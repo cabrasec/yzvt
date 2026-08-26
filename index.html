@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--
+  YZEV Tech — site institucional
+  Placeholders a substituir antes de publicar:
+    WHATSAPP_URL_AQUI  -> link oficial do WhatsApp (ex: https://wa.me/55XXXXXXXXXXX)
+    EMAIL_AQUI         -> e-mail de contato oficial
+    TELEFONE_AQUI      -> telefone de contato (se houver)
+    ENDERECO_AQUI      -> endereço (se houver)
+    N8N_WEBHOOK_URL    -> URL do webhook do n8n que recebe o formulário de contato (ver js/form.js)
+-->
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title data-i18n="seo.title">YZEV Tech | Tecnologia, IA, Automação e Soluções Digitais</title>
+<meta name="description" data-i18n-attr="content" data-i18n="seo.description" content="A YZEV Tech desenvolve sites, sistemas, SaaS, agentes de IA, automações, bots, soluções de segurança, servidores e infraestrutura sob medida."/>
+<meta name="theme-color" content="#161826"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="YZEV Tech"/>
+<meta property="og:title" data-i18n-attr="content" data-i18n="seo.title" content="YZEV Tech | Tecnologia, IA, Automação e Soluções Digitais"/>
+<meta property="og:description" data-i18n-attr="content" data-i18n="seo.description" content="A YZEV Tech desenvolve sites, sistemas, SaaS, agentes de IA, automações, bots, soluções de segurança, servidores e infraestrutura sob medida."/>
+<meta property="og:image" content="./img/yzev-monogram.svg"/>
+<meta name="twitter:card" content="summary"/>
+
+<link rel="icon" type="image/svg+xml" href="./img/favicon.svg"/>
+<link rel="apple-touch-icon" href="./img/favicon.svg"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Pular para o conteúdo</a>
+
+<!-- ============================================================ HEADER ============================================================ -->
+<header class="site-header" id="top">
+  <div class="container site-header__inner">
+
+    <a href="#top" class="brand" aria-label="YZEV Tech">
+      <img class="brand__mark" src="./img/yzev-monogram.svg" width="34" height="34" alt=""/>
+      <span class="brand__word">yzev<span class="accent">tech</span></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <a href="#top" data-i18n="nav.home">Home</a>
+      <a href="#servicos" data-i18n="nav.services">Serviços</a>
+      <a href="#cases" data-i18n="nav.cases">Cases</a>
+      <a href="#a-yzev" data-i18n="nav.about">A YZEV</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" id="lang-switch">
+        <button type="button" class="lang-switch__toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span id="lang-current">PT</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-switch__menu" id="lang-menu" role="listbox">
+          <li role="option" data-lang="pt">PT · Português</li>
+          <li role="option" data-lang="en">EN · English</li>
+          <li role="option" data-lang="es">ES · Español</li>
+        </ul>
+      </div>
+
+      <a class="btn btn--primary btn--sm" href="WHATSAPP_URL_AQUI" target="_blank" rel="noopener" data-i18n="cta.talk">Fale Conosco</a>
+
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================ HERO ============================================================ -->
+<section class="hero" id="hero">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__glow" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__mark" aria-hidden="true">
+      <svg viewBox="0 0 96 96" width="72" height="72" id="hero-mark">
+        <rect class="hm-bar hm-bar--top" x="12" y="14" width="72" height="13"/>
+        <polygon class="hm-bar hm-bar--diag" points="84,27 25,69 12,69 71,27"/>
+        <rect class="hm-bar hm-bar--bottom" x="12" y="69" width="72" height="13"/>
+      </svg>
+    </div>
+
+    <p class="eyebrow reveal" data-i18n="hero.eyebrow">YZEV TECH · SOFTWARE &amp; IA</p>
+
+    <h1 class="hero__title reveal">
+      <span data-i18n="hero.title.p1">Tecnologia que transforma</span>
+      <span class="accent" data-i18n="hero.title.p2">ideias em soluções.</span>
+    </h1>
+
+    <p class="hero__subtitle reveal" data-i18n="hero.subtitle">Desenvolvemos software, Inteligência Artificial, automações e infraestrutura sob medida para transformar desafios de negócio em soluções digitais.</p>
+
+    <div class="hero__actions reveal">
+      <a class="btn btn--primary" href="WHATSAPP_URL_AQUI" target="_blank" rel="noopener" data-i18n="cta.talk">Fale Conosco</a>
+      <a class="btn btn--ghost" href="#servicos" data-i18n="cta.services">Conheça nossos serviços</a>
+    </div>
+
+    <dl class="hero__pillars reveal">
+      <div><dt data-i18n="hero.pillar.1">IA &amp; Automação</dt></div>
+      <div><dt data-i18n="hero.pillar.2">Software &amp; SaaS</dt></div>
+      <div><dt data-i18n="hero.pillar.3">Segurança</dt></div>
+      <div><dt data-i18n="hero.pillar.4">Cloud &amp; Infraestrutura</dt></div>
+    </dl>
+  </div>
+</section>
+
+
+<!-- ============================================================ SERVIÇOS ============================================================ -->
+<section class="section" id="servicos">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow" data-i18n="services.eyebrow">Serviços</p>
+      <h2 data-i18n="services.title">Da primeira ideia à infraestrutura em produção.</h2>
+      <p class="section__lede" data-i18n="services.subtitle">Cinco frentes de trabalho que cobrem todo o ciclo de um produto digital — do entendimento do problema à evolução contínua da solução.</p>
+    </header>
+
+    <div class="pillar-grid">
+
+      <article class="pillar-card reveal">
+        <span class="pillar-card__index">01</span>
+        <div class="pillar-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 19V5a1 1 0 0 1 1-1h9l6 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 4v5a1 1 0 0 0 1 1h5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 data-i18n="service.planning.title">Planning &amp; Discovery</h3>
+        <p data-i18n="service.planning.desc">Entendemos o problema, os objetivos e os requisitos antes de desenvolver a solução: levantamento de requisitos, análise do negócio, arquitetura e planejamento técnico.</p>
+      </article>
+
+      <article class="pillar-card reveal">
+        <span class="pillar-card__index">02</span>
+        <div class="pillar-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5.5l-3 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-i18n="service.dev.title">Desenvolvimento</h3>
+        <p data-i18n="service.dev.desc">Transformamos ideias e requisitos em produtos e sistemas digitais: sites, landing pages, sistemas web, APIs, MicroSaaS, SaaS e aplicações personalizadas.</p>
+      </article>
+
+      <article class="pillar-card reveal">
+        <span class="pillar-card__index">03</span>
+        <div class="pillar-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-i18n="service.support.title">Sustentação &amp; Melhorias</h3>
+        <p data-i18n="service.support.desc">A tecnologia continua evoluindo depois do lançamento. Atuamos na evolução das soluções existentes: correções, melhorias, manutenção e novas funcionalidades.</p>
+      </article>
+
+      <article class="pillar-card pillar-card--accent reveal">
+        <span class="pillar-card__index">04</span>
+        <div class="pillar-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 20h8M12 14v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8.5" cy="9" r="1" fill="currentColor"/><circle cx="15.5" cy="9" r="1" fill="currentColor"/></svg>
+        </div>
+        <h3 data-i18n="service.ai.title">Inteligência Artificial</h3>
+        <p data-i18n="service.ai.desc">Criamos soluções com Inteligência Artificial: agentes autônomos, chatbots, automações inteligentes, processamento de informações e workflows sob medida.</p>
+      </article>
+
+      <article class="pillar-card reveal">
+        <span class="pillar-card__index">05</span>
+        <div class="pillar-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="3.5" width="16" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="14.5" width="16" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="7.5" cy="6.5" r="1" fill="currentColor"/><circle cx="7.5" cy="17.5" r="1" fill="currentColor"/></svg>
+        </div>
+        <h3 data-i18n="service.servers.title">Servidores &amp; Cloud</h3>
+        <p data-i18n="service.servers.desc">Estruturamos e configuramos infraestrutura para aplicações e serviços digitais: servidores, APIs, bancos de dados, automações, bots e Cloud.</p>
+      </article>
+
+    </div>
+
+    <div class="more-services reveal">
+      <p class="more-services__label" data-i18n="services.more.title">Também entregamos</p>
+      <div class="marquee">
+        <div class="marquee__track">
+          <ul class="more-services__list marquee__group">
+            <li data-i18n="services.more.sites">Sites &amp; Landing Pages</li>
+            <li data-i18n="services.more.saas">MicroSaaS &amp; SaaS</li>
+            <li data-i18n="services.more.bots">Bots &amp; Automações</li>
+            <li data-i18n="services.more.security">Segurança Digital</li>
+            <li data-i18n="services.more.cloud">Cloud &amp; Infraestrutura</li>
+          </ul>
+          <ul class="more-services__list marquee__group" aria-hidden="true">
+            <li data-i18n="services.more.sites">Sites &amp; Landing Pages</li>
+            <li data-i18n="services.more.saas">MicroSaaS &amp; SaaS</li>
+            <li data-i18n="services.more.bots">Bots &amp; Automações</li>
+            <li data-i18n="services.more.security">Segurança Digital</li>
+            <li data-i18n="services.more.cloud">Cloud &amp; Infraestrutura</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ IA SPOTLIGHT ============================================================ -->
+<section class="section section--dark" id="ia">
+  <div class="container">
+    <div class="split">
+      <div class="split__text reveal">
+        <p class="eyebrow" data-i18n="ai.eyebrow">Inteligência Artificial</p>
+        <h2 data-i18n="ai.title">IA que trabalha para o seu negócio.</h2>
+        <p class="section__lede" data-i18n="ai.desc">Criamos agentes e automações inteligentes capazes de conectar informações, executar tarefas e apoiar processos de negócio — do primeiro fluxo ao sistema em produção.</p>
+        <a class="link-arrow" href="#contato" data-i18n="cta.services">Conheça nossos serviços</a>
+      </div>
+
+      <div class="flow-diagram reveal" role="img" aria-label="Fluxo: Agentes, Automação, Dados, APIs, Sistemas, Fluxos">
+        <div class="flow-node"><span data-i18n="ai.flow.agents">Agentes</span></div>
+        <div class="flow-node"><span data-i18n="ai.flow.automation">Automação</span></div>
+        <div class="flow-node flow-node--accent"><span data-i18n="ai.flow.data">Dados</span></div>
+        <div class="flow-node"><span data-i18n="ai.flow.apis">APIs</span></div>
+        <div class="flow-node"><span data-i18n="ai.flow.systems">Sistemas</span></div>
+        <div class="flow-node"><span data-i18n="ai.flow.flows">Fluxos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ MICROSAAS / SAAS ============================================================ -->
+<section class="section" id="saas">
+  <div class="container">
+    <div class="split split--reverse">
+      <div class="split__text reveal">
+        <p class="eyebrow" data-i18n="saas.eyebrow">MicroSaaS &amp; SaaS</p>
+        <h2 data-i18n="saas.title">Transforme sua ideia em um produto digital.</h2>
+        <p class="section__lede" data-i18n="saas.desc">Da ideia ao produto, desenvolvemos MicroSaaS e SaaS personalizados para transformar processos e oportunidades em plataformas digitais.</p>
+      </div>
+
+      <div class="stepper reveal" role="img" aria-label="Ideia, Desenvolvimento, Produto, Usuários">
+        <div class="stepper__step"><span class="stepper__dot">1</span><span data-i18n="saas.step.idea">Ideia</span></div>
+        <div class="stepper__step"><span class="stepper__dot">2</span><span data-i18n="saas.step.dev">Desenvolvimento</span></div>
+        <div class="stepper__step"><span class="stepper__dot">3</span><span data-i18n="saas.step.product">Produto</span></div>
+        <div class="stepper__step stepper__step--accent"><span class="stepper__dot">4</span><span data-i18n="saas.step.users">Usuários</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ INFRAESTRUTURA ============================================================ -->
+<section class="section section--dark" id="infra">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow" data-i18n="infra.eyebrow">Infraestrutura</p>
+      <h2 data-i18n="infra.title">Da aplicação à infraestrutura.</h2>
+      <p class="section__lede" data-i18n="infra.desc">Não atuamos só no frontend: cuidamos também do que sustenta a aplicação em produção.</p>
+    </header>
+
+    <div class="infra-grid">
+      <div class="infra-item reveal"><span data-i18n="infra.item.servers">Servidores</span></div>
+      <div class="infra-item reveal"><span data-i18n="infra.item.cloud">Cloud</span></div>
+      <div class="infra-item reveal"><span data-i18n="infra.item.apis">APIs</span></div>
+      <div class="infra-item reveal"><span data-i18n="infra.item.db">Banco de Dados</span></div>
+      <div class="infra-item reveal"><span data-i18n="infra.item.automation">Automações</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ CASES / PORTFÓLIO ============================================================ -->
+<section class="section" id="cases">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow" data-i18n="cases.eyebrow">Cases</p>
+      <h2 data-i18n="cases.title">Nosso Portfólio</h2>
+      <p class="section__lede" data-i18n="cases.subtitle">Espaço preparado para apresentar os projetos desenvolvidos pela YZEV Tech — em breve, com nome, categoria, tecnologias e a solução entregue em cada um.</p>
+    </header>
+
+    <div class="case-grid">
+      <article class="case-card reveal">
+        <div class="case-card__thumb" aria-hidden="true"><span></span></div>
+        <p class="case-card__tag" data-i18n="cases.card.tag1">Produto Digital</p>
+        <h3 data-i18n="cases.card.title">Projeto em destaque</h3>
+        <p data-i18n="cases.card.desc">Em breve: descrição, tecnologias utilizadas e a solução desenvolvida para este projeto.</p>
+      </article>
+      <article class="case-card reveal">
+        <div class="case-card__thumb" aria-hidden="true"><span></span></div>
+        <p class="case-card__tag" data-i18n="cases.card.tag2">Automação &amp; IA</p>
+        <h3 data-i18n="cases.card.title">Projeto em destaque</h3>
+        <p data-i18n="cases.card.desc">Em breve: descrição, tecnologias utilizadas e a solução desenvolvida para este projeto.</p>
+      </article>
+      <article class="case-card reveal">
+        <div class="case-card__thumb" aria-hidden="true"><span></span></div>
+        <p class="case-card__tag" data-i18n="cases.card.tag3">Infraestrutura</p>
+        <h3 data-i18n="cases.card.title">Projeto em destaque</h3>
+        <p data-i18n="cases.card.desc">Em breve: descrição, tecnologias utilizadas e a solução desenvolvida para este projeto.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ A YZEV ============================================================ -->
+<section class="section section--about" id="a-yzev">
+  <div class="container about">
+    <div class="about__mark" aria-hidden="true">
+      <img src="./img/yzev-monogram.svg" width="120" height="120" alt=""/>
+    </div>
+    <div class="about__text reveal">
+      <p class="eyebrow" data-i18n="about.eyebrow">A YZEV</p>
+      <h2 data-i18n="about.title">Tecnologia sob medida, do código à infraestrutura.</h2>
+      <p data-i18n="about.p1">A YZEV Tech nasceu para transformar problemas e ideias em soluções digitais.</p>
+      <p data-i18n="about.p2">Unimos desenvolvimento de software, Inteligência Artificial, automação, segurança e infraestrutura para criar tecnologia sob medida para cada negócio.</p>
+      <p data-i18n="about.p3">Nosso foco é desenvolver soluções úteis, modernas e preparadas para acompanhar a evolução de nossos clientes.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ POR QUE A YZEV ============================================================ -->
+<section class="section section--dark" id="por-que">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow" data-i18n="why.eyebrow">Diferenciais</p>
+      <h2 data-i18n="why.title">Por que escolher a YZEV Tech?</h2>
+    </header>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <h3 data-i18n="why.card1.title">Sob medida</h3>
+        <p data-i18n="why.card1.desc">Cada solução é pensada de acordo com a necessidade do negócio.</p>
+      </div>
+      <div class="why-card reveal">
+        <h3 data-i18n="why.card2.title">Tecnologia atual</h3>
+        <p data-i18n="why.card2.desc">Utilizamos desenvolvimento moderno, automação e Inteligência Artificial quando fazem sentido para o projeto.</p>
+      </div>
+      <div class="why-card reveal">
+        <h3 data-i18n="why.card3.title">Integração</h3>
+        <p data-i18n="why.card3.desc">Conectamos sistemas, APIs, ferramentas e processos.</p>
+      </div>
+      <div class="why-card reveal">
+        <h3 data-i18n="why.card4.title">Segurança</h3>
+        <p data-i18n="why.card4.desc">A segurança é considerada desde a construção das soluções e da infraestrutura.</p>
+      </div>
+      <div class="why-card reveal">
+        <h3 data-i18n="why.card5.title">Evolução contínua</h3>
+        <p data-i18n="why.card5.desc">Projetos podem continuar evoluindo após a primeira entrega.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="close-run">
+
+<!-- ============================================================ CTA FINAL ============================================================ -->
+<section class="section final-cta" id="contato">
+  <div class="container final-cta__inner reveal">
+    <img class="final-cta__mark" src="./img/yzev-monogram.svg" width="56" height="56" alt=""/>
+    <h2 data-i18n="finalcta.title">Sua próxima solução começa aqui.</h2>
+    <p data-i18n="finalcta.desc">Conte para a YZEV Tech o que você precisa. Vamos transformar desafios e ideias em soluções digitais.</p>
+    <a class="btn btn--primary btn--lg" href="WHATSAPP_URL_AQUI" target="_blank" rel="noopener" data-i18n="cta.talk">Fale Conosco</a>
+    <p class="final-cta__alt">
+      <span data-i18n="finalcta.altprompt">Prefere nos contar os detalhes por escrito?</span>
+      <a class="link-arrow" href="#orcamento" data-i18n="finalcta.altlink">Preencha o formulário</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ FORMULÁRIO / ORÇAMENTO ============================================================ -->
+<section class="section form-section" id="orcamento">
+  <div class="container">
+
+    <div class="form-card reveal">
+      <form id="lead-form" novalidate>
+       <div class="form-fields" id="form-fields">
+        <div class="form-row">
+          <div class="field" data-field="name">
+            <label for="f-name" data-i18n="form.field.name.label">Nome</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required data-i18n-attr="placeholder" data-i18n="form.field.name.placeholder" placeholder="Seu nome"/>
+            <span class="field__error"></span>
+          </div>
+          <div class="field" data-field="email">
+            <label for="f-email" data-i18n="form.field.email.label">E-mail</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required data-i18n-attr="placeholder" data-i18n="form.field.email.placeholder" placeholder="seu@email.com"/>
+            <span class="field__error"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field" data-field="whatsapp">
+            <label for="f-whatsapp" data-i18n="form.field.whatsapp.label">WhatsApp</label>
+            <input id="f-whatsapp" name="whatsapp" type="tel" autocomplete="tel" required data-i18n-attr="placeholder" data-i18n="form.field.whatsapp.placeholder" placeholder="(00) 00000-0000"/>
+            <span class="field__error"></span>
+          </div>
+          <div class="field" data-field="company">
+            <label for="f-company"><span data-i18n="form.field.company.label">Empresa</span> <span class="field__optional" data-i18n="form.optional">(opcional)</span></label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" data-i18n-attr="placeholder" data-i18n="form.field.company.placeholder" placeholder="Nome da empresa"/>
+          </div>
+        </div>
+
+        <div class="field" data-field="service">
+          <label for="f-service" data-i18n="form.field.service.label">Serviço</label>
+          <select id="f-service" name="service" required>
+            <option value="" data-i18n="form.field.service.placeholder">Selecione um serviço</option>
+            <option value="Site" data-i18n="form.field.service.opt.site">Site</option>
+            <option value="Landing Page" data-i18n="form.field.service.opt.landing">Landing Page</option>
+            <option value="Sistema Web" data-i18n="form.field.service.opt.system">Sistema Web</option>
+            <option value="MicroSaaS" data-i18n="form.field.service.opt.microsaas">MicroSaaS</option>
+            <option value="SaaS" data-i18n="form.field.service.opt.saas">SaaS</option>
+            <option value="Agente de IA" data-i18n="form.field.service.opt.aiagent">Agente de IA</option>
+            <option value="Automação" data-i18n="form.field.service.opt.automation">Automação</option>
+            <option value="Bot" data-i18n="form.field.service.opt.bot">Bot</option>
+            <option value="Integração" data-i18n="form.field.service.opt.integration">Integração</option>
+            <option value="Segurança Digital" data-i18n="form.field.service.opt.security">Segurança Digital</option>
+            <option value="Servidor / Cloud" data-i18n="form.field.service.opt.server">Servidor / Cloud</option>
+            <option value="Outro" data-i18n="form.field.service.opt.other">Outro</option>
+          </select>
+          <span class="field__error"></span>
+        </div>
+
+        <div class="field" data-field="message">
+          <label for="f-message" data-i18n="form.field.message.label">Descrição do projeto</label>
+          <textarea id="f-message" name="message" rows="4" required data-i18n-attr="placeholder" data-i18n="form.field.message.placeholder" placeholder="Conte brevemente sobre sua ideia, necessidade ou problema que deseja resolver..."></textarea>
+          <span class="field__error"></span>
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="btn btn--primary btn--lg" id="form-submit">
+            <span class="btn__label" data-i18n="form.submit">Enviar solicitação</span>
+            <span class="btn__spinner" aria-hidden="true"></span>
+          </button>
+          <p class="form-privacy" data-i18n="form.privacy">Ao enviar este formulário, você concorda com o uso das informações para contato sobre sua solicitação.</p>
+        </div>
+       </div>
+
+        <div class="form-banner form-banner--success" id="form-success" hidden>
+          <strong data-i18n="form.success.title">Solicitação enviada! 🚀</strong>
+          <p data-i18n="form.success.desc">Recebemos suas informações. A equipe da YZEV Tech entrará em contato em breve.</p>
+        </div>
+
+        <div class="form-banner form-banner--error" id="form-error" hidden>
+          <strong data-i18n="form.error.title">Não foi possível enviar sua solicitação.</strong>
+          <p data-i18n="form.error.desc">Tente novamente ou fale conosco pelo WhatsApp.</p>
+          <a class="btn btn--ghost btn--sm" href="WHATSAPP_URL_AQUI" target="_blank" rel="noopener" data-i18n="form.error.whatsapp">Falar pelo WhatsApp</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.close-run -->
+
+
+</main>
+
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer class="site-footer">
+  <div class="container footer__grid">
+
+    <div class="footer__brand">
+      <a href="#top" class="brand" aria-label="YZEV Tech">
+        <img class="brand__mark" src="./img/yzev-monogram.svg" width="30" height="30" alt=""/>
+        <span class="brand__word">yzev<span class="accent">tech</span></span>
+      </a>
+      <p data-i18n="footer.tagline">Tecnologia, automação e soluções digitais sob medida.</p>
+    </div>
+
+    <nav class="footer__col" aria-label="Navegação do rodapé">
+      <p class="footer__heading" data-i18n="footer.navHeading">Navegação</p>
+      <a href="#top" data-i18n="nav.home">Home</a>
+      <a href="#servicos" data-i18n="nav.services">Serviços</a>
+      <a href="#cases" data-i18n="nav.cases">Cases</a>
+      <a href="#a-yzev" data-i18n="nav.about">A YZEV</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
+    </nav>
+
+    <div class="footer__col">
+      <p class="footer__heading" data-i18n="footer.contactHeading">Contato</p>
+      <a href="WHATSAPP_URL_AQUI" target="_blank" rel="noopener">WhatsApp</a>
+      <span>E-mail: EMAIL_AQUI</span>
+      <span data-i18n="footer.addressLabel">Endereço: ENDERECO_AQUI</span>
+    </div>
+
+    <div class="footer__col">
+      <p class="footer__heading" data-i18n="footer.langHeading">Idioma</p>
+      <div class="footer__langs">
+        <button type="button" data-lang="pt">PT</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="es">ES</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© <span id="year">2026</span> YZEV Tech. <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
+  </div>
+</footer>
+
+<script src="./js/i18n.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/form.js"></script>
+</body>
+</html>
