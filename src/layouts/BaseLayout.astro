@@ -1,0 +1,25 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = 'YZEV Tech | Tecnologia, IA e Soluções Digitais', description = 'Tecnologia, automação e soluções digitais sob medida.' } = Astro.props;
+---
+<!doctype html>
+<html lang="pt-BR" data-lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <slot />
+    <script is:inline src="/js/i18n.js"></script>
+    <script is:inline src="/js/main.js"></script>
+    <script is:inline src="/js/form.js"></script>
+  </body>
+</html>

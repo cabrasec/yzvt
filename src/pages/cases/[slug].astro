@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { projects } from '../../data/projects.js';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const projectImage = 'image' in project ? project.image : undefined;
+---
+<BaseLayout title={`${project.title} | YZEV Tech`}>
+  <Header />
+  <main id="main">
+    <section class="hero"><div class="hero__grid" aria-hidden="true"></div><div class="hero__glow" aria-hidden="true"></div><div class="container hero__inner"><p class="eyebrow">{project.category}</p><h1 class="hero__title"><span>{project.title}</span></h1><p class="hero__subtitle">{project.description}</p></div></section>
+    <section class="section"><div class="container"><a class="link-arrow" href="/cases/">Voltar para Cases</a><div class="section__head"><p class="eyebrow">Projeto</p><h2>{project.title}</h2><p class="section__lede">{project.description}</p></div>{projectImage && <img src={projectImage} alt={project.title} />}</div></section>
+  </main>
+  <Footer />
+</BaseLayout>
