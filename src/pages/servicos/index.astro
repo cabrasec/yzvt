@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { services } from '../../data/services.js';
+---
+<BaseLayout title="Serviços | YZEV Tech" description="Desenvolvimento web, MicroSaaS, SaaS, inteligência artificial e automação sob medida.">
+  <Header />
+  <main id="main">
+    <section class="hero"><div class="hero__grid" aria-hidden="true"></div><div class="hero__glow" aria-hidden="true"></div><div class="container hero__inner"><div class="hero__mark"><img src="/img/yzev-monogram.svg" width="72" height="72" alt="" /></div><p class="eyebrow">YZEV TECH · SERVIÇOS</p><h1 class="hero__title"><span>Tecnologia sob medida,</span><span class="accent">frente a frente com seu negócio.</span></h1><p class="hero__subtitle">Desenvolvimento web, MicroSaaS, SaaS, inteligência artificial e automação em uma solução sob medida.</p></div></section>
+    <section class="section"><div class="container"><header class="section__head reveal"><p class="eyebrow">Serviços</p><h2>Escolha uma frente para conhecer os detalhes</h2><p class="section__lede">Cada serviço tem sua própria página, com o que entregamos e como trabalhamos.</p></header><div class="pillar-grid">{services.map((service, index) => <a href={`/servicos/${service.slug}`} class:list={['pillar-card','reveal', service.accent ? 'pillar-card--accent' : '']}><span class="pillar-card__index">{String(index + 1).padStart(2, '0')}</span><div class="pillar-card__icon" aria-hidden="true">+</div><h3>{service.title}</h3><p>{service.summary}</p></a>)}</div></div></section>
+  </main>
+  <Footer />
+</BaseLayout>

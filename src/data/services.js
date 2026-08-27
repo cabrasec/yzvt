@@ -1,0 +1,82 @@
+/** @type {Array<{slug: string, category: string, title: string, summary: string, description: string, highlights: string[], accent?: boolean}>} */
+export const services = [
+  {
+    slug: 'sites-e-landing-pages',
+    category: 'Desenvolvimento Web',
+    title: 'Sites e Landing Pages',
+    summary: 'Sites institucionais e landing pages rápidas, responsivas e pensadas para converter.',
+    description: 'Sites institucionais e landing pages rápidas, responsivas e pensadas para converter — do design ao deploy.',
+    highlights: [
+      'Design responsivo e performance otimizada',
+      'Landing pages focadas em conversão',
+      'SEO técnico desde a primeira linha de código',
+      'Integração com formulários, CRM e automações',
+    ],
+  },
+  {
+    slug: 'sistemas-web',
+    category: 'Desenvolvimento Web',
+    title: 'Sistemas Web',
+    summary: 'Sistemas web sob medida para organizar processos, dados e operações do seu negócio.',
+    description: 'Sistemas web sob medida para organizar processos, dados e operações do seu negócio em uma única plataforma.',
+    highlights: [
+      'Painéis administrativos e dashboards',
+      'Autenticação, permissões e multiusuário',
+      'APIs para integrar com outras ferramentas',
+      'Arquitetura pensada para escalar',
+    ],
+  },
+  {
+    slug: 'microsaas-e-saas',
+    category: 'Produto Digital',
+    title: 'MicroSaaS e SaaS',
+    summary: 'Do primeiro rascunho ao produto em produção, prontos para receber os primeiros usuários.',
+    description: 'Do primeiro rascunho ao produto em produção: construímos MicroSaaS e SaaS prontos para receber os primeiros usuários e crescer.',
+    highlights: [
+      'Validação e arquitetura do produto',
+      'Cobrança recorrente e planos de assinatura',
+      'Onboarding e experiência do usuário',
+      'Evolução contínua após o lançamento',
+    ],
+  },
+  {
+    slug: 'agentes-de-ia',
+    category: 'Inteligência Artificial',
+    title: 'Agentes Autônomos de IA',
+    summary: 'Agentes de IA que executam tarefas e se conectam aos seus sistemas para apoiar o time.',
+    description: 'Agentes de IA que executam tarefas, tomam decisões simples e se conectam aos seus sistemas para apoiar o time no dia a dia.',
+    highlights: [
+      'Agentes conectados a dados e APIs da empresa',
+      'Automação de tarefas repetitivas com IA',
+      'Chatbots e assistentes para atendimento',
+      'Monitoramento e ajuste contínuo dos agentes',
+    ],
+    accent: true,
+  },
+  {
+    slug: 'automacoes-e-bots',
+    category: 'Automação',
+    title: 'Automações e Bots',
+    summary: 'Eliminamos tarefas manuais conectando ferramentas, dados e processos em fluxos automatizados.',
+    description: 'Eliminamos tarefas manuais e repetitivas conectando ferramentas, dados e processos em fluxos automatizados.',
+    highlights: [
+      'Automação de processos internos',
+      'Bots para WhatsApp, Slack e outros canais',
+      'Fluxos com n8n, APIs e webhooks',
+      'Redução de erros e tempo operacional',
+    ],
+  },
+  {
+    slug: 'integracoes',
+    category: 'Automação',
+    title: 'Integrações entre Sistemas',
+    summary: 'Conectamos plataformas, APIs e bancos de dados para eliminar o retrabalho manual.',
+    description: 'Conectamos plataformas, APIs e bancos de dados para que suas ferramentas troquem informação sem retrabalho manual.',
+    highlights: [
+      'Integração entre CRMs, ERPs e plataformas de pagamento',
+      'Sincronização de dados entre sistemas',
+      'Webhooks e APIs sob medida',
+      'Monitoramento de falhas nas integrações',
+    ],
+  },
+];

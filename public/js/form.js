@@ -1,13 +1,8 @@
 (function () {
   "use strict";
 
-  /*
-   * n8n integration
-   * ----------------
-   * Replace the string below with the real n8n webhook URL before publishing.
-   * Left as a placeholder on purpose — do not invent a URL here.
-   */
-  const N8N_WEBHOOK_URL = "N8N_WEBHOOK_URL";
+  const WEB3FORMS_ACCESS_KEY = "41bfdaca-4693-4dcb-8dcb-376af9895ebc";
+  const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
   const form = document.getElementById("lead-form");
   if (!form) return;
@@ -118,7 +113,16 @@
       return;
     }
 
+    if ((result.data.get("botcheck") || "").toString()) {
+      // Honeypot field was filled in — silently drop the submission (likely a bot).
+      showSuccess();
+      return;
+    }
+
     var payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: "Novo contato via site YZEV Tech",
+      from_name: "Site YZEV Tech",
       name: (result.data.get("name") || "").toString().trim(),
       email: (result.data.get("email") || "").toString().trim(),
       whatsapp: (result.data.get("whatsapp") || "").toString().trim(),
@@ -131,14 +135,15 @@
 
     setLoading(true);
 
-    fetch(N8N_WEBHOOK_URL, {
+    fetch(WEB3FORMS_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify(payload)
     })
-      .then(function (response) {
+      .then(function (response) { return response.json().then(function (json) { return { ok: response.ok, json: json }; }); })
+      .then(function (res) {
         setLoading(false);
-        if (response.ok) {
+        if (res.ok && res.json && res.json.success) {
           showSuccess();
         } else {
           showError();

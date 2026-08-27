@@ -60,6 +60,8 @@ button{font-family:inherit;background:none;border:0;color:inherit;cursor:pointer
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--color-accent);color:#fff;padding:12px 20px;border-radius:0 0 10px 0;z-index:200}
 .skip-link:focus{left:0}
 
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
 .accent{color:var(--color-accent)}
 
 .eyebrow{
@@ -250,7 +252,7 @@ button{font-family:inherit;background:none;border:0;color:inherit;cursor:pointer
    ========================================================================== */
 .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .pillar-card{
-  position:relative;background:var(--color-paper-surface);border-radius:var(--radius-lg);
+  display:block;position:relative;background:var(--color-paper-surface);border-radius:var(--radius-lg);
   padding:32px 28px;box-shadow:inset 0 0 0 1px var(--color-ink-divider);
   transition:transform .35s var(--ease), box-shadow .35s var(--ease);
 }

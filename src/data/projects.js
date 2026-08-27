@@ -13,9 +13,9 @@ export const projects = [
     description: 'Página reservada para um projeto real da YZEV Tech.',
   },
   {
-    slug: 'infraestrutura',
+    slug: 'desenvolvimento-web',
     title: 'Projeto em preparação',
-    category: 'Infraestrutura',
+    category: 'Desenvolvimento Web',
     description: 'Página reservada para um projeto real da YZEV Tech.',
   },
 ];

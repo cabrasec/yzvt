@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { services } from '../../data/services.js';
+
+export function getStaticPaths() {
+  return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+const { service } = Astro.props;
+const otherServices = services.filter((item) => item.slug !== service.slug);
+---
+<BaseLayout title={`${service.title} | YZEV Tech`} description={service.description}>
+  <Header />
+  <main id="main">
+    <section class="hero">
+      <div class="hero__grid" aria-hidden="true"></div><div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="eyebrow">{service.category}</p>
+        <h1 class="hero__title"><span>{service.title}</span></h1>
+        <p class="hero__subtitle">{service.description}</p>
+        <div class="hero__actions"><a class="btn btn--primary" href="/#contato">Fale Conosco</a><a class="btn btn--ghost" href="/servicos/">Ver todos os serviços</a></div>
+      </div>
+    </section>
+    <section class="section section--dark"><div class="container"><header class="section__head reveal"><p class="eyebrow">O que entregamos</p><h2>Como a YZEV Tech trabalha nesse serviço.</h2></header><div class="infra-grid">{service.highlights.map((item) => <div class="infra-item reveal">{item}</div>)}</div></div></section>
+    <section class="section"><div class="container"><header class="section__head reveal"><p class="eyebrow">Outros serviços</p><h2>Conheça o restante da nossa atuação.</h2></header><div class="pillar-grid">{otherServices.map((item, index) => <a href={`/servicos/${item.slug}`} class:list={['pillar-card','reveal', item.accent ? 'pillar-card--accent' : '']}><span class="pillar-card__index">{String(index + 1).padStart(2, '0')}</span><div class="pillar-card__icon" aria-hidden="true">+</div><h3>{item.title}</h3><p>{item.summary}</p></a>)}</div></div></section>
+    <div class="close-run">
+      <section class="section final-cta"><div class="container final-cta__inner reveal"><img class="final-cta__mark" src="/img/yzev-monogram.svg" width="56" height="56" alt="" /><h2>Vamos falar sobre {service.title.toLowerCase()}?</h2><p>Conte para a YZEV Tech o que você precisa. Vamos transformar desafios e ideias em soluções digitais.</p><a class="btn btn--primary btn--lg" href="/#contato">Fale Conosco</a></div></section>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
