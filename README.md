@@ -1,4 +1,4 @@
-npm# YZEV Tech
+# YZEV Tech
 
 Site institucional da YZEV Tech, construído com Next.js, React, TypeScript e Tailwind CSS.
 

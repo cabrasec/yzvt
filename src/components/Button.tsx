@@ -7,7 +7,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-1.5 rounded-md px-4 py-2 text-sm font-medium leading-tight transition-colors disabled:opacity-45 disabled:cursor-not-allowed";
+  "inline-flex items-center justify-center gap-1.5 rounded-full px-5 py-2 text-sm font-medium leading-tight transition-colors disabled:opacity-45 disabled:cursor-not-allowed";
 
 const variants: Record<ButtonVariant, string> = {
   primary:

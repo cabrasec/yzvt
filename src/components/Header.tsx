@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Container } from "@/components/Container";
 import { buttonClasses } from "@/components/Button";
+import { Logo } from "@/components/brand/Logo";
 
 const services = [
   { label: "Infraestrutura", href: "/o-que-fazemos/infraestrutura" },
@@ -50,14 +51,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-divider bg-bg/80 backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-base font-medium text-text no-underline"
-        >
-          <svg viewBox="0 0 96 96" className="h-5 w-5" aria-hidden="true">
-            <path fill="var(--color-accent)" d="M12 14H84V27L25 69H84V82H12V69L71 27H12Z" />
-          </svg>
-          yzev<span className="text-accent">tech_</span>
+        <Link href="/" className="no-underline">
+          <Logo variant="horizontal" />
         </Link>
 
         <nav aria-label="Principal" className="hidden items-center gap-6 md:flex">
@@ -77,36 +72,34 @@ export function Header() {
             {servicesOpen && (
               <div
                 onMouseLeave={() => setServicesOpen(false)}
-                className="absolute left-1/2 top-full w-[420px] -translate-x-1/2 pt-3"
+                className="absolute left-1/2 top-full w-[440px] -translate-x-1/2 border-x border-b border-divider border-t-2 border-t-accent bg-surface p-6 shadow-lg rounded-b-lg"
               >
-                <div className="rounded-lg border border-divider bg-surface p-5 shadow-lg">
-                  <p className="mb-0.5 text-xs uppercase tracking-[0.08em] text-accent">
-                    O que fazemos
-                  </p>
-                  <p className="mb-4 text-sm text-text/80">
-                    Tecnologia para transformar ideias em soluções digitais.
-                  </p>
-                  <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
-                    {services.map((service) => (
-                      <li key={service.href}>
-                        <Link
-                          href={service.href}
-                          className="block text-sm text-text no-underline hover:text-accent"
-                          onClick={() => setServicesOpen(false)}
-                        >
-                          {service.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href="/o-que-fazemos"
-                    className="mt-4 block text-right text-sm text-accent no-underline"
-                    onClick={() => setServicesOpen(false)}
-                  >
-                    Ver todos os serviços →
-                  </Link>
-                </div>
+                <p className="mb-1 text-xs uppercase tracking-[0.08em] text-accent">
+                  O que fazemos
+                </p>
+                <p className="mb-5 text-sm text-text/70">
+                  Tecnologia para transformar ideias em soluções digitais.
+                </p>
+                <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
+                  {services.map((service) => (
+                    <li key={service.href}>
+                      <Link
+                        href={service.href}
+                        className="block text-sm leading-snug text-text no-underline hover:text-accent"
+                        onClick={() => setServicesOpen(false)}
+                      >
+                        {service.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/o-que-fazemos"
+                  className="mt-5 block text-right text-sm text-accent no-underline"
+                  onClick={() => setServicesOpen(false)}
+                >
+                  Ver todos os serviços →
+                </Link>
               </div>
             )}
           </div>

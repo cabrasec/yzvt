@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
-/* Tokens — cores, tipografia, raio e elevação da marca. Fonte: mockup
-   blueprint aprovado (preto/dark + off-white + roxo como accent moderado). */
+/* Tokens — cores, tipografia, raio e elevação da marca. Fonte: Logo System
+   (YZEV Tech - Logo System.html) — preto/near-black + branco + roxo #7A3BFF. */
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --color-bg: #161826;
-  --color-surface: #232532;
+  --color-bg: #0b0b12;
+  --color-surface: #14141f;
   --color-text: #e9e9ed;
-  --color-accent: #9184d9;
-  --color-accent-2: #a7a1db;
+  --color-accent: #7a3bff;
+  --color-accent-2: #a78bfa;
   --color-divider: color-mix(in srgb, #e9e9ed 16%, transparent);
 
   --color-neutral-100: #f3f5fe;
@@ -76,5 +76,21 @@
 
   ::selection {
     background: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  }
+}
+
+@layer components {
+  /* Textura de grade técnica — linguagem visual "blueprint" da marca.
+     Menos densa no mobile (células maiores), mais presente no desktop. */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, var(--color-accent) 14%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--color-accent) 14%, transparent) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  @media (min-width: 640px) {
+    .blueprint-grid {
+      background-size: 48px 48px;
+    }
   }
 }
