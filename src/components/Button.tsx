@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+export type ButtonVariant = "primary" | "secondary" | "ghost";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant;
@@ -17,12 +17,14 @@ const variants: Record<ButtonVariant, string> = {
   ghost: "text-accent px-2 hover:bg-accent/[10%] active:bg-accent/[18%]",
 };
 
+export function buttonClasses(variant: ButtonVariant = "primary", className = "") {
+  return `${base} ${variants[variant]} ${className}`;
+}
+
 export function Button({
   variant = "primary",
   className = "",
   ...props
 }: ButtonProps) {
-  return (
-    <button className={`${base} ${variants[variant]} ${className}`} {...props} />
-  );
+  return <button className={buttonClasses(variant, className)} {...props} />;
 }
