@@ -93,4 +93,28 @@
       background-size: 48px 48px;
     }
   }
+
+  /* Revelação progressiva de "evoluir." no Hero — clip-path da esquerda para
+     a direita, uma única vez. O texto em si nunca é ocultado da árvore de
+     acessibilidade; apenas sua apresentação visual é mascarada. */
+  .reveal-mask {
+    clip-path: inset(0 100% 0 0);
+  }
+  .reveal-mask.is-revealed {
+    animation: reveal-mask-in 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  @keyframes reveal-mask-in {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0% 0 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-mask {
+      clip-path: inset(0 0% 0 0) !important;
+      animation: none !important;
+    }
+  }
 }

@@ -6,42 +6,36 @@ const corners = [
 ];
 
 /**
- * Composição técnica do Hero: o símbolo da marca apresentado dentro de uma
- * moldura discreta — grade fina, círculo de referência, corner brackets,
- * linhas de construção e um marcador técnico.
+ * Composição técnica do Hero: o símbolo da marca apresentado sobre linhas de
+ * construção arquitetônicas — grade fina, círculo de referência, cantos e
+ * uma diagonal, todos discretos o suficiente para não competir com o símbolo.
  */
 export function BlueprintMark() {
   return (
     <div aria-hidden="true" className="relative flex justify-center lg:justify-end">
       <div
-        className="relative flex h-64 w-64 items-center justify-center bg-[linear-gradient(to_right,rgba(167,139,250,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(167,139,250,0.12)_1px,transparent_1px)] bg-[length:20px_20px] sm:h-80 sm:w-80 sm:bg-[length:24px_24px] lg:h-[35rem] lg:w-[35rem] lg:translate-x-10 lg:bg-[length:28px_28px]"
+        className="relative flex h-64 w-64 items-center justify-center bg-[linear-gradient(to_right,rgba(167,139,250,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(167,139,250,0.035)_1px,transparent_1px)] bg-[length:20px_20px] sm:h-80 sm:w-80 sm:bg-[length:24px_24px] lg:h-[35rem] lg:w-[35rem] lg:translate-x-10 lg:bg-[length:28px_28px]"
       >
         {corners.map((position) => (
           <span
             key={position}
-            className={`absolute h-4 w-4 border-accent-2/50 ${position}`}
+            className={`absolute h-3 w-3 border-accent-2/[0.18] ${position}`}
           />
         ))}
 
-        <div className="absolute inset-5 rounded-full border border-dashed border-accent-2/60 sm:inset-8" />
+        <div className="absolute inset-5 rounded-full border border-dashed border-accent-2/[0.15] sm:inset-8" />
 
         <svg
-          className="absolute inset-0 h-full w-full text-accent-2/40"
+          className="absolute inset-0 h-full w-full text-accent-2/[0.12]"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
-          <line x1="4" y1="96" x2="96" y2="4" stroke="currentColor" strokeWidth="0.22" />
-          <line x1="20" y1="96" x2="96" y2="20" stroke="currentColor" strokeWidth="0.22" />
+          <line x1="4" y1="96" x2="96" y2="4" stroke="currentColor" strokeWidth="0.16" />
         </svg>
 
-        <span className="absolute bottom-10 right-10 h-3 w-3">
-          <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-divider" />
-          <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-divider" />
-        </span>
-
         <svg
-          className="relative h-[17rem] w-[17rem] overflow-visible sm:h-[22rem] sm:w-[22rem] lg:h-[30rem] lg:w-[30rem]"
+          className="relative h-[17.85rem] w-[17.85rem] overflow-visible sm:h-[23.1rem] sm:w-[23.1rem] lg:h-[26.25rem] lg:w-[26.25rem]"
           viewBox="0 0 100 100"
           fill="none"
         >

@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import { buttonClasses } from "@/components/Button";
 import { Logo } from "@/components/brand/Logo";
 import { BlueprintMark } from "@/components/hero/BlueprintMark";
+import { RevealWord } from "@/components/hero/RevealWord";
 
 const corners = [
   "-left-1.5 -top-1.5 border-l-2 border-t-2",
@@ -14,7 +15,7 @@ const corners = [
 
 export function Hero() {
   return (
-    <section className="blueprint-grid py-20 sm:py-28 lg:py-32">
+    <section className="blueprint-grid py-12 sm:py-16 lg:pt-24 lg:pb-16">
       <Container>
         <div
           aria-hidden="true"
@@ -27,7 +28,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden border border-dashed border-divider px-6 py-14 sm:px-10 sm:py-20 lg:px-16">
+        <div className="relative overflow-hidden border border-dashed border-divider px-6 py-10 sm:px-10 sm:py-14 lg:px-16 lg:py-12">
           {corners.map((position) => (
             <span
               key={position}
@@ -36,18 +37,20 @@ export function Hero() {
             />
           ))}
 
-          <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
-            <div className="max-w-xl">
+          <div className="grid items-start gap-12 lg:grid-cols-[58%_42%] lg:gap-6">
+            <div>
               <p className="mb-5 text-xs uppercase tracking-[0.2em] text-accent">
                 Software · IA · Infraestrutura
               </p>
 
               <h1 className="text-4xl font-bold tracking-[-0.02em] sm:text-5xl lg:text-6xl">
                 Tecnologia para empresas que querem{" "}
-                <span className="bg-[linear-gradient(110deg,#9A72FF_0%,#7C3CFF_45%,#6330D7_100%)] bg-clip-text text-transparent">evoluir.</span>
+                <RevealWord className="bg-[linear-gradient(110deg,#9A72FF_0%,#7C3CFF_45%,#6330D7_100%)] bg-clip-text text-transparent">
+                  evoluir.
+                </RevealWord>
               </h1>
 
-              <p className="mt-6 max-w-lg text-lg text-text/80">
+              <p className="mt-5 max-w-lg text-lg text-text/80">
                 Criamos softwares, automações e soluções digitais para
                 pequenas e médias empresas.
               </p>
@@ -62,7 +65,7 @@ export function Hero() {
                 </Link>
               </div>
 
-              <p className="mt-10 max-w-sm border-t border-divider pt-4 text-sm italic text-text/50">
+              <p className="mt-10 max-w-sm border-t border-divider pt-4 text-sm italic text-[#aaa8b8]">
                 Projetamos software como se projeta uma estrutura.
               </p>
             </div>

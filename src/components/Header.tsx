@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Globe, Menu, Search, X } from "lucide-react";
 import { Container } from "@/components/Container";
 import { buttonClasses } from "@/components/Button";
 import { Logo } from "@/components/brand/Logo";
+import { availableLocales, defaultLocale, localeLabel, type LocaleCode } from "@/lib/i18n";
 
 const services = [
   { label: "Infraestrutura", href: "/o-que-fazemos/infraestrutura" },
@@ -28,6 +29,13 @@ export function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
 
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  const [langOpen, setLangOpen] = useState(false);
+  const [locale, setLocale] = useState<LocaleCode>(defaultLocale);
+  const langRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (!servicesOpen) return;
 
@@ -48,9 +56,33 @@ export function Header() {
     };
   }, [servicesOpen]);
 
+  useEffect(() => {
+    if (!langOpen) return;
+
+    function handlePointerDown(event: MouseEvent) {
+      if (!langRef.current?.contains(event.target as Node)) {
+        setLangOpen(false);
+      }
+    }
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setLangOpen(false);
+    }
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [langOpen]);
+
+  useEffect(() => {
+    if (searchOpen) searchInputRef.current?.focus();
+  }, [searchOpen]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-divider bg-bg/80 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between gap-4">
+      <Container className="flex h-20 items-center justify-between gap-4">
         <Link href="/" className="no-underline">
           <Logo variant="horizontal" id="header-logo" gap={18} techGradient />
         </Link>
@@ -115,11 +147,66 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <Link href="/contato" className={buttonClasses("primary")}>
-            Fale conosco
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+        <div className="hidden items-center gap-5 md:flex">
+          {searchOpen ? (
+            <div className="flex items-center gap-2 border-b border-divider pb-0.5">
+              <Search className="h-5 w-5 text-text/60" aria-hidden="true" />
+              <input
+                ref={searchInputRef}
+                type="text"
+                placeholder="Buscar..."
+                aria-label="Buscar no site"
+                onBlur={() => setSearchOpen(false)}
+                onKeyDown={(event) => {
+                  if (event.key === "Escape") setSearchOpen(false);
+                }}
+                className="w-28 bg-transparent text-sm text-text placeholder:text-text/40 outline-none transition-[width] duration-200 focus:w-40"
+              />
+            </div>
+          ) : (
+            <button
+              type="button"
+              aria-label="Buscar"
+              onClick={() => setSearchOpen(true)}
+              className="text-text/60 hover:text-text"
+            >
+              <Search className="h-5 w-5" aria-hidden="true" />
+            </button>
+          )}
+
+          <div ref={langRef} className="relative">
+            <button
+              type="button"
+              aria-haspopup="true"
+              aria-expanded={langOpen}
+              onClick={() => setLangOpen((open) => !open)}
+              className="flex items-center gap-2 text-sm text-text hover:text-accent"
+            >
+              <Globe className="h-5 w-5" aria-hidden="true" />
+              {localeLabel(locale)}
+              <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+            </button>
+
+            {langOpen && (
+              <div className="absolute right-0 top-full mt-2 w-36 rounded-lg border border-divider bg-surface py-1.5 shadow-sm">
+                {availableLocales().map((option) => (
+                  <button
+                    key={option.code}
+                    type="button"
+                    onClick={() => {
+                      setLocale(option.code);
+                      setLangOpen(false);
+                    }}
+                    className={`block w-full px-3 py-1.5 text-left text-sm ${
+                      option.code === locale ? "text-accent" : "text-text hover:text-accent"
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         <button
