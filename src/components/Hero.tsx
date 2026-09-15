@@ -15,8 +15,8 @@ const corners = [
 
 export function Hero() {
   return (
-    <section className="blueprint-grid py-12 sm:py-16 lg:pt-24 lg:pb-16">
-      <Container>
+    <section className="blueprint-grid py-12 sm:py-16 lg:flex lg:min-h-[calc(100vh-5rem)] lg:flex-col lg:justify-center lg:py-0">
+      <Container wide className="lg:pt-14 lg:pb-24">
         <div
           aria-hidden="true"
           className="mb-2 hidden justify-end text-right text-[10px] uppercase tracking-[0.15em] text-text/40 sm:flex"
@@ -28,7 +28,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden border border-dashed border-divider px-6 py-10 sm:px-10 sm:py-14 lg:px-16 lg:py-12">
+        <div className="relative overflow-hidden border border-dashed border-divider px-6 py-10 sm:px-10 sm:py-14 lg:px-20 lg:py-14">
           {corners.map((position) => (
             <span
               key={position}
@@ -37,13 +37,13 @@ export function Hero() {
             />
           ))}
 
-          <div className="grid items-start gap-12 lg:grid-cols-[58%_42%] lg:gap-6">
+          <div className="grid items-start gap-12 lg:grid-cols-[58%_42%] lg:gap-16">
             <div>
               <p className="mb-5 text-xs uppercase tracking-[0.2em] text-accent">
                 Software · IA · Infraestrutura
               </p>
 
-              <h1 className="text-4xl font-bold tracking-[-0.02em] sm:text-5xl lg:text-6xl">
+              <h1 className="text-4xl font-bold tracking-[-0.02em] sm:text-5xl lg:w-[700px] lg:text-[clamp(4.5rem,5vw,5.5rem)] lg:leading-[0.98]">
                 Tecnologia para empresas que querem{" "}
                 <RevealWord className="bg-[linear-gradient(110deg,#9A72FF_0%,#7C3CFF_45%,#6330D7_100%)] bg-clip-text text-transparent">
                   evoluir.

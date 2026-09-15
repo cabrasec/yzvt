@@ -14,7 +14,7 @@ export function BlueprintMark() {
   return (
     <div aria-hidden="true" className="relative flex justify-center lg:justify-end">
       <div
-        className="relative flex h-64 w-64 items-center justify-center bg-[linear-gradient(to_right,rgba(167,139,250,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(167,139,250,0.035)_1px,transparent_1px)] bg-[length:20px_20px] sm:h-80 sm:w-80 sm:bg-[length:24px_24px] lg:h-[35rem] lg:w-[35rem] lg:translate-x-10 lg:bg-[length:28px_28px]"
+        className="relative flex h-64 w-64 items-center justify-center bg-[linear-gradient(to_right,rgba(167,139,250,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(167,139,250,0.035)_1px,transparent_1px)] bg-[length:20px_20px] sm:h-80 sm:w-80 sm:bg-[length:24px_24px] lg:h-[37.5rem] lg:w-[37.5rem] lg:translate-x-10 lg:bg-[length:28px_28px]"
       >
         {corners.map((position) => (
           <span
@@ -35,7 +35,7 @@ export function BlueprintMark() {
         </svg>
 
         <svg
-          className="relative h-[17.85rem] w-[17.85rem] overflow-visible sm:h-[23.1rem] sm:w-[23.1rem] lg:h-[26.25rem] lg:w-[26.25rem]"
+          className="relative h-[17.85rem] w-[17.85rem] overflow-visible sm:h-[23.1rem] sm:w-[23.1rem] lg:h-[28.125rem] lg:w-[28.125rem]"
           viewBox="0 0 100 100"
           fill="none"
         >

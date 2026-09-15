@@ -82,12 +82,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-divider bg-bg/80 backdrop-blur">
-      <Container className="flex h-20 items-center justify-between gap-4">
+      <Container headerWide className="flex h-20 items-center justify-between gap-4 lg:h-[86px]">
         <Link href="/" className="no-underline">
-          <Logo variant="horizontal" id="header-logo" gap={18} techGradient />
+          <Logo variant="horizontal" id="header-logo" gap={18} techGradient size="lg" />
         </Link>
 
-        <nav aria-label="Principal" className="hidden items-center gap-6 md:flex">
+        <nav aria-label="Principal" className="hidden items-center gap-6 md:flex lg:gap-8">
           <div ref={servicesRef} className="relative">
             <button
               type="button"
@@ -95,7 +95,7 @@ export function Header() {
               aria-expanded={servicesOpen}
               onClick={() => setServicesOpen((open) => !open)}
               onMouseEnter={() => setServicesOpen(true)}
-              className="flex items-center gap-1 text-sm text-text hover:text-accent"
+              className="flex items-center gap-1 text-sm text-text hover:text-accent lg:text-base"
             >
               O que fazemos
               <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
@@ -140,7 +140,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-text no-underline hover:text-accent"
+              className="text-sm text-text no-underline hover:text-accent lg:text-base"
             >
               {link.label}
             </Link>
@@ -150,7 +150,7 @@ export function Header() {
         <div className="hidden items-center gap-5 md:flex">
           {searchOpen ? (
             <div className="flex items-center gap-2 border-b border-divider pb-0.5">
-              <Search className="h-5 w-5 text-text/60" aria-hidden="true" />
+              <Search className="h-5 w-5 text-text/60 lg:h-[22px] lg:w-[22px]" aria-hidden="true" />
               <input
                 ref={searchInputRef}
                 type="text"
@@ -170,7 +170,7 @@ export function Header() {
               onClick={() => setSearchOpen(true)}
               className="text-text/60 hover:text-text"
             >
-              <Search className="h-5 w-5" aria-hidden="true" />
+              <Search className="h-5 w-5 lg:h-[22px] lg:w-[22px]" aria-hidden="true" />
             </button>
           )}
 
@@ -180,11 +180,11 @@ export function Header() {
               aria-haspopup="true"
               aria-expanded={langOpen}
               onClick={() => setLangOpen((open) => !open)}
-              className="flex items-center gap-2 text-sm text-text hover:text-accent"
+              className="flex items-center gap-2 text-sm text-text hover:text-accent lg:text-base"
             >
-              <Globe className="h-5 w-5" aria-hidden="true" />
+              <Globe className="h-5 w-5 lg:h-[22px] lg:w-[22px]" aria-hidden="true" />
               {localeLabel(locale)}
-              <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+              <ChevronDown className="h-3.5 w-3.5 lg:h-4 lg:w-4" aria-hidden="true" />
             </button>
 
             {langOpen && (
