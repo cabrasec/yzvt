@@ -29,3 +29,7 @@ pnpm-debug.log*
 
 # typescript
 *.tsbuildinfo
+
+# other
+yzevtech_site_blueprint_e_plano_incremental.md
+yzev-blueprint.html
