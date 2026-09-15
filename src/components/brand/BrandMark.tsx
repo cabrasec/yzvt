@@ -14,9 +14,9 @@ export function BrandMark({ id, variant = "gradient", className = "" }: BrandMar
   if (variant === "flat") {
     return (
       <svg viewBox="0 0 96 96" fill="currentColor" aria-hidden="true" className={className}>
-        <path d="M14 10 L90 10 L90 36 L14 36 Z" />
-        <path d="M62 36 L90 36 L34 60 L6 60 Z" opacity="0.72" />
-        <path d="M6 60 L82 60 L82 86 L6 86 Z" />
+        <path d="M8 8h82v26H8Z" />
+        <path d="M62 34h28L62 62H34Z" opacity="0.72" />
+        <path d="M6 62h82v26H6Z" />
       </svg>
     );
   }
@@ -41,9 +41,9 @@ export function BrandMark({ id, variant = "gradient", className = "" }: BrandMar
           <stop offset="1" stopColor="#6423E8" />
         </linearGradient>
       </defs>
-      <path d="M14 10 L90 10 L90 36 L14 36 Z" fill={`url(#${top})`} />
-      <path d="M62 36 L90 36 L34 60 L6 60 Z" fill={`url(#${fold})`} />
-      <path d="M6 60 L82 60 L82 86 L6 86 Z" fill={`url(#${bot})`} />
+      <path d="M8 8h82v26H8Z" fill={`url(#${top})`} />
+      <path d="M62 34h28L62 62H34Z" fill={`url(#${fold})`} />
+      <path d="M6 62h82v26H6Z" fill={`url(#${bot})`} />
     </svg>
   );
 }

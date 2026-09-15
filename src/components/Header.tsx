@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { Container } from "@/components/Container";
 import { buttonClasses } from "@/components/Button";
 import { Logo } from "@/components/brand/Logo";
@@ -52,7 +52,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-divider bg-bg/80 backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link href="/" className="no-underline">
-          <Logo variant="horizontal" />
+          <Logo variant="horizontal" id="header-logo" gap={18} techGradient />
         </Link>
 
         <nav aria-label="Principal" className="hidden items-center gap-6 md:flex">
@@ -118,6 +118,7 @@ export function Header() {
         <div className="hidden md:block">
           <Link href="/contato" className={buttonClasses("primary")}>
             Fale conosco
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
 
@@ -191,6 +192,7 @@ export function Header() {
               onClick={() => setMobileOpen(false)}
             >
               Fale conosco
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </Container>
         </nav>

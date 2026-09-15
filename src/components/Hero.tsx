@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
 import { buttonClasses } from "@/components/Button";
+import { Logo } from "@/components/brand/Logo";
 import { BlueprintMark } from "@/components/hero/BlueprintMark";
 
 const corners = [
@@ -42,7 +44,7 @@ export function Hero() {
 
               <h1 className="text-4xl font-bold tracking-[-0.02em] sm:text-5xl lg:text-6xl">
                 Tecnologia para empresas que querem{" "}
-                <span className="text-accent">evoluir.</span>
+                <span className="bg-[linear-gradient(110deg,#9A72FF_0%,#7C3CFF_45%,#6330D7_100%)] bg-clip-text text-transparent">evoluir.</span>
               </h1>
 
               <p className="mt-6 max-w-lg text-lg text-text/80">
@@ -51,8 +53,9 @@ export function Hero() {
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-3">
-                <Link href="/contato" className={buttonClasses("primary")}>
+                <Link href="/contato" className={buttonClasses("filled")}>
                   Fale conosco
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <Link href="/o-que-fazemos" className={buttonClasses("secondary")}>
                   O que fazemos
@@ -78,9 +81,7 @@ export function Hero() {
         </div>
 
         <div className="mt-6 flex items-center justify-between border-t border-divider pt-4 text-xs uppercase tracking-[0.15em] text-text/50">
-          <span className="font-bold normal-case tracking-[-0.02em] text-text">
-            yzevtech
-          </span>
+          <Logo variant="horizontal" id="home-logo" className="text-sm" />
           <span>Tecnologia para o próximo passo</span>
         </div>
       </Container>
