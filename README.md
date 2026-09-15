@@ -1,11 +1,8 @@
 # YZEV Tech
 
-Site institucional da YZEV Tech, construído com Astro e HTML, CSS e JavaScript estáticos.
+Site institucional da YZEV Tech, construído com Next.js, React, TypeScript e Tailwind CSS.
 
-## Antes de publicar
-
-- **Formulário de contato**: configurado com a chave do Web3Forms em [public/js/form.js](public/js/form.js).
-- **Analytics**: configurado com o token do Cloudflare Web Analytics em [src/layouts/BaseLayout.astro](src/layouts/BaseLayout.astro).
+O projeto está em construção incremental: cada fase é implementada, validada e commitada separadamente. Veja `yzevtech_site_blueprint_e_plano_incremental.md` para o plano completo.
 
 O deploy é feito na Vercel (`vercel.json` já define os cabeçalhos de segurança do site).
 
@@ -18,83 +15,48 @@ O deploy é feito na Vercel (`vercel.json` já define os cabeçalhos de seguran�
 
 Na raiz do projeto:
 
-```powershell
-npm.cmd install
+```bash
+npm install
 ```
 
-## Iniciar o Astro
+## Desenvolvimento
 
-Para iniciar o servidor de desenvolvimento:
-
-```powershell
-npm.cmd run dev
+```bash
+npm run dev
 ```
 
 Abra no navegador:
 
 ```text
-http://localhost:4321
+http://localhost:3000
 ```
-
-O Astro atualiza a página automaticamente enquanto os arquivos são editados.
 
 ## Build de produção
 
-```powershell
-npm.cmd run build
+```bash
+npm run build
+npm run start
 ```
-
-Os arquivos finais são gerados na pasta `dist/`.
-
-Para visualizar o build localmente:
-
-```powershell
-npm.cmd run preview
-```
-
-## Rotas
-
-- `/`: página principal
-- `/cases/`: lista de Cases
-- `/cases/:slug/`: página específica de um projeto
-
-## Adicionar um Case
-
-Edite `src/data/projects.js` e adicione somente informações reais e aprovadas:
-
-```js
-{
-  slug: 'meu-projeto',
-  title: 'Meu Projeto',
-  category: 'Produto Digital',
-  description: 'Descrição real do projeto.',
-  image: '/img/meu-projeto.png',
-}
-```
-
-A rota será gerada automaticamente em `/cases/meu-projeto/` durante o build.
 
 ## Estrutura
 
 ```text
 src/
-  components/       Componentes reutilizáveis
-  data/              Dados dos Cases
-  layouts/           Layout global
-  pages/             Páginas Astro e rotas dinâmicas
+  app/          Rotas e layouts (Next.js App Router)
+  components/   Componentes reutilizáveis
+  content/      Conteúdo (futuramente MDX)
+  lib/          Funções e utilidades
+  styles/       Estilos globais
 public/
-  css/               Estilos
-  img/               Identidade visual e imagens
-  js/                Interações e formulário
+  img/          Identidade visual e imagens
 ```
 
 ## Scripts disponíveis
 
 | Comando | Função |
 | --- | --- |
-| `npm.cmd run dev` | Inicia o desenvolvimento local |
-| `npm.cmd run build` | Gera a versão de produção |
-| `npm.cmd run preview` | Visualiza a versão gerada |
-| `npm.cmd run astro` | Executa a CLI do Astro |
-
-Em macOS ou Linux, use `npm` no lugar de `npm.cmd`.
+| `npm run dev` | Inicia o desenvolvimento local |
+| `npm run build` | Gera a versão de produção |
+| `npm run start` | Sobe o build de produção localmente |
+| `npm run lint` | Executa o ESLint |
+| `npm run typecheck` | Verifica os tipos TypeScript |
