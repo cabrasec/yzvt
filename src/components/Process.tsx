@@ -86,13 +86,18 @@ export function Process() {
           const els = cardRefs.current.filter((el): el is HTMLDivElement => el !== null);
 
           // Cada card percorre a mesma trajetória (entra por baixo, cruza o
-          // stage congelado, sai por cima) num segmento de 1 unidade de
-          // scroll; o segmento seguinte começa 0.4 unidade antes do
-          // anterior terminar, criando a sobreposição pedida (card N ainda
-          // saindo enquanto card N+1 já está entrando). O fundo nunca é
+          // stage congelado, sai por cima) num segmento de 0.85 unidade de
+          // scroll; o segmento seguinte começa 0.38 unidade antes do
+          // anterior terminar — o próximo card começa a subir um pouco mais
+          // cedo (antes o gatilho era em ~65% do trajeto do card atual,
+          // agora é em ~55%), reduzindo a sensação de intervalo morto sem
+          // voltar a fazer os dois competirem pela leitura. A distância de
+          // deslocamento (140% -> 125%) segue reduzida, só o suficiente
+          // para sair completamente da área visível. O fundo nunca é
           // tocado — só os cards têm transform animado.
-          const segmentDuration = 1;
-          const overlap = 0.4;
+          const travelPercent = 125;
+          const segmentDuration = 0.85;
+          const overlap = 0.38;
           const totalUnits = segmentDuration * els.length - overlap * (els.length - 1);
 
           const timeline = gsap.timeline({
@@ -110,10 +115,10 @@ export function Process() {
           // de travessia ele continua deslocando fora da tela, na mesma
           // reta. Isso evita qualquer "congelamento": em todo instante do
           // scroll, todo card está se movendo, mesmo quando invisível.
-          const rate = -280 / segmentDuration;
+          const rate = (-2 * travelPercent) / segmentDuration;
           els.forEach((el, index) => {
             const position = index * (segmentDuration - overlap);
-            const startY = 140 - rate * position;
+            const startY = travelPercent - rate * position;
             const endY = startY + rate * totalUnits;
             timeline.fromTo(
               el,
