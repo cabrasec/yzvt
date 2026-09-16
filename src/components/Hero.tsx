@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
 import { buttonClasses } from "@/components/Button";
-import { Logo } from "@/components/brand/Logo";
 import { BlueprintMark } from "@/components/hero/BlueprintMark";
 import { RevealWord } from "@/components/hero/RevealWord";
 
@@ -15,8 +13,8 @@ const corners = [
 
 export function Hero() {
   return (
-    <section className="blueprint-grid py-12 sm:py-16 lg:flex lg:min-h-[calc(100vh-5rem)] lg:flex-col lg:justify-center lg:py-0">
-      <Container wide className="lg:pt-14 lg:pb-24">
+    <section className="relative overflow-hidden blueprint-grid py-12 sm:py-16 lg:flex lg:min-h-[min(calc(100svh-5.375rem),54rem)] lg:flex-col lg:justify-center lg:py-0">
+      <Container wide className="lg:pt-14 lg:pb-10">
         <div
           aria-hidden="true"
           className="mb-2 hidden justify-end text-right text-[10px] uppercase tracking-[0.15em] text-text/40 sm:flex"
@@ -56,10 +54,6 @@ export function Hero() {
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-3">
-                <Link href="/contato" className={buttonClasses("filled")}>
-                  Fale conosco
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
                 <Link href="/o-que-fazemos" className={buttonClasses("secondary")}>
                   O que fazemos
                 </Link>
@@ -83,8 +77,7 @@ export function Hero() {
           <span>Pessoas</span>
         </div>
 
-        <div className="mt-6 flex items-center justify-between border-t border-divider pt-4 text-xs uppercase tracking-[0.15em] text-text/50">
-          <Logo variant="horizontal" id="home-logo" className="text-sm" />
+        <div className="mt-6 flex items-center justify-end border-t border-divider pt-4 text-xs uppercase tracking-[0.15em] text-text/50">
           <span>Tecnologia para o próximo passo</span>
         </div>
       </Container>
