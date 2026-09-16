@@ -107,6 +107,23 @@ export function Process() {
               end: () => `+=${window.innerHeight * totalUnits}`,
               scrub: true,
               pin: true,
+              // O pin padrão do GSAP reserva altura própria da section
+              // (h-screen) + distância de scroll da animação no spacer que
+              // ele mesmo cria — depois que o pin solta, essa altura própria
+              // sobra como um trecho morto extra (quase 1 viewport) antes da
+              // Section 04, com a frase já sem pin "arrastando" por cima do
+              // Header nesse meio-tempo. Em vez de reestruturar o pin em si
+              // (arriscado — GSAP trata `pin` e `trigger` em elementos
+              // diferentes de forma frágil), corrigimos na origem exata do
+              // excesso: depois que o spacer é criado, encolhemos ele para
+              // conter SÓ a distância de scroll da animação, sem a sobra da
+              // altura natural da section. Nada da animação dos cards muda.
+              onRefresh: () => {
+                const spacer = stageRef.current?.parentElement;
+                if (spacer?.classList.contains("pin-spacer")) {
+                  spacer.style.height = `${window.innerHeight * totalUnits}px`;
+                }
+              },
             },
           });
 
