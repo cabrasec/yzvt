@@ -9,115 +9,69 @@ gsap.registerPlugin(ScrollTrigger);
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-type Entry = {
-  heading: string;
-  text: string;
-};
-
 type Card = {
-  number: string;
-  phraseTop: string;
-  phraseBottom: string;
-  entries: Entry[];
+  title: string;
+  subtitle: string;
+  body: string;
+  complement: string;
+  examples: string;
   surface: string;
   side: "left" | "right";
-  numberColor: string;
   headingColor: string;
   subColor: string;
   dividerColor: string;
   bodyColor: string;
+  labelColor: string;
 };
 
 const cards: Card[] = [
   {
-    number: "01",
-    phraseTop: "AUTOMATIZE",
-    phraseBottom: "o que toma seu tempo.",
+    title: "COMUNICAR",
+    subtitle: "Conecte sua empresa às pessoas que fazem o negócio acontecer.",
+    body: "Para estabelecer interações automatizadas com clientes, colaboradores e parceiros por diferentes canais, como WhatsApp, Instagram, e-mail e outros pontos de contato, tornando o atendimento mais rápido, organizado e adequado ao contexto de cada conversa.",
+    complement:
+      "A comunicação pode iniciar um atendimento, responder dúvidas, enviar informações, confirmar pedidos, acompanhar solicitações e encaminhar cada interação para o próximo passo do processo.",
+    examples:
+      "Atendimento pelo WhatsApp, pedidos pelo Instagram, confirmação de pedidos, avisos, acompanhamento de clientes e respostas automatizadas.",
     surface: "bg-[#0B0B10]",
     side: "left",
-    numberColor: "text-accent-2",
     headingColor: "text-text",
     subColor: "text-text/80",
     dividerColor: "border-text/15",
     bodyColor: "text-text/65",
-    entries: [
-      {
-        heading: "WhatsApp que responde sozinho",
-        text: "Receba mensagens de clientes, tire dúvidas, envie informações, confirme pedidos e encaminhe cada atendimento sem precisar responder tudo manualmente.",
-      },
-      {
-        heading: "Pedidos pelo WhatsApp e Instagram",
-        text: "Receba pedidos diretamente pelos canais que seus clientes já usam. As informações podem ser organizadas e encaminhadas automaticamente para quem precisa atender ou preparar o pedido.",
-      },
-      {
-        heading: "Pedidos de restaurantes",
-        text: "Cardápio, pedido, confirmação e atualização do cliente em um fluxo simples, sem precisar copiar informações de uma conversa para outra.",
-      },
-      {
-        heading: "Tarefas que se repetem todos os dias",
-        text: "Envio de mensagens, avisos, atualização de informações, preenchimento de dados e outras tarefas repetitivas podem acontecer automaticamente.",
-      },
-    ],
+    labelColor: "text-accent-2",
   },
   {
-    number: "02",
-    phraseTop: "CRIE",
-    phraseBottom: "o que sua empresa precisa.",
+    title: "AUTOMATIZAR",
+    subtitle: "Deixe o trabalho repetitivo acontecer sozinho.",
+    body: "Para substituir atividades manuais e repetitivas por fluxos que executam tarefas de forma rápida, padronizada e rastreável, reduzindo o trabalho operacional e permitindo que as pessoas concentrem seu tempo no que realmente precisa de atenção.",
+    complement:
+      "Processos que dependem de copiar informações, enviar mensagens, organizar pedidos, atualizar planilhas, consultar sistemas ou repetir as mesmas etapas todos os dias podem ser transformados em fluxos automáticos.",
+    examples:
+      "Pedidos de restaurantes, atualização de informações, organização de dados, envio de mensagens, integrações entre sistemas e rotinas administrativas.",
     surface: "bg-[#45238A]",
     side: "right",
-    numberColor: "text-text/60",
     headingColor: "text-text",
     subColor: "text-text/80",
     dividerColor: "border-text/20",
     bodyColor: "text-text/70",
-    entries: [
-      {
-        heading: "Um sistema para o seu negócio",
-        text: "Se sua empresa ainda controla informações por planilhas, mensagens ou anotações, podemos transformar esse processo em um sistema simples, feito para a sua rotina.",
-      },
-      {
-        heading: "Site que trabalha pelo seu negócio",
-        text: "Mais do que uma página bonita: um site pode apresentar seus serviços, mostrar produtos, receber contatos, gerar pedidos e facilitar o atendimento.",
-      },
-      {
-        heading: "Uma aplicação para sua operação",
-        text: "Crie uma ferramenta para organizar pedidos, clientes, produtos, serviços, agendamentos ou qualquer outra parte do negócio.",
-      },
-      {
-        heading: "Faça suas ferramentas conversarem",
-        text: "WhatsApp, site, planilhas e outros sistemas podem trocar informações automaticamente, evitando trabalho duplicado e a necessidade de copiar e colar dados.",
-      },
-    ],
+    labelColor: "text-text/70",
   },
   {
-    number: "03",
-    phraseTop: "TRANSFORME",
-    phraseBottom: "uma ideia em produto.",
+    title: "CRIAR",
+    subtitle: "Transforme uma necessidade ou ideia em um produto digital.",
+    body: "Para transformar uma necessidade, oportunidade ou ideia em um software próprio, desenvolvido de acordo com a realidade do negócio e preparado para evoluir conforme novos processos, clientes e possibilidades surgem.",
+    complement:
+      "Uma solução pode começar pequena, resolver um problema específico e crescer com o tempo, tornando-se uma ferramenta interna, uma plataforma para clientes ou até mesmo um novo produto digital.",
+    examples:
+      "Sistemas próprios, plataformas web, ferramentas internas, produtos digitais, SaaS e MicroSaaS.",
     surface: "bg-[#0B0B10]",
     side: "left",
-    numberColor: "text-accent-2",
     headingColor: "text-text",
     subColor: "text-text/80",
     dividerColor: "border-text/15",
     bodyColor: "text-text/65",
-    entries: [
-      {
-        heading: "Tire sua ideia do papel",
-        text: "Transforme uma ideia em uma primeira versão funcionando, coloque para testar e descubra o que realmente faz sentido antes de investir em algo maior.",
-      },
-      {
-        heading: "Crie seu próprio software",
-        text: "Se existe um problema que pode ser resolvido por tecnologia, sua empresa pode transformar essa solução em um produto próprio.",
-      },
-      {
-        heading: "SaaS e MicroSaaS",
-        text: "Crie um software que outras empresas ou pessoas possam usar pela internet, com uma estrutura preparada para crescer.",
-      },
-      {
-        heading: "Automação dentro do produto",
-        text: "Seu software também pode executar tarefas, enviar mensagens, organizar informações e usar inteligência artificial quando isso realmente facilitar a experiência.",
-      },
-    ],
+    labelColor: "text-accent-2",
   },
 ];
 
@@ -192,44 +146,49 @@ export function Process() {
 
       {cards.map((card, index) => (
         <div
-          key={card.number}
+          key={card.title}
           ref={(el) => {
             cardRefs.current[index] = el;
           }}
-          className={`relative z-10 mt-8 flex w-full flex-col justify-start px-5 py-8 first:mt-0 sm:px-7 sm:py-9 lg:px-7 lg:py-9 motion-safe:absolute motion-safe:inset-x-0 motion-safe:top-[14vh] motion-safe:mx-auto motion-safe:mt-0 motion-safe:w-[88%] sm:motion-safe:w-[64%] ${
+          className={`relative z-10 mt-8 flex w-full flex-col justify-start px-5 py-8 first:mt-0 sm:px-7 sm:py-9 lg:px-8 lg:py-10 motion-safe:absolute motion-safe:inset-x-0 motion-safe:top-[14vh] motion-safe:mx-auto motion-safe:mt-0 motion-safe:w-[88%] sm:motion-safe:w-[64%] ${
             card.side === "left"
               ? "lg:motion-safe:left-[6%] lg:motion-safe:right-auto lg:motion-safe:mx-0 lg:motion-safe:w-[38%]"
               : "lg:motion-safe:right-[6%] lg:motion-safe:left-auto lg:motion-safe:mx-0 lg:motion-safe:w-[38%]"
           } ${card.surface}`}
           style={{ zIndex: index + 1 }}
         >
-          <span className={`block text-xs tracking-[0.3em] ${card.numberColor}`}>
-            {card.number}
-          </span>
           <p
-            className={`mt-3 text-2xl font-bold uppercase leading-[0.95] tracking-[-0.01em] sm:text-3xl lg:text-[1.85rem] ${card.headingColor}`}
+            className={`text-3xl font-bold uppercase leading-[0.95] tracking-[-0.01em] sm:text-4xl lg:text-[2.75rem] ${card.headingColor}`}
           >
-            {card.phraseTop}
+            {card.title}
           </p>
           <p
-            className={`mt-1 text-base font-medium leading-[1.15] sm:text-lg lg:text-lg ${card.subColor}`}
+            className={`mt-3 text-lg leading-snug sm:text-xl lg:mt-4 lg:text-2xl ${card.subColor}`}
           >
-            {card.phraseBottom}
+            {card.subtitle}
           </p>
 
-          <div className={`mt-4 border-t lg:mt-5 ${card.dividerColor}`} />
+          <div className={`mt-5 border-t lg:mt-6 ${card.dividerColor}`} />
 
-          <div className="mt-4 flex flex-col gap-3 lg:mt-5 lg:gap-3.5">
-            {card.entries.map((entry) => (
-              <div key={entry.heading}>
-                <p className={`text-sm font-semibold leading-snug ${card.headingColor}`}>
-                  {entry.heading}
-                </p>
-                <p className={`mt-1 text-xs leading-relaxed sm:text-[0.8rem] ${card.bodyColor}`}>
-                  {entry.text}
-                </p>
-              </div>
-            ))}
+          <div className="mt-5 flex flex-col gap-4 lg:mt-6 lg:gap-5">
+            <p className={`text-sm leading-relaxed sm:text-base lg:text-base ${card.bodyColor}`}>
+              {card.body}
+            </p>
+            <p className={`text-sm leading-relaxed sm:text-base lg:text-base ${card.bodyColor}`}>
+              {card.complement}
+            </p>
+            <div>
+              <p
+                className={`text-xs font-semibold uppercase tracking-[0.12em] sm:text-sm lg:text-lg ${card.labelColor}`}
+              >
+                Exemplos de aplicação
+              </p>
+              <p
+                className={`mt-2 text-sm leading-relaxed sm:text-base lg:text-base ${card.bodyColor}`}
+              >
+                {card.examples}
+              </p>
+            </div>
           </div>
         </div>
       ))}
