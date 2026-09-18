@@ -8,6 +8,7 @@ type ThoughtCard = {
   alt: string;
   href?: string;
   image?: string;
+  grayscale?: boolean;
 };
 
 // TODO: quando as imagens chegarem, adicionar `src` aqui e trocar o
@@ -23,9 +24,10 @@ const secondary: ThoughtCard[] = [
   {
     category: "Software",
     title: "Quando uma planilha deixa de ser suficiente?",
-    alt: "Monitor exibindo gráficos e indicadores de dados financeiros",
+    alt: "Painel de operação com pedidos, atendimentos, operações, estoque e financeiro centralizados em um só lugar",
     href: "/insights/quando-uma-planilha-deixa-de-ser-suficiente",
-    image: "/img/carlos-muza-hpjSkU2UYSU-unsplash.jpg",
+    image: "/img/yzev-planilha.png",
+    grayscale: false,
   },
   {
     category: "IA",
@@ -42,10 +44,12 @@ const secondary: ThoughtCard[] = [
 function CardMedia({
   src,
   alt,
+  grayscale = true,
   className = "",
 }: {
   src?: string;
   alt?: string;
+  grayscale?: boolean;
   className?: string;
 }) {
   if (src) {
@@ -55,7 +59,9 @@ function CardMedia({
         alt={alt ?? ""}
         fill
         sizes="(min-width: 1024px) 50vw, 100vw"
-        className={`object-cover grayscale contrast-[1.05] brightness-[0.97] transition-transform duration-700 ease-out group-hover:scale-[1.04] ${className}`}
+        className={`object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] ${
+          grayscale ? "grayscale contrast-[1.05] brightness-[0.97]" : ""
+        } ${className}`}
       />
     );
   }
@@ -75,11 +81,11 @@ function CategoryTag({ children }: { children: string }) {
   );
 }
 
-function FeaturedCard({ category, title, href, image, alt }: ThoughtCard) {
+function FeaturedCard({ category, title, href, image, alt, grayscale }: ThoughtCard) {
   return (
     <a href={href ?? "#"} className="group relative block">
       <div className="relative aspect-[4/5] overflow-hidden bg-surface">
-        <CardMedia src={image} alt={alt} />
+        <CardMedia src={image} alt={alt} grayscale={grayscale} />
         <CategoryTag>{category}</CategoryTag>
       </div>
       <div className="relative z-10 -mt-16 ml-4 mr-8 bg-bg px-6 py-6 sm:-mt-20 sm:ml-6 sm:mr-12 sm:px-8 sm:py-8">
@@ -98,13 +104,13 @@ function FeaturedCard({ category, title, href, image, alt }: ThoughtCard) {
   );
 }
 
-function SecondaryCard({ category, title, href, image, alt }: ThoughtCard) {
+function SecondaryCard({ category, title, href, image, alt, grayscale }: ThoughtCard) {
   return (
     <a
       href={href ?? "#"}
       className="group relative flex aspect-[16/11] flex-col justify-end overflow-hidden bg-surface"
     >
-      <CardMedia src={image} alt={alt} />
+      <CardMedia src={image} alt={alt} grayscale={grayscale} />
       <CategoryTag>{category}</CategoryTag>
       <div className="relative z-10 bg-gradient-to-t from-bg via-bg/70 to-transparent px-5 pb-5 pt-14 sm:px-6 sm:pb-6">
         <h3 className="text-lg font-bold leading-snug text-text transition-colors duration-300 group-hover:text-accent-2 sm:text-xl">
@@ -131,8 +137,8 @@ export function Thoughts() {
             Os problemas das empresas continuam esperando soluções.
           </h2>
           <p className="mt-6 max-w-lg text-lg text-text/75">
-            Ideias, análises e exemplos sobre tecnologia aplicada aos negócios — sem
-            complicação e sem tecnologia pela tecnologia.
+            Ideias, análises e exemplos sobre tecnologia aplicada aos negócios,
+            sem complicação e sem tecnologia pela tecnologia.
           </p>
         </div>
 

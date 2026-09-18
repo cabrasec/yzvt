@@ -110,7 +110,7 @@ export function Header() {
                   O que fazemos
                 </p>
                 <p className="mb-5 text-sm text-text/70">
-                  Tecnologia para transformar ideias em soluções digitais.
+                  Infraestrutura, automações e software sob medida para o seu negócio.
                 </p>
                 <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
                   {services.map((service) => (

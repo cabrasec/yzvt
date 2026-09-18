@@ -117,4 +117,45 @@
       animation: none !important;
     }
   }
+
+  /* Revelação sequencial do diagrama de fluxo do Hero (insights/planilha) —
+     roda uma única vez ao carregar a página, via CSS puro (sem
+     IntersectionObserver: o diagrama já está acima da dobra). */
+  .dg {
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @keyframes dg-in {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes dg-scale-y {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+  @keyframes dg-scale-x {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dg {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 }

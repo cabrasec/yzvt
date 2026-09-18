@@ -27,12 +27,12 @@ type Card = {
 const cards: Card[] = [
   {
     title: "COMUNICAR",
-    subtitle: "Conecte sua empresa às pessoas que fazem o negócio acontecer.",
-    body: "Para estabelecer interações automatizadas com clientes, colaboradores e parceiros por diferentes canais, como WhatsApp, Instagram, e-mail e outros pontos de contato, tornando o atendimento mais rápido, organizado e adequado ao contexto de cada conversa.",
+    subtitle: "Atenda clientes e parceiros direto nos canais que eles já usam.",
+    body: "Automatizamos o contato com clientes, colaboradores e parceiros em canais como WhatsApp, Instagram e e-mail, para que cada conversa siga um fluxo organizado, sem depender de alguém lembrar do próximo passo.",
     complement:
-      "A comunicação pode iniciar um atendimento, responder dúvidas, enviar informações, confirmar pedidos, acompanhar solicitações e encaminhar cada interação para o próximo passo do processo.",
+      "Esse tipo de automação também responde dúvidas simples, confirma pedidos e avisa quando alguma solicitação precisa de atenção humana.",
     examples:
-      "Atendimento pelo WhatsApp, pedidos pelo Instagram, confirmação de pedidos, avisos, acompanhamento de clientes e respostas automatizadas.",
+      "Atendimento pelo WhatsApp, pedidos pelo Instagram, confirmações automáticas e acompanhamento de clientes.",
     surface: "bg-[#0B0B10]",
     side: "left",
     headingColor: "text-text",
@@ -44,11 +44,11 @@ const cards: Card[] = [
   {
     title: "AUTOMATIZAR",
     subtitle: "Deixe o trabalho repetitivo acontecer sozinho.",
-    body: "Para substituir atividades manuais e repetitivas por fluxos que executam tarefas de forma rápida, padronizada e rastreável, reduzindo o trabalho operacional e permitindo que as pessoas concentrem seu tempo no que realmente precisa de atenção.",
+    body: "Substituímos tarefas manuais e repetitivas por fluxos automáticos, que seguem sempre o mesmo padrão e deixam um histórico do que foi feito. A equipe passa a gastar menos tempo com trabalho operacional e mais tempo com o que realmente exige atenção.",
     complement:
-      "Processos que dependem de copiar informações, enviar mensagens, organizar pedidos, atualizar planilhas, consultar sistemas ou repetir as mesmas etapas todos os dias podem ser transformados em fluxos automáticos.",
+      "Isso vale para processos que hoje dependem de copiar informações entre sistemas, atualizar planilhas ou repetir as mesmas etapas todos os dias.",
     examples:
-      "Pedidos de restaurantes, atualização de informações, organização de dados, envio de mensagens, integrações entre sistemas e rotinas administrativas.",
+      "Pedidos de restaurantes, atualização de dados entre sistemas, envio de mensagens e rotinas administrativas.",
     surface: "bg-[#45238A]",
     side: "right",
     headingColor: "text-text",
@@ -59,10 +59,10 @@ const cards: Card[] = [
   },
   {
     title: "CRIAR",
-    subtitle: "Transforme uma necessidade ou ideia em um produto digital.",
-    body: "Para transformar uma necessidade, oportunidade ou ideia em um software próprio, desenvolvido de acordo com a realidade do negócio e preparado para evoluir conforme novos processos, clientes e possibilidades surgem.",
+    subtitle: "Uma ideia ou necessidade específica pode virar um sistema próprio.",
+    body: "Quando não existe uma solução pronta para o que a empresa precisa, desenvolvemos um software sob medida, construído para a realidade do negócio e preparado para crescer junto com ele.",
     complement:
-      "Uma solução pode começar pequena, resolver um problema específico e crescer com o tempo, tornando-se uma ferramenta interna, uma plataforma para clientes ou até mesmo um novo produto digital.",
+      "O projeto pode começar pequeno, resolvendo um problema específico, e crescer com o tempo até virar uma ferramenta interna ou uma plataforma usada pelos clientes.",
     examples:
       "Sistemas próprios, plataformas web, ferramentas internas, produtos digitais, SaaS e MicroSaaS.",
     surface: "bg-[#0B0B10]",

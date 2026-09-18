@@ -16,20 +16,20 @@ export function Purpose() {
 
           <div className="mt-14 max-w-md space-y-5 text-base text-black/65 lg:ml-28">
             <p>
-              Acreditamos que a tecnologia tem o poder de simplificar rotinas,
-              abrir novas oportunidades e impulsionar negócios reais.
+              Acreditamos que a tecnologia só faz sentido quando resolve um
+              problema real do dia a dia de uma empresa.
             </p>
             <p>
-              Por isso, construímos soluções que aproximam estratégia, processos
-              e tecnologia, para que empresas possam ir mais longe com menos
-              complexidade.
+              Por isso, desenvolvemos soluções sob medida, pensadas para a
+              realidade de cada negócio e para reduzir a complexidade da
+              operação, não para aumentá-la.
             </p>
           </div>
 
           <p className="mt-14 max-w-xs border-t border-black/15 pt-4 text-xs uppercase tracking-[0.15em] text-black/45 lg:ml-28">
-            Tecnologia mais próxima de
+            Tecnologia pensada para
             <br />
-            quem faz o mundo acontecer.
+            quem toca o negócio no dia a dia.
           </p>
         </div>
 

@@ -11,7 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "YZEV Tech",
-  description: "YZEV Tech",
+  description:
+    "Criamos softwares, automações e soluções digitais para pequenas e médias empresas.",
 };
 
 export default function RootLayout({
