@@ -5,7 +5,6 @@ type LogoProps = {
   id?: string;
   className?: string;
   gap?: number;
-  techGradient?: boolean;
   size?: "default" | "lg";
 };
 
@@ -14,7 +13,6 @@ export function Logo({
   id = "brand-logo",
   className = "",
   gap,
-  techGradient = false,
   size = "default",
 }: LogoProps) {
   const markSize = size === "lg" ? "h-7 w-7 lg:h-8 lg:w-8" : "h-7 w-7";
@@ -32,15 +30,7 @@ export function Logo({
       <BrandMark id={id} className={markSize} />
       <span>
         {"yzev"}
-        <span
-          className={
-            techGradient
-              ? "bg-[linear-gradient(135deg,#A477FF_0%,#7C3FF0_55%,#6330D7_100%)] bg-clip-text text-transparent"
-              : "text-accent-2"
-          }
-        >
-          tech
-        </span>
+        <span className="text-accent-2">tech</span>
       </span>
     </span>
   );

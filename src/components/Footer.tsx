@@ -52,7 +52,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:gap-24">
           <div>
             <Link href="/" className="inline-block no-underline">
-              <Logo variant="horizontal" id="footer-logo" gap={18} techGradient size="lg" />
+              <Logo variant="horizontal" id="footer-logo" gap={18} size="lg" />
             </Link>
             <p className="mt-6 max-w-xs text-xs uppercase tracking-[0.2em] text-text/50">
               Tecnologia para o próximo passo
@@ -70,7 +70,7 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-sm text-text/80 no-underline transition-colors duration-200 hover:text-accent"
+                        className="text-sm text-text/80 no-underline transition-colors duration-200 hover:text-accent-2"
                       >
                         {link.label}
                       </Link>

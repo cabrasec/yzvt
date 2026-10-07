@@ -6,44 +6,41 @@ type BrandMarkProps = {
 };
 
 /**
- * Símbolo "Z" da Yzev Tech — geometria de três faixas (fita dobrada) extraída
- * de "YZEV Tech - Logo System.html". Fonte única do path: não redesenhar
- * livremente, reutilizar em qualquer contexto (Header, Hero, futuro favicon).
+ * Símbolo "Z" da Yzev Tech — duas peças espelhadas com cortes a 45°,
+ * encaixadas em torno de um vazio retangular (Yzev Logo System, v1.0 2026).
+ * Fonte única do path: não redesenhar livremente, reutilizar em qualquer
+ * contexto (Header, Hero, favicon).
  */
+const TOP = "M5 36 L28.5 13 H92 V35 L62.6 61.5 V36 Z";
+const BOTTOM = "M4 62.2 L32.4 36 V61.5 H92 L68.7 83.2 H4 Z";
+
 export function BrandMark({ id, variant = "gradient", className = "" }: BrandMarkProps) {
   if (variant === "flat") {
     return (
       <svg viewBox="0 0 96 96" fill="currentColor" aria-hidden="true" className={className}>
-        <path d="M8 8h82v26H8Z" />
-        <path d="M62 34h28L62 62H34Z" opacity="0.72" />
-        <path d="M6 62h82v26H6Z" />
+        <path d={TOP} />
+        <path d={BOTTOM} />
       </svg>
     );
   }
 
   const top = `${id}-zg-top`;
-  const fold = `${id}-zg-fold`;
   const bot = `${id}-zg-bot`;
 
   return (
     <svg viewBox="0 0 96 96" aria-hidden="true" className={className}>
       <defs>
         <linearGradient id={top} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#B69CFF" />
-          <stop offset="1" stopColor="#7A3BFF" />
-        </linearGradient>
-        <linearGradient id={fold} x1="1" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#5B21D6" />
-          <stop offset="1" stopColor="#3D1499" />
+          <stop offset="0" style={{ stopColor: "var(--color-accent-mid)" }} />
+          <stop offset="1" style={{ stopColor: "var(--color-accent-dark)" }} />
         </linearGradient>
         <linearGradient id={bot} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#8B5CF6" />
-          <stop offset="1" stopColor="#6423E8" />
+          <stop offset="0" style={{ stopColor: "var(--color-accent-dark)" }} />
+          <stop offset="1" style={{ stopColor: "var(--color-accent-mid)" }} />
         </linearGradient>
       </defs>
-      <path d="M8 8h82v26H8Z" fill={`url(#${top})`} />
-      <path d="M62 34h28L62 62H34Z" fill={`url(#${fold})`} />
-      <path d="M6 62h82v26H6Z" fill={`url(#${bot})`} />
+      <path d={TOP} fill={`url(#${top})`} />
+      <path d={BOTTOM} fill={`url(#${bot})`} />
     </svg>
   );
 }

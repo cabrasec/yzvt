@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
@@ -9,15 +10,21 @@ type ThoughtCard = {
   href?: string;
   image?: string;
   grayscale?: boolean;
+  /** Substitui CardMedia por uma composição própria (ex.: AutomationFlowArt) quando não houver foto. */
+  media?: ReactNode;
 };
 
-// TODO: quando as imagens chegarem, adicionar `src` aqui e trocar o
-// placeholder .blueprint-grid por <Image src={...} alt={alt} fill /> em
-// CardMedia. O `alt` já está pronto para uso imediato.
+const automationFlowArtAlt =
+  "Nós conectados por linhas finas, representando um processo que passa a acontecer sozinho";
+
+// Cards sem `image` nem `media` caem no placeholder .blueprint-grid em
+// CardMedia; o `alt` já fica pronto para quando a imagem chegar.
 const featured: ThoughtCard = {
   category: "Automação",
   title: "Sua empresa ainda depende de tarefas que poderiam acontecer sozinhas?",
-  alt: "Dashboard com indicadores e gráficos",
+  alt: automationFlowArtAlt,
+  href: "/insights/sua-empresa-ainda-depende-de-tarefas-que-poderiam-acontecer-sozinhas",
+  media: <AutomationFlowArt label={automationFlowArtAlt} />,
 };
 
 const secondary: ThoughtCard[] = [
@@ -40,6 +47,43 @@ const secondary: ThoughtCard[] = [
     alt: "Blocos de madeira sendo empilhados para formar uma estrutura",
   },
 ];
+
+// Capa do card "Automação": nenhuma foto, nenhum ícone — a espinha com nós
+// (vazados e, nos pontos de automação, preenchidos em verde) é a mesma
+// gramática visual do FlowChain usado dentro do próprio artigo. A grade de
+// fundo reaproveita .blueprint-grid, já usado como placeholder dos outros
+// cards desta seção.
+function AutomationFlowArt({ label }: { label?: string }) {
+  return (
+    <div
+      role={label ? "img" : undefined}
+      aria-label={label}
+      className="blueprint-grid absolute inset-0 bg-surface transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+    >
+      <svg
+        viewBox="0 0 400 500"
+        preserveAspectRatio="xMidYMid slice"
+        className="h-full w-full"
+        aria-hidden="true"
+      >
+        <path d="M120 40 V 460" className="stroke-divider" strokeWidth="1" fill="none" />
+        <path d="M120 150 H 230" className="stroke-divider" strokeWidth="1" fill="none" />
+        <path d="M120 240 H 60" className="stroke-divider" strokeWidth="1" fill="none" />
+        <path d="M120 330 H 250" className="stroke-accent-2/50" strokeWidth="1" fill="none" />
+
+        <circle cx="120" cy="40" r="5" className="fill-bg stroke-text/35" strokeWidth="1" />
+        <circle cx="120" cy="150" r="5" className="fill-accent-2" />
+        <circle cx="230" cy="150" r="5" className="fill-bg stroke-text/35" strokeWidth="1" />
+        <circle cx="120" cy="240" r="5" className="fill-accent-2" />
+        <circle cx="60" cy="240" r="5" className="fill-bg stroke-text/35" strokeWidth="1" />
+        <circle cx="120" cy="330" r="5" className="fill-accent-2" />
+        <circle cx="250" cy="330" r="5" className="fill-bg stroke-accent-2" strokeWidth="1" strokeDasharray="2 3" />
+        <circle cx="120" cy="420" r="5" className="fill-bg stroke-text/35" strokeWidth="1" />
+        <circle cx="120" cy="460" r="6" className="fill-accent-2" />
+      </svg>
+    </div>
+  );
+}
 
 function CardMedia({
   src,
@@ -81,11 +125,11 @@ function CategoryTag({ children }: { children: string }) {
   );
 }
 
-function FeaturedCard({ category, title, href, image, alt, grayscale }: ThoughtCard) {
+function FeaturedCard({ category, title, href, image, alt, grayscale, media }: ThoughtCard) {
   return (
     <a href={href ?? "#"} className="group relative block">
       <div className="relative aspect-[4/5] overflow-hidden bg-surface">
-        <CardMedia src={image} alt={alt} grayscale={grayscale} />
+        {media ?? <CardMedia src={image} alt={alt} grayscale={grayscale} />}
         <CategoryTag>{category}</CategoryTag>
       </div>
       <div className="relative z-10 -mt-16 ml-4 mr-8 bg-bg px-6 py-6 sm:-mt-20 sm:ml-6 sm:mr-12 sm:px-8 sm:py-8">
@@ -130,7 +174,7 @@ export function Thoughts() {
     <section className="bg-bg py-20 text-text sm:py-24 lg:py-28">
       <Container>
         <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-accent">O que pensamos</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-accent-2">O que pensamos</p>
           <h2 className="mt-6 text-3xl font-bold leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
             Tecnologia muda rápido.
             <br />

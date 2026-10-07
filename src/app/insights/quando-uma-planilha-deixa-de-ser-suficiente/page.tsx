@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,33 +16,11 @@ export const metadata: Metadata = {
     "Planilhas funcionam muito bem até o momento em que o processo começa a depender mais da operação do que da própria ferramenta. Uma leitura para quem administra uma empresa pequena ou média.",
 };
 
-// Esta página adota uma paleta LIGHT EDITORIAL própria — só nesta rota.
-// Os tokens globais (--color-bg, --color-text, --color-divider, --color-surface,
-// --color-accent-2) continuam intocados em src/styles/globals.css; aqui eles
-// são apenas *redeclarados localmente*, via CSS custom properties num wrapper,
-// e herdados por toda a árvore (Hero, ArticleIndex, DiagnosticSignals,
-// PossibilityMap) sem precisar editar nenhum desses componentes.
-// --color-accent-2 (roxo claro, pensado para fundo escuro) vira igual a
-// --color-accent no tema claro, porque teria contraste ruim sobre o novo
-// fundo claro — mesmo roxo da marca, só a variante correta para o fundo.
-const lightVars = {
-  "--color-bg": "#f5f5f2",
-  "--color-surface": "#ffffff",
-  "--color-text": "#0b0b10",
-  "--color-divider": "color-mix(in srgb, #0b0b10 12%, transparent)",
-  "--color-accent-2": "#7a3bff",
-} as CSSProperties;
-
-// O manifesto (único momento dark) reinstaura localmente a paleta escura
-// original dentro do próprio recorte, criando uma ilha visual full-bleed no
-// meio da página clara.
-const darkVars = {
-  "--color-bg": "#0b0b10",
-  "--color-surface": "#14141f",
-  "--color-text": "#e9e9ed",
-  "--color-divider": "color-mix(in srgb, #e9e9ed 16%, transparent)",
-  "--color-accent-2": "#a78bfa",
-} as CSSProperties;
+// Esta página adota a superfície clara (off-white) só nesta rota, via a classe
+// .theme-light de globals.css, que redeclara localmente as variáveis de
+// superfície (bg, surface, text, divider) e faz --color-accent-2 valer o verde
+// musgo de marca, legível sobre claro. O manifesto é uma ilha .theme-dark
+// full-bleed no meio da página, com o verde de destaque legível sobre preto.
 
 const indexItems = [
   { id: "problema", label: "O problema" },
@@ -106,6 +83,7 @@ const relatedArticles = [
   {
     tag: "Automação",
     title: "Sua empresa ainda depende de tarefas que poderiam acontecer sozinhas?",
+    href: "/insights/sua-empresa-ainda-depende-de-tarefas-que-poderiam-acontecer-sozinhas",
   },
   {
     tag: "IA",
@@ -125,7 +103,7 @@ const readingGrid = "lg:grid lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-16";
 export default function Page() {
   return (
     <>
-    <main className="bg-bg text-text" style={lightVars}>
+    <main className="theme-light bg-bg text-text">
       {/* HERO — texto à esquerda, diagrama do pedido fragmentado à direita */}
       <section className="border-b border-divider">
         <Container className="grid gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16 lg:py-24">
@@ -220,15 +198,15 @@ export default function Page() {
         </Container>
 
         {/* MOMENTO DARK — manifesto, full-bleed, pausa na leitura */}
-        <section style={darkVars} className="border-y border-divider bg-bg text-text py-24 sm:py-32">
+        <section className="theme-dark border-y border-divider bg-bg text-text py-24 sm:py-32">
           <Container className={readingGrid}>
             <div aria-hidden="true" className="hidden lg:block" />
             <div className="max-w-3xl">
-              <div className="mb-6 h-px w-16 bg-accent" aria-hidden="true" />
+              <div className="mb-6 h-px w-16 bg-accent-2" aria-hidden="true" />
               <p className="text-3xl font-bold leading-[1.15] tracking-[-0.01em] sm:text-5xl lg:text-6xl">
                 Quando uma operação precisa ser constantemente organizada por
                 alguém, talvez ela precise ser organizada por{" "}
-                <span className="text-accent">software</span>.
+                <span className="text-accent-2">software</span>.
               </p>
             </div>
           </Container>
@@ -345,7 +323,7 @@ export default function Page() {
               <p className="text-xs uppercase tracking-[0.2em] text-text/60">Continue lendo</p>
               <div className="mt-7 grid gap-8 sm:grid-cols-3 sm:gap-10">
                 {relatedArticles.map((article) => (
-                  <a key={article.tag} href="#" className="block no-underline text-text">
+                  <a key={article.tag} href={article.href ?? "#"} className="block no-underline text-text">
                     <p className="text-xs uppercase tracking-[0.16em] text-accent">{article.tag}</p>
                     <p className="mt-2.5 text-lg font-semibold leading-snug transition-colors duration-200 hover:text-accent-2">
                       {article.title}

@@ -11,12 +11,12 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "text-text border border-accent hover:bg-accent/[12%] active:bg-accent/[22%]",
+    "bg-accent text-background-light border border-transparent hover:bg-accent-dark active:bg-accent-dark",
   secondary:
     "text-text border border-divider hover:bg-text/[7%] active:bg-text/[14%]",
-  ghost: "text-accent px-2 hover:bg-accent/[10%] active:bg-accent/[18%]",
+  ghost: "text-accent-2 px-2 hover:bg-accent-2/[10%] active:bg-accent-2/[18%]",
   filled:
-    "bg-gradient-to-br from-accent-2 to-accent text-white border border-transparent hover:brightness-110 active:brightness-95",
+    "bg-accent text-background-light border border-transparent hover:bg-accent-dark active:bg-accent-dark",
 };
 
 export function buttonClasses(variant: ButtonVariant = "primary", className = "") {

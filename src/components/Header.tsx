@@ -84,7 +84,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-divider bg-bg/80 backdrop-blur">
       <Container headerWide className="flex h-20 items-center justify-between gap-4 lg:h-[86px]">
         <Link href="/" className="no-underline">
-          <Logo variant="horizontal" id="header-logo" gap={18} techGradient size="lg" />
+          <Logo variant="horizontal" id="header-logo" gap={18} size="lg" />
         </Link>
 
         <nav aria-label="Principal" className="hidden items-center gap-6 md:flex lg:gap-8">
@@ -95,7 +95,7 @@ export function Header() {
               aria-expanded={servicesOpen}
               onClick={() => setServicesOpen((open) => !open)}
               onMouseEnter={() => setServicesOpen(true)}
-              className="flex items-center gap-1 text-sm text-text hover:text-accent lg:text-base"
+              className="flex items-center gap-1 text-sm text-text hover:text-accent-2 lg:text-base"
             >
               O que fazemos
               <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
@@ -104,9 +104,9 @@ export function Header() {
             {servicesOpen && (
               <div
                 onMouseLeave={() => setServicesOpen(false)}
-                className="absolute left-1/2 top-full w-[440px] -translate-x-1/2 border-x border-b border-divider border-t-2 border-t-accent bg-surface p-6 shadow-lg rounded-b-lg"
+                className="absolute left-1/2 top-full w-[440px] -translate-x-1/2 border-x border-b border-divider border-t-2 border-t-accent-light bg-surface p-6 shadow-lg rounded-b-lg"
               >
-                <p className="mb-1 text-xs uppercase tracking-[0.08em] text-accent">
+                <p className="mb-1 text-xs uppercase tracking-[0.08em] text-accent-2">
                   O que fazemos
                 </p>
                 <p className="mb-5 text-sm text-text/70">
@@ -117,7 +117,7 @@ export function Header() {
                     <li key={service.href}>
                       <Link
                         href={service.href}
-                        className="block text-sm leading-snug text-text no-underline hover:text-accent"
+                        className="block text-sm leading-snug text-text no-underline hover:text-accent-2"
                         onClick={() => setServicesOpen(false)}
                       >
                         {service.label}
@@ -127,7 +127,7 @@ export function Header() {
                 </ul>
                 <Link
                   href="/o-que-fazemos"
-                  className="mt-5 block text-right text-sm text-accent no-underline"
+                  className="mt-5 block text-right text-sm text-accent-2 no-underline"
                   onClick={() => setServicesOpen(false)}
                 >
                   Ver todos os serviços →
@@ -140,7 +140,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-text no-underline hover:text-accent lg:text-base"
+              className="text-sm text-text no-underline hover:text-accent-2 lg:text-base"
             >
               {link.label}
             </Link>
@@ -180,7 +180,7 @@ export function Header() {
               aria-haspopup="true"
               aria-expanded={langOpen}
               onClick={() => setLangOpen((open) => !open)}
-              className="flex items-center gap-2 text-sm text-text hover:text-accent lg:text-base"
+              className="flex items-center gap-2 text-sm text-text hover:text-accent-2 lg:text-base"
             >
               <Globe className="h-5 w-5 lg:h-[22px] lg:w-[22px]" aria-hidden="true" />
               {localeLabel(locale)}
@@ -198,7 +198,7 @@ export function Header() {
                       setLangOpen(false);
                     }}
                     className={`block w-full px-3 py-1.5 text-left text-sm ${
-                      option.code === locale ? "text-accent" : "text-text hover:text-accent"
+                      option.code === locale ? "text-accent-2" : "text-text hover:text-accent-2"
                     }`}
                   >
                     {option.label}
@@ -252,7 +252,7 @@ export function Header() {
                   <li key={service.href}>
                     <Link
                       href={service.href}
-                      className="block py-1.5 text-sm text-text/80 no-underline hover:text-accent"
+                      className="block py-1.5 text-sm text-text/80 no-underline hover:text-accent-2"
                       onClick={() => setMobileOpen(false)}
                     >
                       {service.label}
@@ -266,7 +266,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-2 text-sm text-text no-underline hover:text-accent"
+                className="py-2 text-sm text-text no-underline hover:text-accent-2"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

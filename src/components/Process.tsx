@@ -33,7 +33,7 @@ const cards: Card[] = [
       "Esse tipo de automação também responde dúvidas simples, confirma pedidos e avisa quando alguma solicitação precisa de atenção humana.",
     examples:
       "Atendimento pelo WhatsApp, pedidos pelo Instagram, confirmações automáticas e acompanhamento de clientes.",
-    surface: "bg-[#0B0B10]",
+    surface: "bg-background-dark",
     side: "left",
     headingColor: "text-text",
     subColor: "text-text/80",
@@ -49,7 +49,7 @@ const cards: Card[] = [
       "Isso vale para processos que hoje dependem de copiar informações entre sistemas, atualizar planilhas ou repetir as mesmas etapas todos os dias.",
     examples:
       "Pedidos de restaurantes, atualização de dados entre sistemas, envio de mensagens e rotinas administrativas.",
-    surface: "bg-[#45238A]",
+    surface: "bg-accent-dark",
     side: "right",
     headingColor: "text-text",
     subColor: "text-text/80",
@@ -65,7 +65,7 @@ const cards: Card[] = [
       "O projeto pode começar pequeno, resolvendo um problema específico, e crescer com o tempo até virar uma ferramenta interna ou uma plataforma usada pelos clientes.",
     examples:
       "Sistemas próprios, plataformas web, ferramentas internas, produtos digitais, SaaS e MicroSaaS.",
-    surface: "bg-[#0B0B10]",
+    surface: "bg-background-dark",
     side: "left",
     headingColor: "text-text",
     subColor: "text-text/80",

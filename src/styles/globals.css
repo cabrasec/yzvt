@@ -1,36 +1,83 @@
 @import "tailwindcss";
 
-/* Tokens — cores, tipografia, raio e elevação da marca. Fonte: Logo System
-   (YZEV Tech - Logo System.html) — preto/near-black + branco + roxo #7A3BFF. */
+/* Tokens — identidade visual Yzev: preto carvão + verde + off-white + neutros.
+   O verde é a cor de assinatura (ação, foco, estado, conexão), nunca a cor de
+   fundo padrão.
+
+   Regra de contraste (medida):
+   - --color-accent (#227A4B) é preenchimento de marca: CTA, linhas, símbolo e
+     texto SOBRE CLARO (4,7:1 em off-white, com texto off-white sobre ele
+     também 4,7:1). Sobre preto carvão dá 3,3:1, então não serve para texto no
+     escuro.
+   - --color-accent-2 é o "acento legível na superfície atual": #4FBF7A no
+     escuro (8,4:1) e #227A4B no claro. Texto, link, foco e hover usam ele.
+   Superfícies claras usam a classe .theme-light; ilhas escuras dentro de uma
+   página clara usam .theme-dark (ver @layer components). */
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --color-bg: #0b0b12;
-  --color-surface: #14141f;
-  --color-text: #e9e9ed;
-  --color-accent: #7a3bff;
-  --color-accent-2: #a78bfa;
-  --color-divider: color-mix(in srgb, #e9e9ed 16%, transparent);
+  /* Superfícies e texto (contexto escuro, padrão do site) */
+  --color-background-dark: #0b0d0b;
+  --color-surface-dark: #151815;
+  --color-text-on-dark: #edebe0;
+  --color-border-dark: #272b25;
+  --color-text-muted: #a5a89c;
+  --color-text-faint: #82867b;
 
-  --color-neutral-100: #f3f5fe;
-  --color-neutral-200: #e4e7f5;
-  --color-neutral-300: #cfd3e5;
-  --color-neutral-400: #b2b6ca;
-  --color-neutral-500: #9397ab;
-  --color-neutral-600: #75798c;
-  --color-neutral-700: #595d6c;
-  --color-neutral-800: #3f424d;
-  --color-neutral-900: #292b31;
+  /* Tokens semânticos: seguem a superfície atual (.theme-light / .theme-dark) */
+  --color-bg: var(--color-background-dark);
+  --color-surface: var(--color-surface-dark);
+  --color-text: var(--color-text-on-dark);
+  --color-divider: var(--color-border-dark);
 
-  --color-accent-100: #f5f4ff;
-  --color-accent-200: #e7e5fe;
-  --color-accent-300: #d2cefd;
-  --color-accent-400: #b5abfc;
-  --color-accent-500: #968ae0;
-  --color-accent-600: #796cbf;
-  --color-accent-700: #5d5294;
-  --color-accent-800: #423a6a;
-  --color-accent-900: #2b2741;
+  /* Superfícies e texto (contexto claro) */
+  --color-background-light: #f2f1eb;
+  --color-surface-light: #f8f7f1;
+  --color-text-primary: #111311;
+  --color-text-body: #3a3e37;
+  --color-text-secondary: #666a61;
+  --color-border: #d7d8d1;
+  --color-line: #b9bbb2;
+
+  /* Verde de marca */
+  --color-accent: #227a4b;
+  --color-accent-2: #4fbf7a;
+  --color-accent-light: #35a063;
+  --color-accent-highlight: #4fbf7a;
+  --color-accent-dark: #144d31;
+  --color-accent-wash: #dcefe3;
+  --color-accent-selection: rgba(53, 160, 99, 0.32);
+
+  /* Tons de apoio usados só nos gradientes do símbolo e do wordmark */
+  --color-accent-soft: #8fdcaf;
+  --color-accent-sage: #5fcb8b;
+  --color-accent-mid: #2e8f5a;
+
+  /* Linhas de construção (blueprint) sobre fundo escuro */
+  --color-blueprint-line: rgba(79, 191, 122, 0.18);
+  --color-blueprint-hair: rgba(79, 191, 122, 0.12);
+  --color-blueprint-faint: rgba(79, 191, 122, 0.05);
+  --color-blueprint-grid: rgba(79, 191, 122, 0.07);
+
+  --color-neutral-100: #f2f1eb;
+  --color-neutral-200: #e2e2da;
+  --color-neutral-300: #d7d8d1;
+  --color-neutral-400: #b9bbb2;
+  --color-neutral-500: #82867b;
+  --color-neutral-600: #666a61;
+  --color-neutral-700: #3a3e37;
+  --color-neutral-800: #272b25;
+  --color-neutral-900: #151815;
+
+  --color-accent-100: #eef7f1;
+  --color-accent-200: #dcefe3;
+  --color-accent-300: #b7e1c6;
+  --color-accent-400: #8fdcaf;
+  --color-accent-500: #4fbf7a;
+  --color-accent-600: #35a063;
+  --color-accent-700: #227a4b;
+  --color-accent-800: #144d31;
+  --color-accent-900: #0e3322;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -65,27 +112,46 @@
   }
 
   a {
-    color: var(--color-accent);
+    color: var(--color-accent-2);
     text-underline-offset: 3px;
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-accent-2);
     outline-offset: 2px;
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    background: var(--color-accent-selection);
   }
 }
 
 @layer components {
+  /* Contextos de superfície. A página inicia no tema escuro (tokens do @theme);
+     .theme-light e .theme-dark redeclaram só as variáveis de superfície, então
+     todos os componentes (text-text, bg-bg, border-divider, text-accent-2)
+     seguem a superfície onde estão, sem hex espalhado. */
+  .theme-light {
+    --color-bg: var(--color-background-light);
+    --color-surface: var(--color-surface-light);
+    --color-text: var(--color-text-primary);
+    --color-divider: var(--color-border);
+    --color-accent-2: var(--color-accent);
+  }
+  .theme-dark {
+    --color-bg: var(--color-background-dark);
+    --color-surface: var(--color-surface-dark);
+    --color-text: var(--color-text-on-dark);
+    --color-divider: var(--color-border-dark);
+    --color-accent-2: var(--color-accent-highlight);
+  }
+
   /* Textura de grade técnica — linguagem visual "blueprint" da marca.
      Menos densa no mobile (células maiores), mais presente no desktop. */
   .blueprint-grid {
     background-image:
-      linear-gradient(to right, color-mix(in srgb, var(--color-accent) 14%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in srgb, var(--color-accent) 14%, transparent) 1px, transparent 1px);
+      linear-gradient(to right, var(--color-blueprint-grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-blueprint-grid) 1px, transparent 1px);
     background-size: 64px 64px;
   }
   @media (min-width: 640px) {

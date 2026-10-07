@@ -31,19 +31,19 @@ export function Hero() {
             <span
               key={position}
               aria-hidden="true"
-              className={`absolute h-4 w-4 border-accent ${position}`}
+              className={`absolute h-4 w-4 border-accent-light ${position}`}
             />
           ))}
 
           <div className="grid items-start gap-12 lg:grid-cols-[58%_42%] lg:gap-16">
             <div>
-              <p className="mb-5 text-xs uppercase tracking-[0.2em] text-accent">
+              <p className="mb-5 text-xs uppercase tracking-[0.2em] text-accent-2">
                 Software · IA · Infraestrutura
               </p>
 
               <h1 className="text-4xl font-bold tracking-[-0.02em] sm:text-5xl lg:w-[700px] lg:text-[clamp(4.5rem,5vw,5.5rem)] lg:leading-[0.98]">
                 Tecnologia para empresas que querem{" "}
-                <RevealWord className="bg-[linear-gradient(110deg,#9A72FF_0%,#7C3CFF_45%,#6330D7_100%)] bg-clip-text text-transparent">
+                <RevealWord className="bg-[linear-gradient(110deg,var(--color-accent-highlight)_0%,var(--color-accent-light)_55%,var(--color-accent-mid)_100%)] bg-clip-text text-transparent">
                   evoluir.
                 </RevealWord>
               </h1>
@@ -59,7 +59,7 @@ export function Hero() {
                 </Link>
               </div>
 
-              <p className="mt-10 max-w-sm border-t border-divider pt-4 text-sm italic text-[#aaa8b8]">
+              <p className="mt-10 max-w-sm border-t border-divider pt-4 text-sm italic text-text-muted">
                 Projetamos software como se projeta uma estrutura.
               </p>
             </div>
