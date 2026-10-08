@@ -12,10 +12,34 @@ type ThoughtCard = {
   grayscale?: boolean;
   /** Substitui CardMedia por uma composição própria (ex.: AutomationFlowArt) quando não houver foto. */
   media?: ReactNode;
+  /** Card "claro" (.theme-light) dentro da seção — por padrão os cards herdam
+   *  o tema escuro da Home. Usado para alternar peso visual entre os cards. */
+  light?: boolean;
 };
 
 const automationFlowArtAlt =
   "Nós conectados por linhas finas, representando um processo que passa a acontecer sozinho";
+
+const webLandingArtAlt =
+  "Janela de navegador com o esqueleto de uma landing page, com um botão de ação conectado a um ponto de contato";
+
+const produtoCoverAlt =
+  "Painéis de interface em um dashboard futurista, conectados por linhas finas, em tons de verde sobre fundo escuro";
+
+// Brilho, contraste e saturação reduzidos para tirar o excesso de glow do
+// arquivo original — o card continua escuro e técnico, mas sem a sensação
+// de "dashboard cyberpunk" (este é o único momento escuro da seção).
+function ProdutoCoverImage() {
+  return (
+    <Image
+      src="/img/dashboard-futurista-neon-verde.png"
+      alt={produtoCoverAlt}
+      fill
+      sizes="(min-width: 1024px) 50vw, 100vw"
+      className="object-cover saturate-[0.5] contrast-[0.94] brightness-[0.85] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+    />
+  );
+}
 
 // Cards sem `image` nem `media` caem no placeholder .blueprint-grid em
 // CardMedia; o `alt` já fica pronto para quando a imagem chegar.
@@ -25,6 +49,7 @@ const featured: ThoughtCard = {
   alt: automationFlowArtAlt,
   href: "/insights/sua-empresa-ainda-depende-de-tarefas-que-poderiam-acontecer-sozinhas",
   media: <AutomationFlowArt label={automationFlowArtAlt} />,
+  light: true,
 };
 
 const secondary: ThoughtCard[] = [
@@ -37,14 +62,19 @@ const secondary: ThoughtCard[] = [
     grayscale: false,
   },
   {
-    category: "IA",
-    title: "Onde a inteligência artificial realmente ajuda uma empresa?",
-    alt: "Onda abstrata formada por pontos",
+    category: "Desenvolvimento Web",
+    title: "Sua empresa está perdendo clientes por não ter uma página que vende?",
+    alt: webLandingArtAlt,
+    href: "/insights/sua-empresa-esta-perdendo-clientes-por-nao-ter-uma-pagina-que-vende",
+    media: <WebLandingArt label={webLandingArtAlt} />,
+    light: true,
   },
   {
     category: "Produto",
     title: "E se um problema interno pudesse virar um produto?",
-    alt: "Blocos de madeira sendo empilhados para formar uma estrutura",
+    alt: produtoCoverAlt,
+    href: "/insights/e-se-um-problema-interno-pudesse-virar-um-produto",
+    media: <ProdutoCoverImage />,
   },
 ];
 
@@ -80,6 +110,48 @@ function AutomationFlowArt({ label }: { label?: string }) {
         <circle cx="250" cy="330" r="5" className="fill-bg stroke-accent-2" strokeWidth="1" strokeDasharray="2 3" />
         <circle cx="120" cy="420" r="5" className="fill-bg stroke-text/35" strokeWidth="1" />
         <circle cx="120" cy="460" r="6" className="fill-accent-2" />
+      </svg>
+    </div>
+  );
+}
+
+// Capa do card "Desenvolvimento Web": uma janela de navegador com o esqueleto
+// de uma landing page (título, botão de ação) conectada por uma linha fina a
+// um ponto de contato — a mesma gramática de nós e linhas do FlowChain e do
+// AutomationFlowArt, sem foto, sem ícone, sem pessoa.
+function WebLandingArt({ label }: { label?: string }) {
+  return (
+    <div
+      role={label ? "img" : undefined}
+      aria-label={label}
+      className="blueprint-grid absolute inset-0 bg-surface transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+    >
+      <svg
+        viewBox="0 0 480 330"
+        preserveAspectRatio="xMidYMid slice"
+        className="h-full w-full"
+        aria-hidden="true"
+      >
+        <rect x="40.5" y="50.5" width="399" height="229" className="stroke-divider" strokeWidth="1" fill="none" />
+        <path d="M40 80 H 440" className="stroke-divider" strokeWidth="1" />
+        <circle cx="56" cy="65" r="2.5" className="fill-text/25" />
+        <circle cx="68" cy="65" r="2.5" className="fill-text/25" />
+        <circle cx="80" cy="65" r="2.5" className="fill-text/25" />
+
+        <rect x="60" y="102" width="14" height="14" className="fill-accent-2/40" />
+        <path d="M340 107 H 364 M372 107 H 396 M404 107 H 420" className="stroke-text/25" strokeWidth="1" />
+
+        <rect x="60" y="142" width="220" height="10" className="fill-text/70" />
+        <rect x="60" y="160" width="150" height="10" className="fill-text/35" />
+
+        <rect x="60" y="187" width="110" height="26" className="stroke-accent-2" strokeWidth="1" fill="none" />
+
+        <path d="M60 240 H 110 M60 254 H 95" className="stroke-text/20" strokeWidth="1" />
+        <path d="M185 240 H 235 M185 254 H 220" className="stroke-text/20" strokeWidth="1" />
+        <path d="M310 240 H 360 M310 254 H 345" className="stroke-text/20" strokeWidth="1" />
+
+        <path d="M115 213 V 270 H 260" className="stroke-accent-2/50" strokeWidth="1" fill="none" />
+        <circle cx="260" cy="270" r="5" className="fill-accent-2" />
       </svg>
     </div>
   );
@@ -125,9 +197,9 @@ function CategoryTag({ children }: { children: string }) {
   );
 }
 
-function FeaturedCard({ category, title, href, image, alt, grayscale, media }: ThoughtCard) {
+function FeaturedCard({ category, title, href, image, alt, grayscale, media, light }: ThoughtCard) {
   return (
-    <a href={href ?? "#"} className="group relative block">
+    <a href={href ?? "#"} className={`group relative block ${light ? "theme-light" : ""}`}>
       <div className="relative aspect-[4/5] overflow-hidden bg-surface">
         {media ?? <CardMedia src={image} alt={alt} grayscale={grayscale} />}
         <CategoryTag>{category}</CategoryTag>
@@ -148,13 +220,15 @@ function FeaturedCard({ category, title, href, image, alt, grayscale, media }: T
   );
 }
 
-function SecondaryCard({ category, title, href, image, alt, grayscale }: ThoughtCard) {
+function SecondaryCard({ category, title, href, image, alt, grayscale, media, light }: ThoughtCard) {
   return (
     <a
       href={href ?? "#"}
-      className="group relative flex aspect-[16/11] flex-col justify-end overflow-hidden bg-surface"
+      className={`group relative flex aspect-[16/11] flex-col justify-end overflow-hidden bg-surface ${
+        light ? "theme-light" : ""
+      }`}
     >
-      <CardMedia src={image} alt={alt} grayscale={grayscale} />
+      {media ?? <CardMedia src={image} alt={alt} grayscale={grayscale} />}
       <CategoryTag>{category}</CategoryTag>
       <div className="relative z-10 bg-gradient-to-t from-bg via-bg/70 to-transparent px-5 pb-5 pt-14 sm:px-6 sm:pb-6">
         <h3 className="text-lg font-bold leading-snug text-text transition-colors duration-300 group-hover:text-accent-2 sm:text-xl">

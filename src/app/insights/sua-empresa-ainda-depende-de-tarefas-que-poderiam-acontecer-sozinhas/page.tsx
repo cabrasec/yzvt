@@ -116,12 +116,9 @@ const relatedArticles = [
     href: "/insights/quando-uma-planilha-deixa-de-ser-suficiente",
   },
   {
-    tag: "IA",
-    title: "Onde a inteligência artificial realmente ajuda uma empresa?",
-  },
-  {
     tag: "Produto",
     title: "E se um problema interno pudesse virar um produto?",
+    href: "/insights/e-se-um-problema-interno-pudesse-virar-um-produto",
   },
 ];
 
@@ -470,7 +467,7 @@ export default function Page() {
                 realmente precisa continuar dependendo de alguém.
               </p>
 
-              <Link href="/contato" className={`${buttonClasses("primary")} mt-8`}>
+              <Link href="/#contato" className={`${buttonClasses("primary")} mt-8`}>
                 Conversar sobre meu processo
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
@@ -478,7 +475,7 @@ export default function Page() {
 
             <section aria-label="Continue lendo" className="border-t border-divider pt-10 sm:pt-12">
               <p className="text-xs uppercase tracking-[0.2em] text-text/60">Continue lendo</p>
-              <div className="mt-7 grid gap-8 sm:grid-cols-3 sm:gap-10">
+              <div className="mt-7 grid gap-8 sm:grid-cols-2 sm:gap-10">
                 {relatedArticles.map((article) => (
                   <a
                     key={article.tag}

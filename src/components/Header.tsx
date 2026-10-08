@@ -18,9 +18,9 @@ const services = [
 ];
 
 const navLinks = [
-  { label: "O que pensamos", href: "/o-que-pensamos" },
+  { label: "O que pensamos", href: "/insights" },
   { label: "Quem somos", href: "/quem-somos" },
-  { label: "Contato", href: "/contato" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 export function Header() {
@@ -136,15 +136,30 @@ export function Header() {
             )}
           </div>
 
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-text no-underline hover:text-accent-2 lg:text-base"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.href === "/#contato" ? (
+              // Âncora nativa de propósito: o roteamento client-side do Next,
+              // vindo de outra rota, tenta rolar até #contato antes do
+              // ScrollTrigger da Seção 03 terminar de medir seu pin-spacer,
+              // e o scroll erra o alvo. Uma navegação completa (sem
+              // interceptação do router) sempre chega no lugar certo.
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-text no-underline hover:text-accent-2 lg:text-base"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-text no-underline hover:text-accent-2 lg:text-base"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="hidden items-center gap-5 md:flex">
@@ -262,25 +277,37 @@ export function Header() {
               </ul>
             )}
 
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="py-2 text-sm text-text no-underline hover:text-accent-2"
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.href === "/#contato" ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="py-2 text-sm text-text no-underline hover:text-accent-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="py-2 text-sm text-text no-underline hover:text-accent-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ),
+            )}
 
-            <Link
-              href="/contato"
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- âncora nativa de propósito: navegação client-side do Next para #contato erra o scroll (ver comentário acima); uma navegação completa sempre acerta. */}
+            <a
+              href="/#contato"
               className={buttonClasses("primary", "mt-2 w-full")}
               onClick={() => setMobileOpen(false)}
             >
               Fale conosco
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            </a>
           </Container>
         </nav>
       )}

@@ -2,7 +2,7 @@
 
 Site institucional da YZEV Tech, construído com Next.js, React, TypeScript e Tailwind CSS.
 
-O projeto está em construção incremental: cada fase é implementada, validada e commitada separadamente. Veja `yzevtech_site_blueprint_e_plano_incremental.md` para o plano completo.
+O projeto está em construção incremental: cada fase é implementada, validada e commitada separadamente.
 
 O deploy é feito na Vercel (`vercel.json` já define os cabeçalhos de segurança do site).
 
