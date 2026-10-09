@@ -17,10 +17,11 @@ export function Closing() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-xl">
             <div className="h-px w-16 bg-accent-2" aria-hidden="true" />
-            <p className="mt-6 text-2xl font-medium leading-snug tracking-[-0.015em] sm:text-3xl">
+            <p className="mt-6 text-text/60">{t("intro")}</p>
+            <p className="mt-3 text-2xl font-medium leading-snug tracking-[-0.015em] sm:text-3xl">
               {t("question")}
             </p>
-            <p className="mt-4 text-text/60">{t("description")}</p>
+            <p className="mt-4 text-text/60">{t("note")}</p>
           </div>
 
           <a

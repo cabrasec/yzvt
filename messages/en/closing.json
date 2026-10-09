@@ -1,7 +1,8 @@
 {
   "Closing": {
-    "question": "Prefer to talk before writing?",
-    "description": "Software, automation, and digital products for companies ready to grow. A quick conversation is enough to see if it's a fit.",
+    "intro": "Software, automation, and digital products for companies ready to grow.",
+    "question": "Shall we talk about what your business needs?",
+    "note": "A first conversation helps us understand the challenge and find the best path forward.",
     "whatsappLabel": "Chat on WhatsApp"
   }
 }

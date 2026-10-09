@@ -1,7 +1,8 @@
 {
   "Closing": {
-    "question": "Prefere conversar antes de escrever?",
-    "description": "Software, automação e produtos digitais para empresas que querem evoluir. Uma conversa rápida resolve se faz sentido.",
+    "intro": "Software, automação e produtos digitais para empresas que querem evoluir.",
+    "question": "Vamos conversar sobre o que seu negócio precisa?",
+    "note": "Uma primeira conversa ajuda a entender o desafio e encontrar o melhor caminho.",
     "whatsappLabel": "Falar no WhatsApp"
   }
 }
