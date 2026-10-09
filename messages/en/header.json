@@ -1,0 +1,26 @@
+{
+  "Header": {
+    "servicesNav": "What we do",
+    "servicesTitle": "What we do",
+    "servicesIntro": "Infrastructure, automation and software built around your business.",
+    "viewAllServices": "View all services",
+    "navInsights": "Insights",
+    "navAbout": "About us",
+    "navContact": "Contact",
+    "searchPlaceholder": "Search...",
+    "searchAriaLabel": "Search the site",
+    "searchButtonAriaLabel": "Search",
+    "navAriaLabel": "Main",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "ctaContact": "Get in touch",
+    "services": {
+      "infraestrutura": "Infrastructure",
+      "cloud": "Cloud",
+      "automacoes": "Automation",
+      "desenvolvimentoWeb": "Web Development",
+      "softwaresPlataformas": "Software & Platforms",
+      "saasMicrosaas": "SaaS & MicroSaaS"
+    }
+  }
+}

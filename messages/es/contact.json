@@ -1,0 +1,58 @@
+{
+  "Contact": {
+    "eyebrow": "Contacto",
+    "heading": "Cuéntanos qué necesitas resolver.",
+    "lead": "A partir de ahí, pensamos en la solución más adecuada — y te diremos con franqueza si no somos la mejor opción.",
+    "whatsappBoxLabel": "¿Prefieres hablar?",
+    "whatsappLinkLabel": "Hablar por WhatsApp",
+    "requiredNote": "Todos los campos son obligatorios, excepto los marcados.",
+    "optional": "(opcional)",
+    "fields": {
+      "nome": {
+        "label": "Nombre",
+        "placeholder": "Tu nombre"
+      },
+      "empresa": {
+        "label": "Empresa",
+        "placeholder": "Nombre de la empresa"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "tu@correo.com"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "placeholder": "(00) 00000-0000"
+      },
+      "mensagem": {
+        "label": "Mensaje",
+        "placeholder": "El proceso actual, qué lo frena y a dónde quieres llegar."
+      }
+    },
+    "errors": {
+      "nome": "Indica tu nombre.",
+      "emailRequired": "Indica tu correo electrónico.",
+      "emailInvalid": "Indica un correo electrónico válido.",
+      "necessidade": "Selecciona una opción.",
+      "mensagem": "Cuéntanos brevemente qué necesitas."
+    },
+    "necessidadeLegend": "¿Qué necesitas?",
+    "necessidadeHint": "Elige una",
+    "options": {
+      "automacao": "Automatización",
+      "software": "Software",
+      "desenvolvimentoWeb": "Desarrollo web",
+      "produtoDigital": "Producto digital",
+      "outro": "Otro"
+    },
+    "successTitle": "Mensaje recibido.",
+    "successBody": "Vamos a analizar lo que nos contaste y te responderemos pronto.",
+    "errorTitle": "No pudimos enviar tu mensaje en este momento.",
+    "errorBodyBefore": "Inténtalo de nuevo o",
+    "errorBodyLinkLabel": "escríbenos por WhatsApp",
+    "submit": "Enviar mensaje",
+    "submitting": "Enviando...",
+    "consentBefore": "Al enviar, aceptas el uso de tus datos para responder a este contacto. Consulta nuestro",
+    "consentLinkLabel": "Aviso de Privacidad"
+  }
+}

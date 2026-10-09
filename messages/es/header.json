@@ -1,0 +1,26 @@
+{
+  "Header": {
+    "servicesNav": "Qué hacemos",
+    "servicesTitle": "Qué hacemos",
+    "servicesIntro": "Infraestructura, automatizaciones y software a la medida de tu negocio.",
+    "viewAllServices": "Ver todos los servicios",
+    "navInsights": "Lo que pensamos",
+    "navAbout": "Quiénes somos",
+    "navContact": "Contacto",
+    "searchPlaceholder": "Buscar...",
+    "searchAriaLabel": "Buscar en el sitio",
+    "searchButtonAriaLabel": "Buscar",
+    "navAriaLabel": "Principal",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "ctaContact": "Hablemos",
+    "services": {
+      "infraestrutura": "Infraestructura",
+      "cloud": "Cloud",
+      "automacoes": "Automatizaciones",
+      "desenvolvimentoWeb": "Desarrollo Web",
+      "softwaresPlataformas": "Software & Plataformas",
+      "saasMicrosaas": "SaaS & MicroSaaS"
+    }
+  }
+}

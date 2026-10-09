@@ -1,0 +1,104 @@
+{
+  "InsightLandingPage": {
+    "metaDescription": "No toda empresa necesita empezar con un sistema completo. A veces, el primer paso es una página que pone una oferta frente a las personas correctas.",
+    "heroIntro": "Muchas empresas tienen Instagram, WhatsApp y recomendaciones, pero no tienen una página propia que explique con claridad qué ofrecen y guíe al visitante hacia el siguiente paso.",
+    "index": {
+      "problema": "El problema",
+      "umaPaginaUmaFuncao": "Una página no tiene que hacerlo todo",
+      "oQueUmaBoaPaginaPrecisa": "Qué necesita una buena página",
+      "quandoFazMaisSentido": "Cuándo tiene más sentido que un sistema",
+      "comecarPequeno": "Empezar en pequeño"
+    },
+    "problema": {
+      "title": "Visibilidad no es lo mismo que tener una página propia",
+      "paragraph1": "Un perfil de Instagram, un número de WhatsApp, la recomendación de alguien que ya es cliente: eso es visibilidad. No es necesariamente un lugar que explique la oferta, muestre qué hace diferente al servicio y lleve al visitante hasta el siguiente paso.",
+      "paragraph2": "Sin una página así, cada persona interesada tiene que reconstruir por su cuenta qué hace la empresa, a partir de fragmentos dispersos en distintos lugares.",
+      "highlight": "El problema casi nunca es falta de visibilidad. Generalmente es no tener a dónde enviar a quien ya está interesado."
+    },
+    "siteVsComercial": {
+      "headlineBefore": "Tener un sitio web es una cosa. Tener una página pensada para un ",
+      "headlineHighlight": "objetivo comercial",
+      "headlineAfter": " es otra.",
+      "body": "Un sitio web presenta a la empresa. Una página comercial lleva a alguien hasta el siguiente paso: un formulario, un mensaje de WhatsApp, una solicitud de cotización."
+    },
+    "umaFuncaoSo": {
+      "intro": "Puede tener una sola función, bien clara. Vista como una pieza comercial, el camino es simple:",
+      "flowSteps": ["Oferta", "Landing page", "Visita", "Contacto", "Oportunidad", "Venta"],
+      "exampleTitle": "Un ejemplo simple",
+      "exampleIntro": "Una empresa de mantenimiento de aires acondicionados, por ejemplo, no necesita un sistema completo para empezar. Puede crear una página específica: “Mantenimiento de aires acondicionados para empresas”. Ahí, el visitante encuentra:",
+      "pageComponents": [
+        "El problema que resuelve",
+        "El servicio ofrecido",
+        "Diferenciales reales",
+        "Zona de cobertura",
+        "Preguntas frecuentes",
+        "Formulario de contacto",
+        "Botón de WhatsApp"
+      ],
+      "closing": "El objetivo es simple: convertir interés en contacto."
+    },
+    "boaPagina": {
+      "title": "Qué necesita una buena página",
+      "communicatesTitle": "Qué comunica",
+      "communicatesItems": [
+        "Propuesta clara",
+        "Público definido",
+        "Oferta concreta",
+        "Prueba o información relevante, cuando exista"
+      ],
+      "behavesTitle": "Cómo se comporta",
+      "behavesItems": [
+        "Jerarquía visual",
+        "Una llamada a la acción clara",
+        "Formulario o canal de contacto",
+        "Carga rápida",
+        "Buena experiencia en el celular",
+        "Seguimiento básico de resultados"
+      ],
+      "closing": "Nada de esto depende de un sitio web grande. Depende de que la página haya sido pensada para un objetivo, no solo para existir."
+    },
+    "quandoFazSentido": {
+      "title": "Cuándo una página tiene más sentido que un sistema",
+      "paragraph1": "No todo problema exige software completo. Una página puede ser suficiente cuando la empresa necesita dar a conocer algo rápidamente, probar una oferta, captar contactos, apoyar una campaña, presentar un nuevo servicio o validar una idea antes de invertir en una solución mayor.",
+      "paragraph2": "Cuando la operación empieza a exigir procesos, usuarios, reglas e integraciones más complejas, ahí el siguiente paso puede ser un sistema.",
+      "stepsTitle": "Del primer contacto al siguiente paso",
+      "flowSteps": ["Visibilidad", "Oferta", "Landing page", "Contacto", "Atención", "Oportunidad"],
+      "closing": "El desarrollo web puede ser parte del proceso comercial, no solo una entrega visual."
+    },
+    "comecarPequeno": {
+      "title": "Empezar en pequeño",
+      "intro": "Una empresa no necesita esperar a tener toda la operación digital lista para empezar. Puede empezar con una página.",
+      "flowSteps": [
+        "Una página",
+        "WhatsApp integrado",
+        "Formulario",
+        "CRM conectado",
+        "Atención automatizada",
+        "El proceso se convierte en software"
+      ],
+      "closing": "Sitio web, automatización y software no son opciones separadas. Son etapas de un mismo camino."
+    },
+    "bigIdea": {
+      "headlineBefore": "Una buena página puede ser ",
+      "headlineHighlight": "pequeña en desarrollo",
+      "headlineAfter": " y grande en la función que cumple.",
+      "body": "Pone una oferta en marcha. Reduce el tiempo entre la idea y su lanzamiento. Empieza a captar contactos antes de que exista cualquier sistema.",
+      "finalLine": "El primer paso no necesita ser grande. Necesita funcionar."
+    },
+    "conclusion": {
+      "paragraph1": "Tal vez tu empresa no necesite un sistema nuevo ahora.",
+      "paragraph2": "Tal vez solo necesite una mejor forma de presentar lo que ya vende.",
+      "ctaTitle": "¿Hay una oferta que tu empresa todavía no ha puesto en línea?",
+      "ctaBody": "El siguiente paso puede ser simple: una página que presente bien lo que ya haces.",
+      "ctaButton": "Hablemos de mi proyecto"
+    },
+    "continueReading": {
+      "label": "Sigue leyendo",
+      "articles": [
+        { "tag": "Automatización", "title": "¿Tu empresa todavía depende de tareas que podrían suceder solas?" },
+        { "tag": "Software", "title": "¿Cuándo una hoja de cálculo deja de ser suficiente?" },
+        { "tag": "Producto", "title": "¿Y si un problema interno pudiera convertirse en un producto?" }
+      ]
+    }
+  }
+}

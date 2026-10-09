@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,11 +11,7 @@ const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 type Card = {
-  title: string;
-  subtitle: string;
-  body: string;
-  complement: string;
-  examples: string;
+  key: "comunicar" | "automatizar" | "criar";
   surface: string;
   side: "left" | "right";
   headingColor: string;
@@ -26,13 +23,7 @@ type Card = {
 
 const cards: Card[] = [
   {
-    title: "COMUNICAR",
-    subtitle: "Atenda clientes e parceiros direto nos canais que eles já usam.",
-    body: "Automatizamos o contato com clientes, colaboradores e parceiros em canais como WhatsApp, Instagram e e-mail, para que cada conversa siga um fluxo organizado, sem depender de alguém lembrar do próximo passo.",
-    complement:
-      "Esse tipo de automação também responde dúvidas simples, confirma pedidos e avisa quando alguma solicitação precisa de atenção humana.",
-    examples:
-      "Atendimento pelo WhatsApp, pedidos pelo Instagram, confirmações automáticas e acompanhamento de clientes.",
+    key: "comunicar",
     surface: "bg-background-dark",
     side: "left",
     headingColor: "text-text",
@@ -42,13 +33,7 @@ const cards: Card[] = [
     labelColor: "text-accent-2",
   },
   {
-    title: "AUTOMATIZAR",
-    subtitle: "Deixe o trabalho repetitivo acontecer sozinho.",
-    body: "Substituímos tarefas manuais e repetitivas por fluxos automáticos, que seguem sempre o mesmo padrão e deixam um histórico do que foi feito. A equipe passa a gastar menos tempo com trabalho operacional e mais tempo com o que realmente exige atenção.",
-    complement:
-      "Isso vale para processos que hoje dependem de copiar informações entre sistemas, atualizar planilhas ou repetir as mesmas etapas todos os dias.",
-    examples:
-      "Pedidos de restaurantes, atualização de dados entre sistemas, envio de mensagens e rotinas administrativas.",
+    key: "automatizar",
     surface: "bg-accent-dark",
     side: "right",
     headingColor: "text-text",
@@ -58,13 +43,7 @@ const cards: Card[] = [
     labelColor: "text-text/70",
   },
   {
-    title: "CRIAR",
-    subtitle: "Uma ideia ou necessidade específica pode virar um sistema próprio.",
-    body: "Quando não existe uma solução pronta para o que a empresa precisa, desenvolvemos um software sob medida, construído para a realidade do negócio e preparado para crescer junto com ele.",
-    complement:
-      "O projeto pode começar pequeno, resolvendo um problema específico, e crescer com o tempo até virar uma ferramenta interna ou uma plataforma usada pelos clientes.",
-    examples:
-      "Sistemas próprios, plataformas web, ferramentas internas, produtos digitais, SaaS e MicroSaaS.",
+    key: "criar",
     surface: "bg-background-dark",
     side: "left",
     headingColor: "text-text",
@@ -76,6 +55,7 @@ const cards: Card[] = [
 ];
 
 export function Process() {
+  const t = useTranslations("Process");
   const stageRef = useRef<HTMLElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -162,13 +142,13 @@ export function Process() {
           fluxo (sem overlay/pin), já que a mecânica de scroll é desativada. */}
       <div className="relative z-0 flex items-center justify-center px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24 motion-safe:absolute motion-safe:inset-0 motion-safe:py-0">
         <p className="max-w-3xl text-center text-[clamp(1.75rem,5.5vw,3.75rem)] font-bold uppercase leading-[1.08] tracking-[-0.01em]">
-          Tecnologia para resolver o que hoje dá trabalho.
+          {t("heading")}
         </p>
       </div>
 
       {cards.map((card, index) => (
         <div
-          key={card.title}
+          key={card.key}
           ref={(el) => {
             cardRefs.current[index] = el;
           }}
@@ -182,33 +162,33 @@ export function Process() {
           <p
             className={`text-3xl font-bold uppercase leading-[0.95] tracking-[-0.01em] sm:text-4xl lg:text-[2.75rem] ${card.headingColor}`}
           >
-            {card.title}
+            {t(`cards.${card.key}.title`)}
           </p>
           <p
             className={`mt-3 text-lg leading-snug sm:text-xl lg:mt-4 lg:text-2xl ${card.subColor}`}
           >
-            {card.subtitle}
+            {t(`cards.${card.key}.subtitle`)}
           </p>
 
           <div className={`mt-5 border-t lg:mt-6 ${card.dividerColor}`} />
 
           <div className="mt-5 flex flex-col gap-4 lg:mt-6 lg:gap-5">
             <p className={`text-sm leading-relaxed sm:text-base lg:text-base ${card.bodyColor}`}>
-              {card.body}
+              {t(`cards.${card.key}.body`)}
             </p>
             <p className={`text-sm leading-relaxed sm:text-base lg:text-base ${card.bodyColor}`}>
-              {card.complement}
+              {t(`cards.${card.key}.complement`)}
             </p>
             <div>
               <p
                 className={`text-xs font-semibold uppercase tracking-[0.12em] sm:text-sm lg:text-lg ${card.labelColor}`}
               >
-                Exemplos de aplicação
+                {t("applicationExamplesLabel")}
               </p>
               <p
                 className={`mt-2 text-sm leading-relaxed sm:text-base lg:text-base ${card.bodyColor}`}
               >
-                {card.examples}
+                {t(`cards.${card.key}.examples`)}
               </p>
             </div>
           </div>

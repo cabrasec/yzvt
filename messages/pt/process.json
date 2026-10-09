@@ -1,0 +1,29 @@
+{
+  "Process": {
+    "heading": "Tecnologia para resolver o que hoje dá trabalho.",
+    "applicationExamplesLabel": "Exemplos de aplicação",
+    "cards": {
+      "comunicar": {
+        "title": "COMUNICAR",
+        "subtitle": "Atenda clientes e parceiros direto nos canais que eles já usam.",
+        "body": "Automatizamos o contato com clientes, colaboradores e parceiros em canais como WhatsApp, Instagram e e-mail, para que cada conversa siga um fluxo organizado, sem depender de alguém lembrar do próximo passo.",
+        "complement": "Esse tipo de automação também responde dúvidas simples, confirma pedidos e avisa quando alguma solicitação precisa de atenção humana.",
+        "examples": "Atendimento pelo WhatsApp, pedidos pelo Instagram, confirmações automáticas e acompanhamento de clientes."
+      },
+      "automatizar": {
+        "title": "AUTOMATIZAR",
+        "subtitle": "Deixe o trabalho repetitivo acontecer sozinho.",
+        "body": "Substituímos tarefas manuais e repetitivas por fluxos automáticos, que seguem sempre o mesmo padrão e deixam um histórico do que foi feito. A equipe passa a gastar menos tempo com trabalho operacional e mais tempo com o que realmente exige atenção.",
+        "complement": "Isso vale para processos que hoje dependem de copiar informações entre sistemas, atualizar planilhas ou repetir as mesmas etapas todos os dias.",
+        "examples": "Pedidos de restaurantes, atualização de dados entre sistemas, envio de mensagens e rotinas administrativas."
+      },
+      "criar": {
+        "title": "CRIAR",
+        "subtitle": "Uma ideia ou necessidade específica pode virar um sistema próprio.",
+        "body": "Quando não existe uma solução pronta para o que a empresa precisa, desenvolvemos um software sob medida, construído para a realidade do negócio e preparado para crescer junto com ele.",
+        "complement": "O projeto pode começar pequeno, resolvendo um problema específico, e crescer com o tempo até virar uma ferramenta interna ou uma plataforma usada pelos clientes.",
+        "examples": "Sistemas próprios, plataformas web, ferramentas internas, produtos digitais, SaaS e MicroSaaS."
+      }
+    }
+  }
+}

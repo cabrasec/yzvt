@@ -12,7 +12,7 @@ const corners = [
  * construção arquitetônicas — grade fina, círculo de referência, cantos e
  * uma diagonal, todos discretos o suficiente para não competir com o símbolo.
  *
- * O símbolo é o mesmo BrandMark do Header (fonte única do Z de duas peças),
+ * O símbolo é o mesmo BrandMark do Header (fonte única do Z de três faixas),
  * só que em escala de Hero — antes este componente tinha uma geometria própria.
  */
 export function BlueprintMark() {

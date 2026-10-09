@@ -1,0 +1,39 @@
+{
+  "Privacidade": {
+    "metaTitle": "Privacy Notice | Yzev",
+    "metaDescription": "How Yzev handles the personal data submitted through the site's contact form.",
+    "eyebrow": "Legal",
+    "title": "Privacy Notice",
+    "lastUpdated": "Last updated: October 2026.",
+    "sections": [
+      {
+        "title": "1. Who is responsible for this data",
+        "body": "This notice explains how Yzev Tech (\"Yzev\", \"we\") handles the personal data collected on this site, in accordance with Brazil's General Data Protection Law (Lei Geral de Proteção de Dados, Law No. 13,709/2018 — LGPD)."
+      },
+      {
+        "title": "2. Cookies",
+        "body": "We use a single cookie, strictly necessary for the site to work: NEXT_LOCALE, which remembers which language (Portuguese, English or Spanish) you're browsing in as you move between pages. It doesn't identify you and isn't used for tracking, so it doesn't require a consent banner. We don't use tracking cookies or analytics tools on this site."
+      },
+      {
+        "title": "3. What data we collect",
+        "body": "The only personal data we collect is what you voluntarily provide when filling out the contact form: name, company, email, WhatsApp number, the selected need, and the message you send."
+      },
+      {
+        "title": "4. What we use this data for",
+        "body": "We use this information exclusively to understand your request and respond to your contact. We don't use this data to send marketing, we don't sell it, and we don't share it with third parties."
+      },
+      {
+        "title": "5. How long we keep it",
+        "body": "We keep the contact form data only for as long as needed to handle your request and maintain a record of our conversation with you. You can request deletion of this data at any time through the channels listed below."
+      },
+      {
+        "title": "6. Your rights",
+        "body": "Under the LGPD, you can request confirmation of processing, access, correction, anonymization, portability, or deletion of your data, as well as withdraw your consent. To exercise any of these rights, contact us at the email below."
+      },
+      {
+        "title": "7. Contact",
+        "body": "Questions about this notice or how your data is handled can be sent to contato@yzev.tech."
+      }
+    ]
+  }
+}

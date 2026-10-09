@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useId, useState, type FormEvent } from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { ArrowRight, Check } from "lucide-react";
 import { Container } from "@/components/Container";
+import { WhatsAppIcon } from "@/components/Closing";
+import { WHATSAPP_DISPLAY, getWhatsAppUrl } from "@/lib/contact";
 
 type FormValues = {
   nome: string;
@@ -27,37 +30,40 @@ const emptyValues: FormValues = {
   mensagem: "",
 };
 
-const necessidadeOptions = ["Automação", "Software", "Desenvolvimento Web", "Produto digital", "Outro"];
+const necessidadeOptions = ["automacao", "software", "desenvolvimentoWeb", "produtoDigital", "outro"] as const;
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function validate(values: FormValues): FormErrors {
+function validate(values: FormValues, t: ReturnType<typeof useTranslations>): FormErrors {
   const errors: FormErrors = {};
 
-  if (!values.nome.trim()) errors.nome = "Informe seu nome.";
+  if (!values.nome.trim()) errors.nome = t("errors.nome");
 
   if (!values.email.trim()) {
-    errors.email = "Informe seu e-mail.";
+    errors.email = t("errors.emailRequired");
   } else if (!emailPattern.test(values.email.trim())) {
-    errors.email = "Informe um e-mail válido.";
+    errors.email = t("errors.emailInvalid");
   }
 
-  if (!values.necessidade) errors.necessidade = "Selecione uma opção.";
+  if (!values.necessidade) errors.necessidade = t("errors.necessidade");
 
-  if (!values.mensagem.trim()) errors.mensagem = "Conte brevemente o que você precisa.";
+  if (!values.mensagem.trim()) errors.mensagem = t("errors.mensagem");
 
   return errors;
 }
 
+// Um só tipo de campo: caixa com borda fina. Antes havia três (sublinhado,
+// caixa na mensagem e chips com borda) e o sublinhado fazia o placeholder
+// parecer valor já digitado.
 const fieldClasses =
-  "mt-2 w-full border-0 border-b border-divider bg-transparent pb-2.5 text-base text-text placeholder:text-text/45 focus:border-accent-2 focus:outline-none transition-colors duration-200";
+  "mt-2 w-full border border-divider bg-text/[0.03] px-4 py-3 text-base text-text placeholder:text-text/40 transition-colors duration-200 hover:border-text/25 focus:border-accent-2 focus:bg-text/[0.05] focus:outline-none aria-[invalid=true]:border-red-400/70";
 
 const labelClasses = "block text-xs uppercase tracking-[0.14em] text-text/70";
 
-// Sem preenchimento, sem radius grande: uma pequena área clicável definida
-// por uma borda fina em verde — a mesma gramática dos chips de "O que você
-// precisa?" logo acima, em vez do botão preenchido/arredondado padrão do
-// site, que aqui soava mais "SaaS" do que editorial.
+function Optional({ label }: { label: string }) {
+  return <span className="ml-1.5 normal-case tracking-normal text-text/45">{label}</span>;
+}
+
 const ctaClasses =
   "group inline-flex w-full items-center justify-center gap-2.5 border border-accent-2/70 px-6 py-3 text-sm font-semibold text-text transition-colors duration-200 hover:border-accent-2 hover:bg-accent-2/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2 disabled:cursor-not-allowed disabled:opacity-45 sm:w-auto";
 
@@ -71,6 +77,9 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 }
 
 export function Contact() {
+  const t = useTranslations("Contact");
+  const tCommon = useTranslations("Common");
+  const whatsappUrl = getWhatsAppUrl(tCommon("whatsappGreeting"));
   const idPrefix = useId();
   const [values, setValues] = useState<FormValues>(emptyValues);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -109,7 +118,7 @@ export function Contact() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const nextErrors = validate(values);
+    const nextErrors = validate(values, t);
     setErrors(nextErrors);
 
     const firstInvalid = (Object.keys(nextErrors) as (keyof FormValues)[])[0];
@@ -146,39 +155,54 @@ export function Contact() {
     >
       <Container>
         <div className="lg:grid lg:grid-cols-[2fr_3fr] lg:gap-20">
-          <div className="max-w-md">
-            <p className="text-xs uppercase tracking-[0.2em] text-accent-2">Contato</p>
+          <div className="flex max-w-md flex-col">
+            <p className="text-xs uppercase tracking-[0.2em] text-accent-2">{t("eyebrow")}</p>
             <div className="mt-6 h-px w-16 bg-accent" aria-hidden="true" />
-            <h2 className="mt-6 text-3xl font-bold leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
-              Vamos construir o próximo passo?
+            <h2 className="mt-6 text-3xl font-medium leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
+              {t("heading")}
             </h2>
-            <p className="mt-6 max-w-sm text-lg text-text/70">
-              Conte o que sua empresa precisa resolver. A partir daí, pensamos
-              na solução mais adequada.
-            </p>
+            <p className="mt-6 max-w-sm text-lg text-text/70">{t("lead")}</p>
+
+            {/* Caminho direto para quem não quer preencher nada. Ocupa o
+                vazio que sobrava abaixo do texto. */}
+            <div className="mt-12 border border-divider bg-surface/60 p-6 lg:mt-auto">
+              <p className="text-xs uppercase tracking-[0.14em] text-text/60">{t("whatsappBoxLabel")}</p>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2.5 text-base font-semibold text-text no-underline transition-colors duration-200 hover:text-accent-2"
+              >
+                <WhatsAppIcon className="h-5 w-5 text-accent-2" />
+                {t("whatsappLinkLabel")}
+                <ArrowRight className="h-4 w-4 text-accent-2" aria-hidden="true" />
+              </a>
+              <p className="mt-3 text-sm text-text/60">{WHATSAPP_DISPLAY}</p>
+              <p className="mt-1 text-xs text-text/45">{tCommon("serviceHours")}</p>
+            </div>
           </div>
 
           <div className="mt-14 lg:mt-0">
             {status === "success" ? (
-              <div role="status" className="max-w-md border border-divider px-6 py-8 sm:px-8 sm:py-10">
-                <p className="text-lg font-semibold text-text">Mensagem recebida.</p>
-                <p className="mt-2 text-text/70">
-                  Vamos analisar o que você descreveu e retornar em breve.
-                </p>
+              <div role="status" tabIndex={-1} className="max-w-md border border-accent-2/40 bg-accent-2/[0.05] px-6 py-8 sm:px-8 sm:py-10">
+                <p className="text-lg font-semibold text-text">{t("successTitle")}</p>
+                <p className="mt-2 text-text/70">{t("successBody")}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate className="max-w-xl">
-                <div className="grid grid-cols-1 gap-x-10 gap-y-9 sm:grid-cols-2">
+                <p className="mb-8 text-sm text-text/55">{t("requiredNote")}</p>
+
+                <div className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-2">
                   <div>
                     <label htmlFor={fieldId("nome")} className={labelClasses}>
-                      Nome
+                      {t("fields.nome.label")}
                     </label>
                     <input
                       id={fieldId("nome")}
                       name="nome"
                       type="text"
                       autoComplete="name"
-                      placeholder="Seu nome"
+                      placeholder={t("fields.nome.placeholder")}
                       value={values.nome}
                       onChange={(e) => updateField("nome", e.target.value)}
                       aria-required="true"
@@ -191,14 +215,15 @@ export function Contact() {
 
                   <div>
                     <label htmlFor={fieldId("empresa")} className={labelClasses}>
-                      Empresa
+                      {t("fields.empresa.label")}
+                      <Optional label={t("optional")} />
                     </label>
                     <input
                       id={fieldId("empresa")}
                       name="empresa"
                       type="text"
                       autoComplete="organization"
-                      placeholder="Nome da empresa"
+                      placeholder={t("fields.empresa.placeholder")}
                       value={values.empresa}
                       onChange={(e) => updateField("empresa", e.target.value)}
                       className={fieldClasses}
@@ -207,7 +232,7 @@ export function Contact() {
 
                   <div>
                     <label htmlFor={fieldId("email")} className={labelClasses}>
-                      E-mail
+                      {t("fields.email.label")}
                     </label>
                     <input
                       id={fieldId("email")}
@@ -215,7 +240,7 @@ export function Contact() {
                       type="email"
                       inputMode="email"
                       autoComplete="email"
-                      placeholder="seu@email.com"
+                      placeholder={t("fields.email.placeholder")}
                       value={values.email}
                       onChange={(e) => updateField("email", e.target.value)}
                       aria-required="true"
@@ -228,7 +253,8 @@ export function Contact() {
 
                   <div>
                     <label htmlFor={fieldId("whatsapp")} className={labelClasses}>
-                      WhatsApp
+                      {t("fields.whatsapp.label")}
+                      <Optional label={t("optional")} />
                     </label>
                     <input
                       id={fieldId("whatsapp")}
@@ -236,7 +262,7 @@ export function Contact() {
                       type="tel"
                       inputMode="tel"
                       autoComplete="tel"
-                      placeholder="(00) 00000-0000"
+                      placeholder={t("fields.whatsapp.placeholder")}
                       value={values.whatsapp}
                       onChange={(e) => updateField("whatsapp", e.target.value)}
                       className={fieldClasses}
@@ -244,8 +270,11 @@ export function Contact() {
                   </div>
                 </div>
 
-                <fieldset className="mt-9">
-                  <legend className={labelClasses}>O que você precisa?</legend>
+                <fieldset className="mt-8">
+                  <legend className={labelClasses}>
+                    {t("necessidadeLegend")}
+                    <span className="ml-1.5 normal-case tracking-normal text-text/45">{t("necessidadeHint")}</span>
+                  </legend>
                   <div
                     role="radiogroup"
                     aria-required="true"
@@ -264,8 +293,12 @@ export function Contact() {
                           onChange={(e) => updateField("necessidade", e.target.value)}
                           className="peer sr-only"
                         />
-                        <span className="inline-block border border-divider px-4 py-2 text-xs font-medium uppercase tracking-[0.1em] text-text/75 transition-colors duration-200 peer-checked:border-accent-2 peer-checked:text-text peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent-2">
-                          {option}
+                        {/* Caixa normal + estado selecionado visível (tinta
+                            verde, borda e ✓) — antes, em caixa alta, os chips
+                            se confundiam com os rótulos dos campos. */}
+                        <span className="inline-flex items-center gap-2 border border-divider px-4 py-2.5 text-sm font-medium text-text/80 transition-colors duration-200 hover:border-text/30 hover:text-text peer-checked:border-accent-2 peer-checked:bg-accent-2/[0.1] peer-checked:text-text peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent-2 [&>svg]:hidden peer-checked:[&>svg]:block">
+                          <Check className="h-3.5 w-3.5 text-accent-2" aria-hidden="true" />
+                          {t(`options.${option}`)}
                         </span>
                       </label>
                     ))}
@@ -273,34 +306,41 @@ export function Contact() {
                   <FieldError id={`${idPrefix}-necessidade-error`} message={errors.necessidade} />
                 </fieldset>
 
-                <div className="mt-9">
+                <div className="mt-8">
                   <label htmlFor={fieldId("mensagem")} className={labelClasses}>
-                    Mensagem
+                    {t("fields.mensagem.label")}
                   </label>
                   <textarea
                     id={fieldId("mensagem")}
                     name="mensagem"
                     rows={4}
-                    placeholder="Conte brevemente o que você precisa resolver."
+                    placeholder={t("fields.mensagem.placeholder")}
                     value={values.mensagem}
                     onChange={(e) => updateField("mensagem", e.target.value)}
                     aria-required="true"
                     aria-invalid={Boolean(errors.mensagem)}
                     aria-describedby={errors.mensagem ? `${fieldId("mensagem")}-error` : undefined}
-                    className="mt-2 w-full resize-none border border-divider bg-transparent px-4 py-3 text-base text-text placeholder:text-text/35 focus:border-accent-2 focus:outline-none transition-colors duration-200"
+                    className={`${fieldClasses} resize-y min-h-28`}
                   />
                   <FieldError id={`${fieldId("mensagem")}-error`} message={errors.mensagem} />
                 </div>
 
                 {status === "error" && (
-                  <p role="alert" className="mt-8 text-sm text-red-400">
-                    Não foi possível enviar sua mensagem agora. Tente novamente em instantes.
-                  </p>
+                  <div role="alert" className="mt-8 border border-red-400/40 bg-red-400/[0.06] px-5 py-4 text-sm">
+                    <p className="text-red-300">{t("errorTitle")}</p>
+                    <p className="mt-1 text-text/70">
+                      {t("errorBodyBefore")}{" "}
+                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-accent-2 underline underline-offset-2">
+                        {t("errorBodyLinkLabel")}
+                      </a>
+                      .
+                    </p>
+                  </div>
                 )}
 
                 <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
-                  <button type="submit" disabled={isSubmitting} className={ctaClasses}>
-                    {isSubmitting ? "Enviando..." : "Enviar mensagem"}
+                  <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting} className={ctaClasses}>
+                    {isSubmitting ? t("submitting") : t("submit")}
                     {!isSubmitting && (
                       <ArrowRight
                         className="h-4 w-4 text-accent-2 transition-transform duration-200 group-hover:translate-x-1"
@@ -311,10 +351,9 @@ export function Contact() {
                 </div>
 
                 <p className="mt-6 max-w-sm text-sm text-text/55">
-                  Ao enviar, você concorda com o uso dos seus dados para
-                  responder ao contato. Consulte nosso{" "}
+                  {t("consentBefore")}{" "}
                   <Link href="/privacidade" className="text-text/75 underline underline-offset-2 hover:text-accent-2">
-                    Aviso de Privacidade
+                    {t("consentLinkLabel")}
                   </Link>
                   .
                 </p>

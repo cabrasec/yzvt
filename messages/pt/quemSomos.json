@@ -1,0 +1,54 @@
+{
+  "QuemSomos": {
+    "metaTitle": "Quem somos | Yzev",
+    "metaDescription": "Conheça a Yzev e nossa forma de pensar tecnologia, software, automação e produtos digitais.",
+    "heroEyebrow": "Quem somos",
+    "heroTitle": "Tecnologia para o próximo passo.",
+    "heroLead": "A Yzev cria software, automações e soluções digitais para empresas que querem evoluir.",
+    "comoPensamosTitle": "Projetamos tecnologia a partir de problemas reais.",
+    "comoPensamosParagraph1": "Nem todo problema precisa de um sistema novo. Nem toda tarefa precisa ser automatizada. Nem toda ideia precisa começar grande.",
+    "comoPensamosParagraph2": "Primeiro entendemos como o trabalho acontece. Depois pensamos no que pode ser simplificado, automatizado, transformado em software ou desenvolvido como produto.",
+    "comoPensamosFlow": {
+      "automatizar": "Automatizar",
+      "criar": "Criar",
+      "evoluir": "Evoluir"
+    },
+    "oQueFazemosEyebrow": "O que fazemos",
+    "pilares": {
+      "automacaoIa": {
+        "title": "Automação & IA",
+        "text": "Tarefas repetitivas automatizadas, para que a equipe gaste tempo com o que exige atenção."
+      },
+      "softwareWeb": {
+        "title": "Software & Web",
+        "text": "Sistemas, sites e plataformas construídos sob medida para a realidade do negócio."
+      },
+      "saasMicrosaas": {
+        "title": "SaaS & MicroSaaS",
+        "text": "Soluções internas validadas e transformadas em produtos para outras empresas usarem."
+      }
+    },
+    "formaDeTrabalharTitle": "Nossa forma de trabalhar",
+    "etapas": {
+      "entender": {
+        "title": "Entender",
+        "text": "Mapear o problema e entender como o trabalho realmente acontece."
+      },
+      "projetar": {
+        "title": "Projetar",
+        "text": "Encontrar a solução adequada antes de começar a construir."
+      },
+      "construir": {
+        "title": "Construir",
+        "text": "Transformar a ideia em software, automação ou produto."
+      },
+      "evoluir": {
+        "title": "Evoluir",
+        "text": "Melhorar a solução conforme novas necessidades aparecem."
+      }
+    },
+    "closingLine1": "Não acreditamos em tecnologia pela tecnologia.",
+    "closingLine2": "Construímos soluções para que o próximo passo faça sentido.",
+    "ctaContact": "Vamos conversar"
+  }
+}

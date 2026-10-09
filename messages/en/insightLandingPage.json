@@ -1,0 +1,104 @@
+{
+  "InsightLandingPage": {
+    "metaDescription": "Not every business needs to start with a full-blown system. Sometimes the first step is just a page that puts an offer in front of the right people.",
+    "heroIntro": "Plenty of businesses have Instagram, WhatsApp, and word of mouth — but no page of their own that clearly explains what they offer and guides visitors to the next step.",
+    "index": {
+      "problema": "The problem",
+      "umaPaginaUmaFuncao": "A page doesn't have to do everything",
+      "oQueUmaBoaPaginaPrecisa": "What a good page needs",
+      "quandoFazMaisSentido": "When it makes more sense than a system",
+      "comecarPequeno": "Starting small"
+    },
+    "problema": {
+      "title": "Visibility isn't the same as having a page of your own",
+      "paragraph1": "An Instagram profile, a WhatsApp number, a referral from an existing client — that's visibility. It's not necessarily a place that explains the offer, shows what sets the service apart, and moves the visitor to the next step.",
+      "paragraph2": "Without a page like that, every interested person has to piece together on their own what the company does, from fragments scattered across different places.",
+      "highlight": "The problem is rarely a lack of visibility. It's usually not having anywhere to send people who are already interested."
+    },
+    "siteVsComercial": {
+      "headlineBefore": "Having a website is one thing. Having a page built for a ",
+      "headlineHighlight": "commercial goal",
+      "headlineAfter": " is another.",
+      "body": "A website presents the company. A commercial page moves someone to the next step: a form, a WhatsApp message, a quote request."
+    },
+    "umaFuncaoSo": {
+      "intro": "It can do just one job, and do it clearly. Seen as a sales asset, the path is simple:",
+      "flowSteps": ["Offer", "Landing page", "Visit", "Contact", "Opportunity", "Sale"],
+      "exampleTitle": "A simple example",
+      "exampleIntro": "A company that services air conditioners, for example, doesn't need a full system to get started. It can create a specific page: “AC maintenance for businesses.” There, the visitor finds:",
+      "pageComponents": [
+        "The problem it solves",
+        "The service offered",
+        "Real differentiators",
+        "Service area",
+        "Frequently asked questions",
+        "Contact form",
+        "WhatsApp button"
+      ],
+      "closing": "The goal is simple: turn interest into contact."
+    },
+    "boaPagina": {
+      "title": "What a good page needs",
+      "communicatesTitle": "What it communicates",
+      "communicatesItems": [
+        "A clear proposition",
+        "A defined audience",
+        "A specific offer",
+        "Proof or relevant information, when available"
+      ],
+      "behavesTitle": "How it behaves",
+      "behavesItems": [
+        "Visual hierarchy",
+        "One clear call to action",
+        "A form or contact channel",
+        "Fast loading",
+        "A good mobile experience",
+        "Basic result tracking"
+      ],
+      "closing": "None of this depends on a big website. It depends on the page being built with a goal in mind, not just to exist."
+    },
+    "quandoFazSentido": {
+      "title": "When a page makes more sense than a system",
+      "paragraph1": "Not every problem calls for full software. A page can be enough when a company needs to announce something quickly, test an offer, capture leads, support a campaign, launch a new service, or validate an idea before investing in something bigger.",
+      "paragraph2": "When operations start demanding more complex processes, users, rules, and integrations, that's when the next step might be a system.",
+      "stepsTitle": "From first contact to the next step",
+      "flowSteps": ["Visibility", "Offer", "Landing page", "Contact", "Service", "Opportunity"],
+      "closing": "Web development can be part of the sales process, not just a visual deliverable."
+    },
+    "comecarPequeno": {
+      "title": "Starting small",
+      "intro": "A company doesn't need to wait until its entire digital operation is ready to get started. It can start with a page.",
+      "flowSteps": [
+        "A page",
+        "Integrated WhatsApp",
+        "Form",
+        "Connected CRM",
+        "Automated service",
+        "Process becomes software"
+      ],
+      "closing": "A website, automation, and software aren't separate choices. They're stages of the same path."
+    },
+    "bigIdea": {
+      "headlineBefore": "A good page can be ",
+      "headlineHighlight": "small in development",
+      "headlineAfter": " and big in the job it does.",
+      "body": "It puts an offer out into the world. It shortens the time between an idea and its launch. It starts capturing contacts before any system even exists.",
+      "finalLine": "The first step doesn't need to be big. It needs to work."
+    },
+    "conclusion": {
+      "paragraph1": "Maybe your business doesn't need a new system right now.",
+      "paragraph2": "Maybe it just needs a better way to present what it already sells.",
+      "ctaTitle": "Is there an offer your business hasn't put online yet?",
+      "ctaBody": "The next step can be simple: a page that presents what you already do, well.",
+      "ctaButton": "Let's talk about my project"
+    },
+    "continueReading": {
+      "label": "Keep reading",
+      "articles": [
+        { "tag": "Automation", "title": "Does your business still depend on tasks that could happen on their own?" },
+        { "tag": "Software", "title": "When does a spreadsheet stop being enough?" },
+        { "tag": "Product", "title": "What if an internal problem could become a product?" }
+      ]
+    }
+  }
+}

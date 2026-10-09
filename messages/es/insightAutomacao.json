@@ -1,0 +1,130 @@
+{
+  "InsightAutomacao": {
+    "meta": {
+      "description": "Automatizar no es sustituir personas. Es entender qué etapas de un proceso pueden suceder solas, y en qué puntos la presencia humana realmente hace la diferencia."
+    },
+    "hero": {
+      "intro": "No todo el trabajo necesita ser automatizado. Pero cuando alguien pasa buena parte del día repitiendo las mismas etapas, tal vez el problema no sea falta de tiempo. Tal vez sea el proceso.",
+      "quote": "Automatizar no es poner una máquina a trabajar en lugar de una persona. Es hacer que el proceso se encargue solo de aquello que no necesita intervención humana."
+    },
+    "indexItems": {
+      "processoManual": "Un proceso, varias etapas",
+      "processoAutomatizado": "El mismo proceso, automatizado",
+      "oQuePodeAcontecerSozinho": "Lo que puede suceder solo",
+      "outrosExemplos": "Otros ejemplos",
+      "comoPensamos": "Cómo pensamos la automatización"
+    },
+    "manualProcess": {
+      "heading": "Atención y agendamiento, etapa por etapa",
+      "intro": "Clínicas, consultorios, salones, servicios técnicos y cualquier negocio que atiende por WhatsApp suelen reconocer esta rutina. Así es como normalmente sucede.",
+      "groups": [
+        {
+          "label": "Entrada",
+          "steps": ["El cliente envía un mensaje", "Alguien responde", "Pregunta qué necesita"]
+        },
+        {
+          "label": "Agendamiento",
+          "steps": ["Consulta horarios", "Verifica disponibilidad", "Confirma el horario"]
+        },
+        {
+          "label": "Control",
+          "steps": ["Lo anota en la agenda", "Envía la confirmación", "Envía el recordatorio"]
+        }
+      ],
+      "closing": "Son nueve etapas, no una. Y cada una depende de que alguien se acuerde de hacerla."
+    },
+    "automatedProcess": {
+      "heading": "El mismo proceso, sin depender de que alguien se acuerde",
+      "intro": "El flujo cambia de forma, pero el objetivo sigue siendo el mismo: el cliente agendado, avisado y recordado en el momento justo.",
+      "steps": [
+        "El cliente se pone en contacto",
+        "La atención identifica la necesidad",
+        "Consulta disponibilidad",
+        "Presenta horarios",
+        "El cliente elige",
+        "El turno queda registrado",
+        "Se envía la confirmación",
+        "Se envía el recordatorio"
+      ],
+      "branch": {
+        "condition": "Casos fuera de las reglas",
+        "result": "La persona interviene"
+      },
+      "closing": "Nada de esto depende de un chatbot respondiendo mensajes. Depende de que el proceso esté descrito de forma que el sistema pueda seguirlo solo, de principio a fin, excepto cuando algo se sale de la regla. Ahí es donde la persona vuelve a intervenir."
+    },
+    "darkQuestion": "La pregunta no es: ¿qué podemos automatizar?<br/>Es: ¿en qué punto la presencia de una <accent>persona</accent> realmente hace la diferencia?",
+    "canHappenAlone": {
+      "automaticLabel": "Puede suceder automáticamente",
+      "automaticItems": [
+        "Consultar disponibilidad",
+        "Registrar datos",
+        "Enviar confirmación",
+        "Enviar recordatorio",
+        "Actualizar estado",
+        "Derivar solicitudes",
+        "Organizar información",
+        "Disparar notificaciones",
+        "Iniciar la siguiente etapa de un proceso"
+      ],
+      "personLabel": "Necesita una persona",
+      "personItems": [
+        "Tomar una decisión fuera de las reglas",
+        "Resolver una excepción",
+        "Negociar",
+        "Interpretar una situación específica",
+        "Lidiar con una situación sensible",
+        "Asumir una decisión que requiere contexto"
+      ],
+      "quote1": "Una buena automatización no elimina a la persona del proceso.",
+      "quote2": "Le quita a la persona aquello que no necesita de su presencia."
+    },
+    "otherAreasSection": {
+      "heading": "El mismo principio en otras áreas",
+      "intro": "El ejemplo de la atención al cliente es solo una puerta de entrada. La misma lógica aparece en otras rutinas de la operación.",
+      "areas": [
+        { "label": "Atención", "stages": ["Recibir", "Identificar", "Responder", "Derivar"] },
+        { "label": "Agendamiento", "stages": ["Disponibilidad", "Elección", "Confirmación", "Recordatorio"] },
+        { "label": "Pedidos", "stages": ["Recibir", "Registrar", "Procesar", "Actualizar"] },
+        { "label": "Documentos", "stages": ["Solicitar", "Recibir", "Validar", "Señalar pendiente"] },
+        { "label": "Rutinas internas", "stages": ["Recolectar", "Organizar", "Distribuir", "Dar seguimiento"] }
+      ],
+      "ordersHeading": "Los pedidos, por ejemplo",
+      "ordersIntro": "Un pedido puede entrar al sistema y disparar solo las siguientes etapas, sin que alguien tenga que copiar la misma información de un lugar a otro.",
+      "ordersFlow": ["Pedido recibido", "Datos estructurados", "Proceso iniciado", "Responsables notificados", "El cliente recibe una actualización"],
+      "documentsHeading": "Los documentos, por ejemplo",
+      "documentsIntro": "Lo mismo vale para documentos con plazo. El recordatorio sale antes del vencimiento, y la pendiente aparece sola cuando el plazo pasa sin respuesta.",
+      "documentsFlow": ["Documento solicitado", "Plazo registrado", "Recordatorio automático", "Documento recibido", "Validación", "Pendiente señalada"]
+    },
+    "methodSection": {
+      "heading": "No todo lo repetitivo necesita ser automatizado.",
+      "paragraphs": [
+        "Una automatización solo tiene sentido cuando la frecuencia, el volumen, las reglas claras, el tiempo operativo y la posibilidad de estandarizar e integrar juegan a favor.",
+        "Si una tarea sucede una vez al mes y toma dos minutos, tal vez no haya un problema que resolver. Si sucede cientos de veces y exige siempre las mismas etapas, la conversación cambia."
+      ],
+      "startSmallHeading": "Empezar en pequeño",
+      "startSmallIntro": "Automatizar no tiene que ser un proyecto enorme desde el principio. Una empresa puede empezar por una tarea específica e ir evolucionando a medida que entiende mejor el proceso.",
+      "startSmallFlow": ["Una tarea", "Un flujo", "Una integración", "Un proceso más autónomo"],
+      "method": [
+        { "title": "Mapear", "text": "Entender cómo sucede el trabajo hoy." },
+        { "title": "Identificar", "text": "Encontrar tareas repetitivas, reglas y puntos de decisión." },
+        { "title": "Integrar", "text": "Conectar sistemas e información que hoy están separados." },
+        { "title": "Automatizar", "text": "Hacer que las etapas previsibles sucedan solas, como parte del flujo." },
+        { "title": "Dar seguimiento", "text": "Observar el proceso y evolucionar cuando surgen nuevas necesidades." }
+      ]
+    },
+    "darkBigIdea": {
+      "text": "La mejor automatización es la que deja de <accent>llamar la atención</accent>.",
+      "paragraph1": "El cliente recibe la confirmación. El pedido avanza a la siguiente etapa. El recordatorio se envía. La información llega a quien la necesita.",
+      "paragraph2": "Nadie necesita detener su trabajo para que eso suceda.",
+      "closing": "El proceso simplemente continúa."
+    },
+    "conclusion": {
+      "paragraph1": "Automatizar no significa sacar a las personas del proceso.",
+      "paragraph2": "Significa dejar que concentren su atención donde hay decisión, contexto o relación. El resto puede suceder como parte del propio proceso.",
+      "heading": "¿Hay alguna tarea que tu empresa repite todos los días?",
+      "intro": "Tal vez el primer paso no sea automatizar todo. Es entender qué es lo que realmente necesita seguir dependiendo de alguien.",
+      "cta": "Conversar sobre mi proceso",
+      "continueReading": "Sigue leyendo"
+    }
+  }
+}

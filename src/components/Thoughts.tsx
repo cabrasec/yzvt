@@ -1,39 +1,36 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
+import { Link } from "@/i18n/navigation";
+
+type InsightsMetaKey =
+  | "quandoPlanilha"
+  | "perdendoClientes"
+  | "tarefasSozinhas"
+  | "problemaInterno";
 
 type ThoughtCard = {
-  category: string;
-  title: string;
-  alt: string;
-  href?: string;
+  metaKey: InsightsMetaKey;
+  href: string;
   image?: string;
   grayscale?: boolean;
   /** Substitui CardMedia por uma composição própria (ex.: AutomationFlowArt) quando não houver foto. */
-  media?: ReactNode;
+  media?: (alt: string) => ReactNode;
   /** Card "claro" (.theme-light) dentro da seção — por padrão os cards herdam
    *  o tema escuro da Home. Usado para alternar peso visual entre os cards. */
   light?: boolean;
 };
 
-const automationFlowArtAlt =
-  "Nós conectados por linhas finas, representando um processo que passa a acontecer sozinho";
-
-const webLandingArtAlt =
-  "Janela de navegador com o esqueleto de uma landing page, com um botão de ação conectado a um ponto de contato";
-
-const produtoCoverAlt =
-  "Painéis de interface em um dashboard futurista, conectados por linhas finas, em tons de verde sobre fundo escuro";
-
 // Brilho, contraste e saturação reduzidos para tirar o excesso de glow do
 // arquivo original — o card continua escuro e técnico, mas sem a sensação
 // de "dashboard cyberpunk" (este é o único momento escuro da seção).
-function ProdutoCoverImage() {
+function ProdutoCoverImage({ alt }: { alt: string }) {
   return (
     <Image
       src="/img/dashboard-futurista-neon-verde.png"
-      alt={produtoCoverAlt}
+      alt={alt}
       fill
       sizes="(min-width: 1024px) 50vw, 100vw"
       className="object-cover saturate-[0.5] contrast-[0.94] brightness-[0.85] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
@@ -44,37 +41,29 @@ function ProdutoCoverImage() {
 // Cards sem `image` nem `media` caem no placeholder .blueprint-grid em
 // CardMedia; o `alt` já fica pronto para quando a imagem chegar.
 const featured: ThoughtCard = {
-  category: "Automação",
-  title: "Sua empresa ainda depende de tarefas que poderiam acontecer sozinhas?",
-  alt: automationFlowArtAlt,
+  metaKey: "tarefasSozinhas",
   href: "/insights/sua-empresa-ainda-depende-de-tarefas-que-poderiam-acontecer-sozinhas",
-  media: <AutomationFlowArt label={automationFlowArtAlt} />,
+  media: (alt) => <AutomationFlowArt label={alt} />,
   light: true,
 };
 
 const secondary: ThoughtCard[] = [
   {
-    category: "Software",
-    title: "Quando uma planilha deixa de ser suficiente?",
-    alt: "Painel de operação com pedidos, atendimentos, operações, estoque e financeiro centralizados em um só lugar",
+    metaKey: "quandoPlanilha",
     href: "/insights/quando-uma-planilha-deixa-de-ser-suficiente",
     image: "/img/yzev-planilha.png",
     grayscale: false,
   },
   {
-    category: "Desenvolvimento Web",
-    title: "Sua empresa está perdendo clientes por não ter uma página que vende?",
-    alt: webLandingArtAlt,
+    metaKey: "perdendoClientes",
     href: "/insights/sua-empresa-esta-perdendo-clientes-por-nao-ter-uma-pagina-que-vende",
-    media: <WebLandingArt label={webLandingArtAlt} />,
+    media: (alt) => <WebLandingArt label={alt} />,
     light: true,
   },
   {
-    category: "Produto",
-    title: "E se um problema interno pudesse virar um produto?",
-    alt: produtoCoverAlt,
+    metaKey: "problemaInterno",
     href: "/insights/e-se-um-problema-interno-pudesse-virar-um-produto",
-    media: <ProdutoCoverImage />,
+    media: (alt) => <ProdutoCoverImage alt={alt} />,
   },
 ];
 
@@ -197,11 +186,21 @@ function CategoryTag({ children }: { children: string }) {
   );
 }
 
-function FeaturedCard({ category, title, href, image, alt, grayscale, media, light }: ThoughtCard) {
+function FeaturedCard({
+  href,
+  image,
+  alt,
+  grayscale,
+  media,
+  light,
+  category,
+  title,
+  readMore,
+}: ThoughtCard & { category: string; title: string; alt: string; readMore: string }) {
   return (
-    <a href={href ?? "#"} className={`group relative block ${light ? "theme-light" : ""}`}>
+    <Link href={href} className={`group relative block ${light ? "theme-light" : ""}`}>
       <div className="relative aspect-[4/5] overflow-hidden bg-surface">
-        {media ?? <CardMedia src={image} alt={alt} grayscale={grayscale} />}
+        {media ? media(alt) : <CardMedia src={image} alt={alt} grayscale={grayscale} />}
         <CategoryTag>{category}</CategoryTag>
       </div>
       <div className="relative z-10 -mt-16 ml-4 mr-8 bg-bg px-6 py-6 sm:-mt-20 sm:ml-6 sm:mr-12 sm:px-8 sm:py-8">
@@ -209,26 +208,35 @@ function FeaturedCard({ category, title, href, image, alt, grayscale, media, lig
           {title}
         </h3>
         <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent-2">
-          Ler mais
+          {readMore}
           <ArrowRight
             className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
             aria-hidden="true"
           />
         </span>
       </div>
-    </a>
+    </Link>
   );
 }
 
-function SecondaryCard({ category, title, href, image, alt, grayscale, media, light }: ThoughtCard) {
+function SecondaryCard({
+  href,
+  image,
+  alt,
+  grayscale,
+  media,
+  light,
+  category,
+  title,
+}: ThoughtCard & { category: string; title: string; alt: string }) {
   return (
-    <a
-      href={href ?? "#"}
+    <Link
+      href={href}
       className={`group relative flex aspect-[16/11] flex-col justify-end overflow-hidden bg-surface ${
         light ? "theme-light" : ""
       }`}
     >
-      {media ?? <CardMedia src={image} alt={alt} grayscale={grayscale} />}
+      {media ? media(alt) : <CardMedia src={image} alt={alt} grayscale={grayscale} />}
       <CategoryTag>{category}</CategoryTag>
       <div className="relative z-10 bg-gradient-to-t from-bg via-bg/70 to-transparent px-5 pb-5 pt-14 sm:px-6 sm:pb-6">
         <h3 className="text-lg font-bold leading-snug text-text transition-colors duration-300 group-hover:text-accent-2 sm:text-xl">
@@ -239,37 +247,49 @@ function SecondaryCard({ category, title, href, image, alt, grayscale, media, li
           aria-hidden="true"
         />
       </div>
-    </a>
+    </Link>
   );
 }
 
 export function Thoughts() {
+  const t = useTranslations("Thoughts");
+  const tMeta = useTranslations("InsightsMeta");
+
   return (
     <section className="bg-bg py-20 text-text sm:py-24 lg:py-28">
       <Container>
         <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-accent-2">O que pensamos</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-accent-2">{t("eyebrow")}</p>
           <h2 className="mt-6 text-3xl font-bold leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
-            Tecnologia muda rápido.
+            {t("titleLine1")}
             <br />
-            Os problemas das empresas continuam esperando soluções.
+            {t("titleLine2")}
           </h2>
-          <p className="mt-6 max-w-lg text-lg text-text/75">
-            Ideias, análises e exemplos sobre tecnologia aplicada aos negócios,
-            sem complicação e sem tecnologia pela tecnologia.
-          </p>
+          <p className="mt-6 max-w-lg text-lg text-text/75">{t("lead")}</p>
         </div>
 
         <div className="mt-12 border-t border-divider pt-12 lg:mt-16 lg:pt-16">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
             <div className="order-2 flex flex-col gap-10 lg:order-1 lg:gap-12">
               {secondary.map((card) => (
-                <SecondaryCard key={card.category} {...card} />
+                <SecondaryCard
+                  key={card.metaKey}
+                  {...card}
+                  category={tMeta(`${card.metaKey}.category`)}
+                  title={tMeta(`${card.metaKey}.title`)}
+                  alt={tMeta(`${card.metaKey}.alt`)}
+                />
               ))}
             </div>
 
             <div className="order-1 lg:order-2 lg:sticky lg:top-24">
-              <FeaturedCard {...featured} />
+              <FeaturedCard
+                {...featured}
+                category={tMeta(`${featured.metaKey}.category`)}
+                title={tMeta(`${featured.metaKey}.title`)}
+                alt={tMeta(`${featured.metaKey}.alt`)}
+                readMore={t("readMore")}
+              />
             </div>
           </div>
         </div>

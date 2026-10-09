@@ -7,9 +7,8 @@ type BrandMarkProps = {
 
 /**
  * Símbolo "Z" da Yzev Tech — duas peças espelhadas com cortes a 45°,
- * encaixadas em torno de um vazio retangular (Yzev Logo System, v1.0 2026).
- * Fonte única do path: não redesenhar livremente, reutilizar em qualquer
- * contexto (Header, Hero, favicon).
+ * encaixadas em torno de um vazio retangular (fonte: uploads/zev-green.png).
+ * Fonte única do path: reutilizar em Header, Hero e favicon.
  */
 const TOP = "M5 36 L28.5 13 H92 V35 L62.6 61.5 V36 Z";
 const BOTTOM = "M4 62.2 L32.4 36 V61.5 H92 L68.7 83.2 H4 Z";

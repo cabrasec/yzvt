@@ -1,0 +1,58 @@
+{
+  "Contact": {
+    "eyebrow": "Contato",
+    "heading": "Conte o que você precisa resolver.",
+    "lead": "A partir daí, pensamos na solução mais adequada — e dizemos com franqueza se não formos a melhor opção.",
+    "whatsappBoxLabel": "Prefere conversar?",
+    "whatsappLinkLabel": "Falar no WhatsApp",
+    "requiredNote": "Todos os campos são obrigatórios, exceto os marcados.",
+    "optional": "(opcional)",
+    "fields": {
+      "nome": {
+        "label": "Nome",
+        "placeholder": "Seu nome"
+      },
+      "empresa": {
+        "label": "Empresa",
+        "placeholder": "Nome da empresa"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "seu@email.com"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "placeholder": "(00) 00000-0000"
+      },
+      "mensagem": {
+        "label": "Mensagem",
+        "placeholder": "O processo de hoje, o que trava, e onde você quer chegar."
+      }
+    },
+    "errors": {
+      "nome": "Informe seu nome.",
+      "emailRequired": "Informe seu e-mail.",
+      "emailInvalid": "Informe um e-mail válido.",
+      "necessidade": "Selecione uma opção.",
+      "mensagem": "Conte brevemente o que você precisa."
+    },
+    "necessidadeLegend": "O que você precisa?",
+    "necessidadeHint": "Escolha uma",
+    "options": {
+      "automacao": "Automação",
+      "software": "Software",
+      "desenvolvimentoWeb": "Desenvolvimento web",
+      "produtoDigital": "Produto digital",
+      "outro": "Outro"
+    },
+    "successTitle": "Mensagem recebida.",
+    "successBody": "Vamos analisar o que você descreveu e retornar em breve.",
+    "errorTitle": "Não foi possível enviar sua mensagem agora.",
+    "errorBodyBefore": "Tente de novo ou",
+    "errorBodyLinkLabel": "fale com a gente pelo WhatsApp",
+    "submit": "Enviar mensagem",
+    "submitting": "Enviando...",
+    "consentBefore": "Ao enviar, você concorda com o uso dos seus dados para responder ao contato. Consulte nosso",
+    "consentLinkLabel": "Aviso de Privacidade"
+  }
+}

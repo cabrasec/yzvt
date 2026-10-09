@@ -1,0 +1,19 @@
+{
+  "Footer": {
+    "tagline": "Technology for your next step.",
+    "talkToUs": "Get in touch",
+    "navAriaLabel": "Footer",
+    "navigation": "Navigation",
+    "legal": "Legal",
+    "copyright": "© {year} Yzev Tech. All rights reserved.",
+    "navLinks": {
+      "services": "What we do",
+      "insights": "Insights",
+      "about": "About us",
+      "contact": "Contact"
+    },
+    "legalLinks": {
+      "privacy": "Privacy Notice"
+    }
+  }
+}

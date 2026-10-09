@@ -1,0 +1,130 @@
+{
+  "InsightAutomacao": {
+    "meta": {
+      "description": "Automating isn't about replacing people. It's about understanding which steps of a process can happen on their own — and where a human presence actually makes a difference."
+    },
+    "hero": {
+      "intro": "Not every task needs to be automated. But when someone spends a good part of the day repeating the same steps, the problem might not be a lack of time. It might be the process.",
+      "quote": "Automating isn't about putting a machine to work in a person's place. It's about making the process take care of whatever doesn't need a human touch, on its own."
+    },
+    "indexItems": {
+      "processoManual": "One process, many steps",
+      "processoAutomatizado": "The same process, automated",
+      "oQuePodeAcontecerSozinho": "What can happen on its own",
+      "outrosExemplos": "Other examples",
+      "comoPensamos": "How we think about automation"
+    },
+    "manualProcess": {
+      "heading": "Service and scheduling, step by step",
+      "intro": "Clinics, medical offices, salons, repair shops, and pretty much any business that handles customers over WhatsApp will recognize this routine. Here's how it usually plays out.",
+      "groups": [
+        {
+          "label": "Intake",
+          "steps": ["Customer sends a message", "Someone replies", "Asks what they need"]
+        },
+        {
+          "label": "Scheduling",
+          "steps": ["Checks time slots", "Confirms availability", "Confirms the time"]
+        },
+        {
+          "label": "Follow-up",
+          "steps": ["Writes it in the calendar", "Sends a confirmation", "Sends a reminder"]
+        }
+      ],
+      "closing": "That's nine steps, not one. And every single one depends on someone remembering to do it."
+    },
+    "automatedProcess": {
+      "heading": "The same process, without depending on someone remembering",
+      "intro": "The flow looks different, but the goal stays the same: the customer booked, notified, and reminded at the right time.",
+      "steps": [
+        "Customer reaches out",
+        "Service identifies the need",
+        "Checks availability",
+        "Presents time slots",
+        "Customer picks one",
+        "Appointment gets logged",
+        "Confirmation is sent",
+        "Reminder is sent"
+      ],
+      "branch": {
+        "condition": "Cases outside the rules",
+        "result": "A person takes over"
+      },
+      "closing": "None of this depends on a chatbot answering messages. It depends on the process being described in a way the system can follow on its own, start to finish — except when something falls outside the rules. That's where a person steps back in."
+    },
+    "darkQuestion": "The question isn't: what can we automate?<br/>It's: where does having a <accent>person</accent> there actually make a difference?",
+    "canHappenAlone": {
+      "automaticLabel": "Can happen automatically",
+      "automaticItems": [
+        "Checking availability",
+        "Logging data",
+        "Sending a confirmation",
+        "Sending a reminder",
+        "Updating a status",
+        "Routing requests",
+        "Organizing information",
+        "Triggering notifications",
+        "Kicking off the next step of a process"
+      ],
+      "personLabel": "Needs a person",
+      "personItems": [
+        "Making a decision outside the rules",
+        "Handling an exception",
+        "Negotiating",
+        "Reading a specific situation",
+        "Dealing with something sensitive",
+        "Owning a decision that requires context"
+      ],
+      "quote1": "Good automation doesn't remove the person from the process.",
+      "quote2": "It removes from that person whatever doesn't actually need them there."
+    },
+    "otherAreasSection": {
+      "heading": "The same principle, in other areas",
+      "intro": "Customer service is just one way in. The same logic shows up in other parts of the operation.",
+      "areas": [
+        { "label": "Customer service", "stages": ["Receive", "Identify", "Reply", "Route"] },
+        { "label": "Scheduling", "stages": ["Availability", "Choice", "Confirmation", "Reminder"] },
+        { "label": "Orders", "stages": ["Receive", "Log", "Process", "Update"] },
+        { "label": "Documents", "stages": ["Request", "Receive", "Validate", "Flag as pending"] },
+        { "label": "Internal routines", "stages": ["Collect", "Organize", "Distribute", "Track"] }
+      ],
+      "ordersHeading": "Orders, for example",
+      "ordersIntro": "An order can enter the system and trigger the next steps on its own, without anyone having to copy the same information from one place to another.",
+      "ordersFlow": ["Order received", "Data structured", "Process started", "People in charge notified", "Customer gets an update"],
+      "documentsHeading": "Documents, for example",
+      "documentsIntro": "The same goes for documents with a deadline. The reminder goes out before it's due, and the item flags itself as pending the moment the deadline passes without a response.",
+      "documentsFlow": ["Document requested", "Deadline logged", "Automatic reminder", "Document received", "Validation", "Flagged as pending"]
+    },
+    "methodSection": {
+      "heading": "Not everything repetitive needs to be automated.",
+      "paragraphs": [
+        "Automation only makes sense when frequency, volume, clear rules, time spent, and the ability to standardize and integrate all work in its favor.",
+        "If a task happens once a month and takes two minutes, there's probably no problem to solve. If it happens hundreds of times and always demands the same steps, that's a different conversation."
+      ],
+      "startSmallHeading": "Start small",
+      "startSmallIntro": "Automation doesn't have to be a massive project from day one. A company can start with one specific task and build from there as it understands the process better.",
+      "startSmallFlow": ["One task", "One flow", "One integration", "A more self-sufficient process"],
+      "method": [
+        { "title": "Map", "text": "Understand how the work happens today." },
+        { "title": "Identify", "text": "Find repetitive tasks, rules, and decision points." },
+        { "title": "Integrate", "text": "Connect systems and information that are currently disconnected." },
+        { "title": "Automate", "text": "Make the predictable steps happen on their own, as part of the flow." },
+        { "title": "Monitor", "text": "Watch the process and evolve it as new needs come up." }
+      ]
+    },
+    "darkBigIdea": {
+      "text": "The best automation is the kind that stops <accent>calling attention to itself</accent>.",
+      "paragraph1": "The customer gets the confirmation. The order moves to the next step. The reminder goes out. The information reaches whoever needs it.",
+      "paragraph2": "No one has to stop what they're doing to make it happen.",
+      "closing": "The process simply keeps going."
+    },
+    "conclusion": {
+      "paragraph1": "Automation doesn't mean taking people out of the process.",
+      "paragraph2": "It means letting them focus where there's a decision, context, or a relationship involved. Everything else can happen as part of the process itself.",
+      "heading": "Is there a task your company repeats every single day?",
+      "intro": "Maybe the first step isn't automating everything. It's understanding what actually still needs to depend on someone.",
+      "cta": "Let's talk about my process",
+      "continueReading": "Keep reading"
+    }
+  }
+}

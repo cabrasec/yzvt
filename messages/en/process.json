@@ -1,0 +1,29 @@
+{
+  "Process": {
+    "heading": "Technology to solve what's slowing you down today.",
+    "applicationExamplesLabel": "Where it applies",
+    "cards": {
+      "comunicar": {
+        "title": "Communicate",
+        "subtitle": "Reach customers and partners right where they already are.",
+        "body": "We automate contact with customers, employees, and partners across channels like WhatsApp, Instagram, and email, so every conversation follows an organized flow instead of relying on someone to remember the next step.",
+        "complement": "This kind of automation also answers simple questions, confirms orders, and flags when a request needs a human.",
+        "examples": "WhatsApp support, orders through Instagram, automatic confirmations, and customer follow-up."
+      },
+      "automatizar": {
+        "title": "Automate",
+        "subtitle": "Let repetitive work run on its own.",
+        "body": "We replace manual, repetitive tasks with automated flows that always follow the same pattern and leave a record of what was done. Your team spends less time on operational work and more time on what actually needs their attention.",
+        "complement": "This applies to processes that today depend on copying information between systems, updating spreadsheets, or repeating the same steps every day.",
+        "examples": "Restaurant orders, data syncing between systems, message sending, and administrative routines."
+      },
+      "criar": {
+        "title": "Create",
+        "subtitle": "A specific idea or need can grow into its own system.",
+        "body": "When there's no ready-made solution for what the business needs, we build custom software, designed for how the business actually works and ready to grow alongside it.",
+        "complement": "A project can start small, solving one specific problem, and grow over time into an internal tool or a platform your customers use.",
+        "examples": "Custom systems, web platforms, internal tools, digital products, SaaS, and MicroSaaS."
+      }
+    }
+  }
+}

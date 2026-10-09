@@ -1,0 +1,99 @@
+{
+  "InsightPlanilha": {
+    "metaDescription": "Spreadsheets work well right up until the process starts depending more on the team than on the tool itself. A read for anyone running a small or midsize business.",
+    "heroIntro": "Spreadsheets work well right up until the process starts depending more on the team than on the tool itself. A read for anyone running a small or midsize business who's starting to feel it happen.",
+    "index": {
+      "problema": "The problem",
+      "sinais": "The four signs",
+      "oQueMuda": "What changes",
+      "oQuePodeVirarSoftware": "What could become software"
+    },
+    "problem": {
+      "title": "The problem rarely starts with the spreadsheet.",
+      "paragraph1": "A spreadsheet can organize customers, orders, inventory, tasks, costs, and metrics. For many companies, it's exactly the right tool to start with.",
+      "paragraph2": "The problem shows up when the operation starts depending on dozens of tabs, shared files, formulas, messages, and the handful of people who know exactly where a given piece of information lives.",
+      "bars": {
+        "informacao": "Information",
+        "ferramentas": "Tools",
+        "pessoas": "People",
+        "decisoes": "Decisions"
+      },
+      "calloutLight": "At that point, the company doesn't necessarily have a spreadsheet problem.",
+      "calloutBold": "It has a process problem."
+    },
+    "signals": {
+      "titleLine1": "What signals the real problem is how complex the operation has become,",
+      "titleLine2": "not how big the spreadsheet is.",
+      "intro": "Four signs tend to show up first in the operation.",
+      "items": [
+        {
+          "number": "01",
+          "kicker": "Misaligned data",
+          "heading": "Three people open the same file, and each one sees a different number.",
+          "text": "When several people need to check, update, or validate the same data, control starts depending on manual discipline. That's exactly where it starts to break down."
+        },
+        {
+          "number": "02",
+          "kicker": "Fragmented process",
+          "heading": "The order comes in on WhatsApp, gets jotted down in the spreadsheet, and confirmed by email.",
+          "text": "The process runs through four or five tools that don't talk to each other. No one holds the whole operation in one place — just pieces of it."
+        },
+        {
+          "number": "03",
+          "kicker": "Repetitive work",
+          "heading": "Someone spends the first hour of the day copying information from one place to another.",
+          "text": "Updating statuses, checking data, sending the same messages, putting together the same report. It's work that happens every day and moves the business forward by exactly nothing."
+        },
+        {
+          "number": "04",
+          "kicker": "Delayed decisions",
+          "heading": "Monday's meeting starts with someone consolidating the spreadsheet.",
+          "text": "When data has to be pulled together by hand before a decision can be made, the decision always arrives after the moment it mattered most."
+        }
+      ]
+    },
+    "manifesto": {
+      "part1": "When an operation needs to be constantly organized by someone, maybe it needs to be organized by",
+      "highlight": "software",
+      "part2": "."
+    },
+    "whatChanges": {
+      "title": "What changes when a process becomes a system",
+      "planilhaHeading": "In the spreadsheet",
+      "planilhaItems": [
+        "Information scattered across files",
+        "Manual updates",
+        "Individual formulas and controls",
+        "Dependence on specific people",
+        "Manually prepared reports"
+      ],
+      "sistemaHeading": "In the system",
+      "sistemaItems": [
+        "Centralized information",
+        "Automated processes",
+        "Rules defined in the system",
+        "Reproducible processes",
+        "Information available the moment it's needed"
+      ],
+      "paragraph1": "This doesn't mean abandoning the spreadsheet. Some processes are still better solved with one — it's the simplest, most appropriate tool for the job. Forcing a system where a spreadsheet already works just trades one problem for another.",
+      "paragraph2": "The decision point comes when the cost of keeping a manual process running starts to outweigh the benefit of sticking with a tool built to organize data, not to run an entire operation."
+    },
+    "possibility": {
+      "title": "The problem you're trying to organize might already be a product.",
+      "intro": "Not every problem needs a system. But some processes stop working well once they depend on too many manual controls."
+    },
+    "operationPanel": {
+      "ariaLabel": "Operations panel organized by software",
+      "imageAlt": "Operations panel with orders, service, operations, inventory, and finance centralized in one place, with customer history alongside. A glimpse of an operation already up and running."
+    },
+    "cta": {
+      "title": "Does your process still fit in a spreadsheet?",
+      "paragraph1": "The problem isn't about file size. It shows up when information, process, people, and decisions start demanding too much manual control.",
+      "paragraph2": "When that happens, switching tools rarely fixes it. The next step is rethinking how the work actually happens.",
+      "buttonLabel": "Talk about my process"
+    },
+    "continueReading": {
+      "label": "Keep reading"
+    }
+  }
+}

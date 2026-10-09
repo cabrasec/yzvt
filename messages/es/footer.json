@@ -1,0 +1,19 @@
+{
+  "Footer": {
+    "tagline": "Tecnología para el próximo paso.",
+    "talkToUs": "Habla con nosotros",
+    "navAriaLabel": "Pie de página",
+    "navigation": "Navegación",
+    "legal": "Legal",
+    "copyright": "© {year} Yzev Tech. Todos los derechos reservados.",
+    "navLinks": {
+      "services": "Qué hacemos",
+      "insights": "Lo que pensamos",
+      "about": "Quiénes somos",
+      "contact": "Contacto"
+    },
+    "legalLinks": {
+      "privacy": "Aviso de Privacidad"
+    }
+  }
+}

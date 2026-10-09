@@ -1,0 +1,24 @@
+{
+  "InsightsMeta": {
+    "quandoPlanilha": {
+      "category": "Software",
+      "title": "When does a spreadsheet stop being enough?",
+      "alt": "Operations panel with orders, service, operations, inventory and finance centralized in one place"
+    },
+    "perdendoClientes": {
+      "category": "Web Development",
+      "title": "Is your business losing customers by not having a page that sells?",
+      "alt": "Browser window with the skeleton of a landing page, with a call-to-action button connected to a contact point"
+    },
+    "tarefasSozinhas": {
+      "category": "Automation",
+      "title": "Does your business still depend on tasks that could happen on their own?",
+      "alt": "Nodes connected by thin lines, representing a process that starts happening on its own"
+    },
+    "problemaInterno": {
+      "category": "Product",
+      "title": "What if an internal problem could become a product?",
+      "alt": "Interface panels in a futuristic dashboard, connected by thin lines, in shades of green on a dark background"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "InsightProduto": {
+    "hero": {
+      "intro": "Produtos relevantes normalmente começam do mesmo jeito: uma empresa percebe que perde tempo controlando pedidos, clientes, documentos, agenda, estoque, aprovações ou acompanhamento de tarefas.",
+      "pullQuote": "Às vezes, o próximo produto da sua empresa está escondido dentro de um problema que ela já resolveu."
+    },
+    "flows": {
+      "internal": ["Problema", "Solução interna", "Processo mais organizado"],
+      "product": ["Problema interno", "Solução interna", "Problema recorrente", "MVP", "Produto"],
+      "saas": ["Ferramenta interna", "MVP", "Primeiros usuários", "Validação", "SaaS / MicroSaaS"],
+      "startSmall": ["Identificar", "Entender", "Prototipar", "Validar", "Construir", "Evoluir"],
+      "evolutionCaption": ["Problema", "Solução", "MVP", "Produto"]
+    },
+    "problema": {
+      "heading": "Todo produto começa com um problema",
+      "intro": "Primeiro existe o problema. Depois vem a tentativa de resolvê-lo.",
+      "lead": "Um produto não começa com uma tecnologia. Começa com um problema que vale a pena resolver.",
+      "subheading": "Primeiro, resolva para você",
+      "body": "Uma empresa pode criar uma ferramenta própria para resolver uma necessidade interna. Nesse estágio, o objetivo não é vender software. É fazer o próprio processo funcionar melhor.",
+      "revealedIntro": "Esse processo também revela coisas que não dava para ver de fora:",
+      "revealedItems": [
+        "Quem usa a solução",
+        "Qual problema realmente precisa ser resolvido",
+        "Quais etapas são desnecessárias",
+        "Quais informações são importantes",
+        "Onde estão as exceções",
+        "O que realmente gera valor"
+      ]
+    },
+    "darkVirada": {
+      "headingPrefix": "E se",
+      "headingAccent": "outras empresas",
+      "headingSuffix": "tiverem o mesmo problema?",
+      "body": "Se outras empresas enfrentam uma dor parecida, uma solução criada internamente pode ter potencial para se tornar um produto. Isso não significa que todo problema interno vai virar produto. É uma possibilidade, e toda possibilidade assim precisa ser validada."
+    },
+    "solucaoProduto": {
+      "heading": "Da solução interna ao produto",
+      "subheading": "Não é preciso começar grande",
+      "body1": "Um MVP não precisa ser uma plataforma enorme. Pode ser uma solução pequena que resolve uma parte importante de um problema específico.",
+      "body2": "Uma empresa percebe, por exemplo, que seus clientes precisam acompanhar solicitações. Em vez de construir uma plataforma completa com dezenas de funcionalidades, pode começar com:",
+      "mvpComponents": ["Cadastro", "Acompanhamento da solicitação", "Atualização de status", "Notificações"],
+      "closing": "Depois, conforme o uso mostra novas necessidades, o produto pode evoluir."
+    },
+    "quandoVirarProduto": {
+      "heading": "Quando uma solução pode virar produto",
+      "intro": "Alguns sinais ajudam a enxergar isso:",
+      "signals": [
+        "O problema aparece com frequência",
+        "Outras empresas enfrentam a mesma dificuldade",
+        "Existe um processo que pode ser padronizado",
+        "A solução gera valor claro",
+        "Existe disposição para pagar pela solução",
+        "O problema continua existindo mesmo depois da primeira solução"
+      ]
+    },
+    "ferramentaSaas": {
+      "heading": "De ferramenta interna a SaaS",
+      "body": "SaaS pode transformar uma solução específica em um produto usado continuamente por outras empresas. MicroSaaS é uma possibilidade parecida, só que para soluções menores e bem focadas: resolvem um problema específico, sem tentar fazer de tudo.",
+      "imageAlt": "Quatro janelas em sequência, cada vez mais definidas, com as etiquetas Problema interno, Solução interna, MVP e Produto, representando essa evolução"
+    },
+    "darkSentido": {
+      "headingPrefix": "Antes de ser vendido, um produto precisa",
+      "headingAccent": "fazer sentido",
+      "headingSuffix": "para alguém.",
+      "body": "Validar o problema e a necessidade vem antes de investir em uma plataforma complexa. A pergunta não deve ser “o que podemos construir?”.",
+      "closing": "É: qual problema vale a pena resolver?"
+    },
+    "comecarPequeno": {
+      "heading": "Começar pequeno",
+      "body": "O produto pode crescer conforme existe evidência de que a solução realmente resolve um problema."
+    },
+    "closing": {
+      "paragraph2": "Uma ferramenta criada para organizar a própria operação pode revelar um processo que outras empresas também precisam resolver.",
+      "paragraph3": "O primeiro passo não é construir uma grande plataforma. É entender se existe um problema real, recorrente e relevante o suficiente para virar uma solução.",
+      "heading": "Existe um problema que sua empresa já resolveu internamente?",
+      "body": "O primeiro passo pode ser simples: entender se esse problema também é de outras empresas.",
+      "cta": "Conversar sobre meu produto"
+    },
+    "continueReading": "Continue lendo"
+  }
+}

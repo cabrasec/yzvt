@@ -1,8 +1,9 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Container } from "@/components/Container";
 import { buttonClasses } from "@/components/Button";
 import { BlueprintMark } from "@/components/hero/BlueprintMark";
 import { RevealWord } from "@/components/hero/RevealWord";
+import { Link } from "@/i18n/navigation";
 
 const corners = [
   "-left-1.5 -top-1.5 border-l-2 border-t-2",
@@ -12,6 +13,8 @@ const corners = [
 ];
 
 export function Hero() {
+  const t = useTranslations("Hero");
+
   return (
     <section className="relative overflow-hidden blueprint-grid py-12 sm:py-16 lg:flex lg:min-h-[min(calc(100svh-5.375rem),54rem)] lg:flex-col lg:justify-center lg:py-0">
       <Container wide className="lg:pt-14 lg:pb-10">
@@ -20,9 +23,9 @@ export function Hero() {
           className="mb-2 hidden justify-end text-right text-[10px] uppercase tracking-[0.15em] text-text/40 sm:flex"
         >
           <div className="flex flex-col gap-0.5">
-            <span>Ideias</span>
-            <span>Processos</span>
-            <span>Resultados</span>
+            <span>{t("topWordIdeas")}</span>
+            <span>{t("topWordProcesses")}</span>
+            <span>{t("topWordResults")}</span>
           </div>
         </div>
 
@@ -38,29 +41,28 @@ export function Hero() {
           <div className="grid items-start gap-12 lg:grid-cols-[58%_42%] lg:gap-16">
             <div>
               <p className="mb-5 text-xs uppercase tracking-[0.2em] text-accent-2">
-                Software · IA · Infraestrutura
+                {t("eyebrow")}
               </p>
 
               <h1 className="text-4xl font-bold tracking-[-0.02em] sm:text-5xl lg:w-[700px] lg:text-[clamp(4.5rem,5vw,5.5rem)] lg:leading-[0.98]">
-                Tecnologia para empresas que querem{" "}
+                {t("titleLead")}{" "}
                 <RevealWord className="bg-[linear-gradient(110deg,var(--color-accent-highlight)_0%,var(--color-accent-light)_55%,var(--color-accent-mid)_100%)] bg-clip-text text-transparent">
-                  evoluir.
+                  {t("titleHighlight")}
                 </RevealWord>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg text-text/80">
-                Criamos softwares, automações e soluções digitais para
-                pequenas e médias empresas.
+                {t("lead")}
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-3">
                 <Link href="/o-que-fazemos" className={buttonClasses("secondary")}>
-                  O que fazemos
+                  {t("cta")}
                 </Link>
               </div>
 
               <p className="mt-10 max-w-sm border-t border-divider pt-4 text-sm italic text-text-muted">
-                Projetamos software como se projeta uma estrutura.
+                {t("quote")}
               </p>
             </div>
 
@@ -72,13 +74,13 @@ export function Hero() {
           aria-hidden="true"
           className="mt-4 hidden flex-col gap-0.5 text-[10px] uppercase tracking-[0.15em] text-text/40 sm:flex"
         >
-          <span>Arquitetura</span>
-          <span>Tecnologia</span>
-          <span>Pessoas</span>
+          <span>{t("bottomWordArchitecture")}</span>
+          <span>{t("bottomWordTechnology")}</span>
+          <span>{t("bottomWordPeople")}</span>
         </div>
 
         <div className="mt-6 flex items-center justify-end border-t border-divider pt-4 text-xs uppercase tracking-[0.15em] text-text/50">
-          <span>Tecnologia para o próximo passo</span>
+          <span>{t("footerLine")}</span>
         </div>
       </Container>
     </section>

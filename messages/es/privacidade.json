@@ -1,0 +1,39 @@
+{
+  "Privacidade": {
+    "metaTitle": "Aviso de Privacidad | Yzev",
+    "metaDescription": "Cómo Yzev trata los datos personales enviados a través del formulario de contacto del sitio.",
+    "eyebrow": "Legal",
+    "title": "Aviso de Privacidad",
+    "lastUpdated": "Última actualización: octubre de 2026.",
+    "sections": [
+      {
+        "title": "1. Quién es responsable de los datos",
+        "body": "Este aviso explica cómo Yzev Tech (\"Yzev\", \"nosotros\") trata los datos personales recolectados en este sitio, de conformidad con la Ley General de Protección de Datos de Brasil (Lei Geral de Proteção de Dados, Ley N.º 13.709/2018 — LGPD)."
+      },
+      {
+        "title": "2. Cookies",
+        "body": "Usamos una única cookie, estrictamente necesaria para el funcionamiento del sitio: NEXT_LOCALE, que recuerda en qué idioma (portugués, inglés o español) estás navegando al cambiar de página. No te identifica ni se usa para rastreo, por lo que no requiere un banner de consentimiento. No usamos cookies de rastreo ni herramientas de analítica en este sitio."
+      },
+      {
+        "title": "3. Qué datos recolectamos",
+        "body": "El único dato personal que recolectamos es el que tú mismo proporcionas voluntariamente al completar el formulario de contacto: nombre, empresa, correo electrónico, WhatsApp, la necesidad seleccionada y el mensaje enviado."
+      },
+      {
+        "title": "4. Para qué usamos estos datos",
+        "body": "Usamos esta información exclusivamente para entender tu solicitud y responder a tu contacto. No usamos estos datos para enviar marketing, no los vendemos y no los compartimos con terceros."
+      },
+      {
+        "title": "5. Por cuánto tiempo los conservamos",
+        "body": "Conservamos los datos del formulario solo por el tiempo necesario para atender tu solicitud y mantener un historial de la conversación contigo. Puedes solicitar la eliminación de estos datos en cualquier momento a través de los canales indicados abajo."
+      },
+      {
+        "title": "6. Tus derechos",
+        "body": "Conforme a la LGPD, puedes solicitar la confirmación del tratamiento, acceso, corrección, anonimización, portabilidad o eliminación de tus datos, así como revocar el consentimiento otorgado. Para ejercer cualquiera de estos derechos, contáctanos por el correo indicado abajo."
+      },
+      {
+        "title": "7. Contacto",
+        "body": "Dudas sobre este aviso o sobre el tratamiento de tus datos pueden enviarse a contato@yzev.tech."
+      }
+    ]
+  }
+}

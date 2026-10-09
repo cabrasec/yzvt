@@ -1,0 +1,99 @@
+{
+  "InsightPlanilha": {
+    "metaDescription": "Planilhas funcionam muito bem até o momento em que o processo começa a depender mais da operação do que da própria ferramenta. Uma leitura para quem administra uma empresa pequena ou média.",
+    "heroIntro": "Planilhas funcionam muito bem até o momento em que o processo começa a depender mais da operação do que da própria ferramenta. Uma leitura para quem administra uma empresa pequena ou média e sente isso acontecendo.",
+    "index": {
+      "problema": "O problema",
+      "sinais": "Os quatro sinais",
+      "oQueMuda": "O que muda",
+      "oQuePodeVirarSoftware": "O que pode virar software"
+    },
+    "problem": {
+      "title": "O problema raramente começa com a planilha.",
+      "paragraph1": "Uma planilha pode organizar clientes, pedidos, estoque, tarefas, custos e indicadores. Para muitas empresas, ela é exatamente a ferramenta certa para começar.",
+      "paragraph2": "O problema aparece quando a operação passa a depender de dezenas de abas, arquivos compartilhados, fórmulas, mensagens e pessoas que sabem exatamente onde determinada informação está.",
+      "bars": {
+        "informacao": "Informação",
+        "ferramentas": "Ferramentas",
+        "pessoas": "Pessoas",
+        "decisoes": "Decisões"
+      },
+      "calloutLight": "Nesse momento, a empresa não tem necessariamente um problema de planilha.",
+      "calloutBold": "Ela tem um problema de processo."
+    },
+    "signals": {
+      "titleLine1": "O que indica o problema é a complexidade da operação,",
+      "titleLine2": "não o tamanho da planilha.",
+      "intro": "Na operação, quatro sinais costumam aparecer primeiro.",
+      "items": [
+        {
+          "number": "01",
+          "kicker": "Dados desalinhados",
+          "heading": "Três pessoas abrem o mesmo arquivo e cada uma tem uma versão diferente do número.",
+          "text": "Quando várias pessoas precisam consultar, atualizar ou validar os mesmos dados, o controle passa a depender de disciplina manual. É justamente aí que ele começa a falhar."
+        },
+        {
+          "number": "02",
+          "kicker": "Processo fragmentado",
+          "heading": "O pedido chega no WhatsApp, é anotado na planilha e confirmado por e-mail.",
+          "text": "O processo atravessa quatro ou cinco ferramentas que não conversam entre si. Ninguém tem a operação inteira em um lugar só, apenas pedaços dela."
+        },
+        {
+          "number": "03",
+          "kicker": "Trabalho repetitivo",
+          "heading": "Alguém passa a primeira hora do dia copiando informação de um lugar para outro.",
+          "text": "Atualizar status, conferir dados, enviar as mesmas mensagens, montar o mesmo relatório. É trabalho que acontece todos os dias e não muda nada no negócio."
+        },
+        {
+          "number": "04",
+          "kicker": "Decisão atrasada",
+          "heading": "A reunião de segunda começa com alguém consolidando a planilha.",
+          "text": "Quando os dados precisam ser reunidos à mão antes de uma decisão, a decisão sempre chega depois do momento em que ela valia mais."
+        }
+      ]
+    },
+    "manifesto": {
+      "part1": "Quando uma operação precisa ser constantemente organizada por alguém, talvez ela precise ser organizada por",
+      "highlight": "software",
+      "part2": "."
+    },
+    "whatChanges": {
+      "title": "O que muda quando o processo vira sistema",
+      "planilhaHeading": "Na planilha",
+      "planilhaItems": [
+        "Informação distribuída em arquivos",
+        "Atualizações manuais",
+        "Fórmulas e controles individuais",
+        "Dependência de pessoas",
+        "Relatórios preparados manualmente"
+      ],
+      "sistemaHeading": "No sistema",
+      "sistemaItems": [
+        "Informação centralizada",
+        "Processos automatizados",
+        "Regras definidas no sistema",
+        "Processos reproduzíveis",
+        "Informação disponível no momento necessário"
+      ],
+      "paragraph1": "Isso não significa abandonar a planilha. Existem processos em que ela continua sendo a solução mais simples e mais adequada. Forçar um sistema onde uma planilha resolve apenas troca um problema por outro.",
+      "paragraph2": "O ponto de decisão aparece quando o custo de manter o processo manual começa a superar o benefício de continuar usando uma ferramenta criada para organizar dados, e não para executar toda a operação."
+    },
+    "possibility": {
+      "title": "Talvez o problema que você está tentando organizar já seja um produto.",
+      "intro": "Nem todo problema precisa de um sistema. Mas alguns processos deixam de funcionar bem quando dependem de controles manuais demais."
+    },
+    "operationPanel": {
+      "ariaLabel": "Painel de operação organizado por software",
+      "imageAlt": "Painel de operação com pedidos, atendimentos, operações, estoque e financeiro centralizados em um só lugar, com o histórico de cliente ao lado. Um recorte de operação já em funcionamento."
+    },
+    "cta": {
+      "title": "Seu processo ainda cabe em uma planilha?",
+      "paragraph1": "O problema não aparece por causa do tamanho do arquivo. Ele aparece quando informação, processo, pessoas e decisões passam a exigir controle manual em excesso.",
+      "paragraph2": "Quando isso acontece, trocar de ferramenta raramente resolve. O passo seguinte é rever como o trabalho acontece.",
+      "buttonLabel": "Conversar sobre meu processo"
+    },
+    "continueReading": {
+      "label": "Continue lendo"
+    }
+  }
+}

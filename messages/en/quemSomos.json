@@ -1,0 +1,54 @@
+{
+  "QuemSomos": {
+    "metaTitle": "About us | Yzev",
+    "metaDescription": "Meet Yzev and the way we think about technology, software, automation, and digital products.",
+    "heroEyebrow": "About us",
+    "heroTitle": "Technology for the next step.",
+    "heroLead": "Yzev builds software, automations, and digital solutions for companies ready to grow.",
+    "comoPensamosTitle": "We design technology from real problems.",
+    "comoPensamosParagraph1": "Not every problem needs a new system. Not every task needs to be automated. Not every idea needs to start big.",
+    "comoPensamosParagraph2": "We start by understanding how the work actually happens. Then we figure out what can be simplified, automated, turned into software, or built as a product.",
+    "comoPensamosFlow": {
+      "automatizar": "Automate",
+      "criar": "Build",
+      "evoluir": "Evolve"
+    },
+    "oQueFazemosEyebrow": "What we do",
+    "pilares": {
+      "automacaoIa": {
+        "title": "Automation & AI",
+        "text": "Repetitive tasks automated, so your team spends time on what actually needs attention."
+      },
+      "softwareWeb": {
+        "title": "Software & Web",
+        "text": "Systems, websites, and platforms built around the way your business really works."
+      },
+      "saasMicrosaas": {
+        "title": "SaaS & MicroSaaS",
+        "text": "Internal solutions validated in-house and turned into products other companies can use."
+      }
+    },
+    "formaDeTrabalharTitle": "How we work",
+    "etapas": {
+      "entender": {
+        "title": "Understand",
+        "text": "Map the problem and understand how the work really happens."
+      },
+      "projetar": {
+        "title": "Design",
+        "text": "Find the right solution before we start building."
+      },
+      "construir": {
+        "title": "Build",
+        "text": "Turn the idea into software, automation, or a product."
+      },
+      "evoluir": {
+        "title": "Evolve",
+        "text": "Improve the solution as new needs come up."
+      }
+    },
+    "closingLine1": "We don't believe in technology for technology's sake.",
+    "closingLine2": "We build solutions so the next step actually makes sense.",
+    "ctaContact": "Let's talk"
+  }
+}

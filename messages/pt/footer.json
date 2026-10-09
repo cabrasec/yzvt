@@ -1,0 +1,19 @@
+{
+  "Footer": {
+    "tagline": "Tecnologia para o próximo passo.",
+    "talkToUs": "Fale com a gente",
+    "navAriaLabel": "Rodapé",
+    "navigation": "Navegação",
+    "legal": "Legal",
+    "copyright": "© {year} Yzev Tech. Todos os direitos reservados.",
+    "navLinks": {
+      "services": "O que fazemos",
+      "insights": "O que pensamos",
+      "about": "Quem somos",
+      "contact": "Contato"
+    },
+    "legalLinks": {
+      "privacy": "Aviso de Privacidade"
+    }
+  }
+}

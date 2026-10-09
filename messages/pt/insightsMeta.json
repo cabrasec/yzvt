@@ -1,0 +1,24 @@
+{
+  "InsightsMeta": {
+    "quandoPlanilha": {
+      "category": "Software",
+      "title": "Quando uma planilha deixa de ser suficiente?",
+      "alt": "Painel de operação com pedidos, atendimentos, operações, estoque e financeiro centralizados em um só lugar"
+    },
+    "perdendoClientes": {
+      "category": "Desenvolvimento Web",
+      "title": "Sua empresa está perdendo clientes por não ter uma página que vende?",
+      "alt": "Janela de navegador com o esqueleto de uma landing page, com um botão de ação conectado a um ponto de contato"
+    },
+    "tarefasSozinhas": {
+      "category": "Automação",
+      "title": "Sua empresa ainda depende de tarefas que poderiam acontecer sozinhas?",
+      "alt": "Nós conectados por linhas finas, representando um processo que passa a acontecer sozinho"
+    },
+    "problemaInterno": {
+      "category": "Produto",
+      "title": "E se um problema interno pudesse virar um produto?",
+      "alt": "Painéis de interface em um dashboard futurista, conectados por linhas finas, em tons de verde sobre fundo escuro"
+    }
+  }
+}

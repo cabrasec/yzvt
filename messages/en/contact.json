@@ -1,0 +1,58 @@
+{
+  "Contact": {
+    "eyebrow": "Contact",
+    "heading": "Tell us what you need to solve.",
+    "lead": "From there, we think through the best-fit solution — and we'll tell you plainly if we're not the right team for it.",
+    "whatsappBoxLabel": "Prefer to talk?",
+    "whatsappLinkLabel": "Chat on WhatsApp",
+    "requiredNote": "All fields are required, except where marked.",
+    "optional": "(optional)",
+    "fields": {
+      "nome": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "empresa": {
+        "label": "Company",
+        "placeholder": "Company name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@email.com"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "placeholder": "(00) 00000-0000"
+      },
+      "mensagem": {
+        "label": "Message",
+        "placeholder": "Today's process, what's holding it back, and where you want to get to."
+      }
+    },
+    "errors": {
+      "nome": "Please enter your name.",
+      "emailRequired": "Please enter your email.",
+      "emailInvalid": "Please enter a valid email.",
+      "necessidade": "Please select an option.",
+      "mensagem": "Briefly describe what you need."
+    },
+    "necessidadeLegend": "What do you need?",
+    "necessidadeHint": "Choose one",
+    "options": {
+      "automacao": "Automation",
+      "software": "Software",
+      "desenvolvimentoWeb": "Web development",
+      "produtoDigital": "Digital product",
+      "outro": "Other"
+    },
+    "successTitle": "Message received.",
+    "successBody": "We'll review what you shared and get back to you shortly.",
+    "errorTitle": "We couldn't send your message right now.",
+    "errorBodyBefore": "Try again or",
+    "errorBodyLinkLabel": "reach us on WhatsApp",
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "consentBefore": "By submitting, you agree to the use of your data to respond to this contact. See our",
+    "consentLinkLabel": "Privacy Notice"
+  }
+}

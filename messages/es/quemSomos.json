@@ -1,0 +1,54 @@
+{
+  "QuemSomos": {
+    "metaTitle": "Quiénes somos | Yzev",
+    "metaDescription": "Conoce a Yzev y nuestra forma de pensar la tecnología, el software, la automatización y los productos digitales.",
+    "heroEyebrow": "Quiénes somos",
+    "heroTitle": "Tecnología para el siguiente paso.",
+    "heroLead": "Yzev crea software, automatizaciones y soluciones digitales para empresas que quieren crecer.",
+    "comoPensamosTitle": "Diseñamos tecnología a partir de problemas reales.",
+    "comoPensamosParagraph1": "No todo problema necesita un sistema nuevo. No toda tarea necesita automatizarse. No toda idea necesita empezar en grande.",
+    "comoPensamosParagraph2": "Primero entendemos cómo sucede el trabajo. Después pensamos qué puede simplificarse, automatizarse, convertirse en software o desarrollarse como producto.",
+    "comoPensamosFlow": {
+      "automatizar": "Automatizar",
+      "criar": "Crear",
+      "evoluir": "Evolucionar"
+    },
+    "oQueFazemosEyebrow": "Qué hacemos",
+    "pilares": {
+      "automacaoIa": {
+        "title": "Automatización e IA",
+        "text": "Tareas repetitivas automatizadas, para que el equipo dedique tiempo a lo que realmente requiere atención."
+      },
+      "softwareWeb": {
+        "title": "Software y Web",
+        "text": "Sistemas, sitios y plataformas creados a la medida de la realidad del negocio."
+      },
+      "saasMicrosaas": {
+        "title": "SaaS y MicroSaaS",
+        "text": "Soluciones internas validadas y convertidas en productos para que otras empresas las usen."
+      }
+    },
+    "formaDeTrabalharTitle": "Nuestra forma de trabajar",
+    "etapas": {
+      "entender": {
+        "title": "Entender",
+        "text": "Mapear el problema y entender cómo sucede realmente el trabajo."
+      },
+      "projetar": {
+        "title": "Diseñar",
+        "text": "Encontrar la solución adecuada antes de empezar a construir."
+      },
+      "construir": {
+        "title": "Construir",
+        "text": "Convertir la idea en software, automatización o producto."
+      },
+      "evoluir": {
+        "title": "Evolucionar",
+        "text": "Mejorar la solución conforme surgen nuevas necesidades."
+      }
+    },
+    "closingLine1": "No creemos en la tecnología por la tecnología.",
+    "closingLine2": "Construimos soluciones para que el siguiente paso tenga sentido.",
+    "ctaContact": "Hablemos"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "InsightPlanilha": {
+    "metaDescription": "Las hojas de cálculo funcionan muy bien hasta el momento en que el proceso empieza a depender más del equipo que de la propia herramienta. Una lectura para quienes administran una empresa pequeña o mediana.",
+    "heroIntro": "Las hojas de cálculo funcionan muy bien hasta el momento en que el proceso empieza a depender más del equipo que de la propia herramienta. Una lectura para quienes administran una empresa pequeña o mediana y ya empiezan a notarlo.",
+    "index": {
+      "problema": "El problema",
+      "sinais": "Las cuatro señales",
+      "oQueMuda": "Qué cambia",
+      "oQuePodeVirarSoftware": "Qué puede convertirse en software"
+    },
+    "problem": {
+      "title": "El problema casi nunca empieza con la hoja de cálculo.",
+      "paragraph1": "Una hoja de cálculo puede organizar clientes, pedidos, inventario, tareas, costos e indicadores. Para muchas empresas, es exactamente la herramienta correcta para empezar.",
+      "paragraph2": "El problema aparece cuando la operación empieza a depender de decenas de pestañas, archivos compartidos, fórmulas, mensajes y personas que saben exactamente dónde está determinada información.",
+      "bars": {
+        "informacao": "Información",
+        "ferramentas": "Herramientas",
+        "pessoas": "Personas",
+        "decisoes": "Decisiones"
+      },
+      "calloutLight": "En ese momento, la empresa no tiene necesariamente un problema de hoja de cálculo.",
+      "calloutBold": "Tiene un problema de proceso."
+    },
+    "signals": {
+      "titleLine1": "Lo que indica el problema es la complejidad de la operación,",
+      "titleLine2": "no el tamaño de la hoja de cálculo.",
+      "intro": "En la operación, cuatro señales suelen aparecer primero.",
+      "items": [
+        {
+          "number": "01",
+          "kicker": "Datos desalineados",
+          "heading": "Tres personas abren el mismo archivo y cada una tiene una versión distinta del número.",
+          "text": "Cuando varias personas necesitan consultar, actualizar o validar los mismos datos, el control pasa a depender de la disciplina manual. Justo ahí es donde empieza a fallar."
+        },
+        {
+          "number": "02",
+          "kicker": "Proceso fragmentado",
+          "heading": "El pedido llega por WhatsApp, se anota en la hoja de cálculo y se confirma por correo.",
+          "text": "El proceso atraviesa cuatro o cinco herramientas que no se comunican entre sí. Nadie tiene la operación completa en un solo lugar, solo fragmentos de ella."
+        },
+        {
+          "number": "03",
+          "kicker": "Trabajo repetitivo",
+          "heading": "Alguien pasa la primera hora del día copiando información de un lugar a otro.",
+          "text": "Actualizar estados, verificar datos, enviar los mismos mensajes, armar el mismo informe. Es trabajo que ocurre todos los días y no cambia nada en el negocio."
+        },
+        {
+          "number": "04",
+          "kicker": "Decisión retrasada",
+          "heading": "La reunión del lunes empieza con alguien consolidando la hoja de cálculo.",
+          "text": "Cuando los datos deben reunirse a mano antes de una decisión, la decisión siempre llega después del momento en que más valía."
+        }
+      ]
+    },
+    "manifesto": {
+      "part1": "Cuando una operación necesita ser organizada constantemente por alguien, quizás necesite ser organizada por",
+      "highlight": "software",
+      "part2": "."
+    },
+    "whatChanges": {
+      "title": "Qué cambia cuando el proceso se convierte en sistema",
+      "planilhaHeading": "En la hoja de cálculo",
+      "planilhaItems": [
+        "Información distribuida en archivos",
+        "Actualizaciones manuales",
+        "Fórmulas y controles individuales",
+        "Dependencia de personas",
+        "Informes preparados manualmente"
+      ],
+      "sistemaHeading": "En el sistema",
+      "sistemaItems": [
+        "Información centralizada",
+        "Procesos automatizados",
+        "Reglas definidas en el sistema",
+        "Procesos reproducibles",
+        "Información disponible en el momento necesario"
+      ],
+      "paragraph1": "Esto no significa abandonar la hoja de cálculo. Hay procesos en los que sigue siendo la solución más simple y adecuada. Forzar un sistema donde una hoja de cálculo ya resuelve el problema solo cambia un problema por otro.",
+      "paragraph2": "El punto de decisión aparece cuando el costo de mantener el proceso manual empieza a superar el beneficio de seguir usando una herramienta creada para organizar datos, y no para ejecutar toda la operación."
+    },
+    "possibility": {
+      "title": "Quizás el problema que estás intentando organizar ya sea un producto.",
+      "intro": "No todo problema necesita un sistema. Pero algunos procesos dejan de funcionar bien cuando dependen de demasiados controles manuales."
+    },
+    "operationPanel": {
+      "ariaLabel": "Panel de operación organizado por software",
+      "imageAlt": "Panel de operación con pedidos, atenciones, operaciones, inventario y finanzas centralizados en un solo lugar, con el historial del cliente al lado. Un vistazo a una operación que ya está en funcionamiento."
+    },
+    "cta": {
+      "title": "¿Tu proceso todavía cabe en una hoja de cálculo?",
+      "paragraph1": "El problema no aparece por el tamaño del archivo. Aparece cuando la información, el proceso, las personas y las decisiones empiezan a exigir demasiado control manual.",
+      "paragraph2": "Cuando eso ocurre, cambiar de herramienta casi nunca lo resuelve. El siguiente paso es revisar cómo sucede el trabajo.",
+      "buttonLabel": "Hablar sobre mi proceso"
+    },
+    "continueReading": {
+      "label": "Sigue leyendo"
+    }
+  }
+}

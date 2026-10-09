@@ -1,0 +1,29 @@
+{
+  "Process": {
+    "heading": "Tecnología para resolver lo que hoy te quita tiempo.",
+    "applicationExamplesLabel": "Ejemplos de aplicación",
+    "cards": {
+      "comunicar": {
+        "title": "Comunicar",
+        "subtitle": "Atiende a clientes y socios justo en los canales que ya usan.",
+        "body": "Automatizamos el contacto con clientes, colaboradores y socios en canales como WhatsApp, Instagram y correo electrónico, para que cada conversación siga un flujo organizado, sin depender de que alguien recuerde el siguiente paso.",
+        "complement": "Este tipo de automatización también responde preguntas simples, confirma pedidos y avisa cuando una solicitud necesita atención humana.",
+        "examples": "Atención por WhatsApp, pedidos por Instagram, confirmaciones automáticas y seguimiento de clientes."
+      },
+      "automatizar": {
+        "title": "Automatizar",
+        "subtitle": "Deja que el trabajo repetitivo ocurra solo.",
+        "body": "Reemplazamos tareas manuales y repetitivas por flujos automáticos que siguen siempre el mismo patrón y dejan un historial de lo que se hizo. El equipo dedica menos tiempo al trabajo operativo y más tiempo a lo que realmente requiere atención.",
+        "complement": "Esto aplica a procesos que hoy dependen de copiar información entre sistemas, actualizar hojas de cálculo o repetir los mismos pasos todos los días.",
+        "examples": "Pedidos de restaurantes, actualización de datos entre sistemas, envío de mensajes y rutinas administrativas."
+      },
+      "criar": {
+        "title": "Crear",
+        "subtitle": "Una idea o necesidad específica puede convertirse en un sistema propio.",
+        "body": "Cuando no existe una solución lista para lo que la empresa necesita, desarrollamos un software a medida, construido para la realidad del negocio y preparado para crecer junto con él.",
+        "complement": "El proyecto puede empezar pequeño, resolviendo un problema específico, y crecer con el tiempo hasta convertirse en una herramienta interna o una plataforma usada por los clientes.",
+        "examples": "Sistemas propios, plataformas web, herramientas internas, productos digitales, SaaS y MicroSaaS."
+      }
+    }
+  }
+}

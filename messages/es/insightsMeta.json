@@ -1,0 +1,24 @@
+{
+  "InsightsMeta": {
+    "quandoPlanilha": {
+      "category": "Software",
+      "title": "¿Cuándo una hoja de cálculo deja de ser suficiente?",
+      "alt": "Panel de operación con pedidos, atenciones, operaciones, inventario y finanzas centralizados en un solo lugar"
+    },
+    "perdendoClientes": {
+      "category": "Desarrollo Web",
+      "title": "¿Tu empresa está perdiendo clientes por no tener una página que venda?",
+      "alt": "Ventana de navegador con el esqueleto de una landing page, con un botón de acción conectado a un punto de contacto"
+    },
+    "tarefasSozinhas": {
+      "category": "Automatización",
+      "title": "¿Tu empresa todavía depende de tareas que podrían suceder solas?",
+      "alt": "Nodos conectados por líneas finas, que representan un proceso que empieza a suceder solo"
+    },
+    "problemaInterno": {
+      "category": "Producto",
+      "title": "¿Y si un problema interno pudiera convertirse en un producto?",
+      "alt": "Paneles de interfaz en un dashboard futurista, conectados por líneas finas, en tonos de verde sobre fondo oscuro"
+    }
+  }
+}
