@@ -36,7 +36,13 @@ function buildCsp(nonce: string): string {
     "connect-src 'self'",
     "frame-ancestors 'none'",
     "base-uri 'self'",
-    "form-action 'self'",
+    // api.web3forms.com: o formulário de contato (Contact.tsx) é um <form>
+    // nativo de verdade que submete pra lá — não fetch/AJAX. O plano
+    // gratuito do Web3Forms recusa chamada servidor-a-servidor e não libera
+    // CORS pra leitura de resposta via fetch (confirmado testando direto
+    // contra a API, com a origem real de produção), então a submissão
+    // precisa ser uma navegação nativa mesmo — é o que form-action controla.
+    "form-action 'self' https://api.web3forms.com",
     "object-src 'none'",
     "upgrade-insecure-requests",
   ].join("; ");

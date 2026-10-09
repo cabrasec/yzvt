@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useId, useState, type FormEvent } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, Check } from "lucide-react";
 import { Container } from "@/components/Container";
 import { WhatsAppIcon } from "@/components/Closing";
 import { WHATSAPP_DISPLAY, getWhatsAppUrl } from "@/lib/contact";
+import { localizedUrl } from "@/lib/site";
 
 type FormValues = {
   nome: string;
@@ -15,11 +16,13 @@ type FormValues = {
   whatsapp: string;
   necessidade: string;
   mensagem: string;
+  // Honeypot: campo real para bots, invisível para humanos (ver estilo mais
+  // abaixo). Preenchido = submissão descartada no cliente, nunca sai pro
+  // Web3Forms (ver handleSubmit).
+  botcheck: string;
 };
 
 type FormErrors = Partial<Record<keyof FormValues, string>>;
-
-type Status = "idle" | "submitting" | "success" | "error";
 
 const emptyValues: FormValues = {
   nome: "",
@@ -28,11 +31,14 @@ const emptyValues: FormValues = {
   whatsapp: "",
   necessidade: "",
   mensagem: "",
+  botcheck: "",
 };
 
 const necessidadeOptions = ["automacao", "software", "desenvolvimentoWeb", "produtoDigital", "outro"] as const;
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
 function validate(values: FormValues, t: ReturnType<typeof useTranslations>): FormErrors {
   const errors: FormErrors = {};
@@ -79,11 +85,13 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 export function Contact() {
   const t = useTranslations("Contact");
   const tCommon = useTranslations("Common");
+  const locale = useLocale();
   const whatsappUrl = getWhatsAppUrl(tCommon("whatsappGreeting"));
   const idPrefix = useId();
   const [values, setValues] = useState<FormValues>(emptyValues);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [status, setStatus] = useState<Status>("idle");
+  const [blockedError, setBlockedError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Chegando com #contato na URL (Header, Footer, CTAs de outras páginas), o
   // scroll automático do navegador às vezes acontece antes do ScrollTrigger
@@ -115,38 +123,48 @@ export function Contact() {
     setErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
+  // Envio é um <form> nativo de verdade (action="https://api.web3forms.com/submit"),
+  // não fetch/AJAX: o plano gratuito do Web3Forms recusa chamada
+  // servidor-a-servidor E não libera CORS pra leitura da resposta via fetch
+  // (confirmado testando direto contra a API, com a origem real de produção,
+  // tanto JSON quanto FormData — nos dois casos bloqueado por CORS antes de
+  // conseguir ler o resultado). O <form> nativo é literalmente o exemplo que
+  // o próprio Web3Forms documenta pro free tier: o navegador sai do site, o
+  // Web3Forms processa, e o campo `redirect` abaixo traz de volta pra
+  // /obrigado (ver src/app/[locale]/obrigado/page.tsx).
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     const nextErrors = validate(values, t);
     setErrors(nextErrors);
+    setBlockedError(false);
 
     const firstInvalid = (Object.keys(nextErrors) as (keyof FormValues)[])[0];
     if (firstInvalid) {
+      event.preventDefault();
       const targetId = firstInvalid === "necessidade" ? `${idPrefix}-necessidade-0` : fieldId(firstInvalid);
       document.getElementById(targetId)?.focus();
       return;
     }
 
-    setStatus("submitting");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-
-      if (!response.ok) throw new Error("request_failed");
-
-      setStatus("success");
-      setValues(emptyValues);
-    } catch {
-      setStatus("error");
+    if (!process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY) {
+      event.preventDefault();
+      setBlockedError(true);
+      return;
     }
-  }
 
-  const isSubmitting = status === "submitting";
+    // Honeypot: se um bot preencheu o campo invisível, a submissão nunca sai
+    // pro Web3Forms — mas finge sucesso pro bot (não dá nenhuma pista de que
+    // foi detectado), indo direto pra mesma página de obrigado de um envio
+    // real.
+    if (values.botcheck.trim() !== "") {
+      event.preventDefault();
+      window.location.href = localizedUrl(locale, "/obrigado");
+      return;
+    }
+
+    setIsSubmitting(true);
+    // Sem reset de isSubmitting: a página está prestes a navegar pro
+    // Web3Forms mesmo (submissão nativa), não para no "idle" de novo aqui.
+  }
 
   return (
     <section
@@ -183,182 +201,202 @@ export function Contact() {
           </div>
 
           <div className="mt-14 lg:mt-0">
-            {status === "success" ? (
-              <div role="status" tabIndex={-1} className="max-w-md border border-accent-2/40 bg-accent-2/[0.05] px-6 py-8 sm:px-8 sm:py-10">
-                <p className="text-lg font-semibold text-text">{t("successTitle")}</p>
-                <p className="mt-2 text-text/70">{t("successBody")}</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} noValidate className="max-w-xl">
-                <p className="mb-8 text-sm text-text/55">{t("requiredNote")}</p>
+            <form
+              action={WEB3FORMS_ENDPOINT}
+              method="POST"
+              onSubmit={handleSubmit}
+              noValidate
+              className="max-w-xl"
+            >
+              <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? ""} />
+              <input type="hidden" name="subject" value="Novo contato pelo site Yzev Tech" />
+              <input type="hidden" name="from_name" value="Site Yzev Tech" />
+              <input type="hidden" name="redirect" value={localizedUrl(locale, "/obrigado")} />
 
-                <div className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor={fieldId("nome")} className={labelClasses}>
-                      {t("fields.nome.label")}
-                    </label>
-                    <input
-                      id={fieldId("nome")}
-                      name="nome"
-                      type="text"
-                      autoComplete="name"
-                      placeholder={t("fields.nome.placeholder")}
-                      value={values.nome}
-                      onChange={(e) => updateField("nome", e.target.value)}
-                      aria-required="true"
-                      aria-invalid={Boolean(errors.nome)}
-                      aria-describedby={errors.nome ? `${fieldId("nome")}-error` : undefined}
-                      className={fieldClasses}
-                    />
-                    <FieldError id={`${fieldId("nome")}-error`} message={errors.nome} />
-                  </div>
+              {/* Honeypot anti-spam: fora da tela e fora da ordem de tab,
+                  para humanos nunca verem nem alcançarem com teclado — bots
+                  que preenchem todo campo que encontram costumam preencher
+                  este também. Mesmo nome que o Web3Forms reconhece como
+                  honeypot nativo deles, então funciona em duas camadas. */}
+              <input
+                type="text"
+                name="botcheck"
+                value={values.botcheck}
+                onChange={(e) => updateField("botcheck", e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+              />
 
-                  <div>
-                    <label htmlFor={fieldId("empresa")} className={labelClasses}>
-                      {t("fields.empresa.label")}
-                      <Optional label={t("optional")} />
-                    </label>
-                    <input
-                      id={fieldId("empresa")}
-                      name="empresa"
-                      type="text"
-                      autoComplete="organization"
-                      placeholder={t("fields.empresa.placeholder")}
-                      value={values.empresa}
-                      onChange={(e) => updateField("empresa", e.target.value)}
-                      className={fieldClasses}
-                    />
-                  </div>
+              <p className="mb-8 text-sm text-text/55">{t("requiredNote")}</p>
 
-                  <div>
-                    <label htmlFor={fieldId("email")} className={labelClasses}>
-                      {t("fields.email.label")}
-                    </label>
-                    <input
-                      id={fieldId("email")}
-                      name="email"
-                      type="email"
-                      inputMode="email"
-                      autoComplete="email"
-                      placeholder={t("fields.email.placeholder")}
-                      value={values.email}
-                      onChange={(e) => updateField("email", e.target.value)}
-                      aria-required="true"
-                      aria-invalid={Boolean(errors.email)}
-                      aria-describedby={errors.email ? `${fieldId("email")}-error` : undefined}
-                      className={fieldClasses}
-                    />
-                    <FieldError id={`${fieldId("email")}-error`} message={errors.email} />
-                  </div>
-
-                  <div>
-                    <label htmlFor={fieldId("whatsapp")} className={labelClasses}>
-                      {t("fields.whatsapp.label")}
-                      <Optional label={t("optional")} />
-                    </label>
-                    <input
-                      id={fieldId("whatsapp")}
-                      name="whatsapp"
-                      type="tel"
-                      inputMode="tel"
-                      autoComplete="tel"
-                      placeholder={t("fields.whatsapp.placeholder")}
-                      value={values.whatsapp}
-                      onChange={(e) => updateField("whatsapp", e.target.value)}
-                      className={fieldClasses}
-                    />
-                  </div>
-                </div>
-
-                <fieldset className="mt-8">
-                  <legend className={labelClasses}>
-                    {t("necessidadeLegend")}
-                    <span className="ml-1.5 normal-case tracking-normal text-text/45">{t("necessidadeHint")}</span>
-                  </legend>
-                  <div
-                    role="radiogroup"
-                    aria-required="true"
-                    aria-invalid={Boolean(errors.necessidade)}
-                    aria-describedby={errors.necessidade ? `${idPrefix}-necessidade-error` : undefined}
-                    className="mt-3 flex flex-wrap gap-2.5"
-                  >
-                    {necessidadeOptions.map((option, index) => (
-                      <label key={option} className="cursor-pointer">
-                        <input
-                          id={index === 0 ? `${idPrefix}-necessidade-0` : undefined}
-                          type="radio"
-                          name="necessidade"
-                          value={option}
-                          checked={values.necessidade === option}
-                          onChange={(e) => updateField("necessidade", e.target.value)}
-                          className="peer sr-only"
-                        />
-                        {/* Caixa normal + estado selecionado visível (tinta
-                            verde, borda e ✓) — antes, em caixa alta, os chips
-                            se confundiam com os rótulos dos campos. */}
-                        <span className="inline-flex items-center gap-2 border border-divider px-4 py-2.5 text-sm font-medium text-text/80 transition-colors duration-200 hover:border-text/30 hover:text-text peer-checked:border-accent-2 peer-checked:bg-accent-2/[0.1] peer-checked:text-text peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent-2 [&>svg]:hidden peer-checked:[&>svg]:block">
-                          <Check className="h-3.5 w-3.5 text-accent-2" aria-hidden="true" />
-                          {t(`options.${option}`)}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                  <FieldError id={`${idPrefix}-necessidade-error`} message={errors.necessidade} />
-                </fieldset>
-
-                <div className="mt-8">
-                  <label htmlFor={fieldId("mensagem")} className={labelClasses}>
-                    {t("fields.mensagem.label")}
+              <div className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-2">
+                <div>
+                  <label htmlFor={fieldId("nome")} className={labelClasses}>
+                    {t("fields.nome.label")}
                   </label>
-                  <textarea
-                    id={fieldId("mensagem")}
-                    name="mensagem"
-                    rows={4}
-                    placeholder={t("fields.mensagem.placeholder")}
-                    value={values.mensagem}
-                    onChange={(e) => updateField("mensagem", e.target.value)}
+                  <input
+                    id={fieldId("nome")}
+                    name="nome"
+                    type="text"
+                    autoComplete="name"
+                    placeholder={t("fields.nome.placeholder")}
+                    value={values.nome}
+                    onChange={(e) => updateField("nome", e.target.value)}
                     aria-required="true"
-                    aria-invalid={Boolean(errors.mensagem)}
-                    aria-describedby={errors.mensagem ? `${fieldId("mensagem")}-error` : undefined}
-                    className={`${fieldClasses} resize-y min-h-28`}
+                    aria-invalid={Boolean(errors.nome)}
+                    aria-describedby={errors.nome ? `${fieldId("nome")}-error` : undefined}
+                    className={fieldClasses}
                   />
-                  <FieldError id={`${fieldId("mensagem")}-error`} message={errors.mensagem} />
+                  <FieldError id={`${fieldId("nome")}-error`} message={errors.nome} />
                 </div>
 
-                {status === "error" && (
-                  <div role="alert" className="mt-8 border border-red-400/40 bg-red-400/[0.06] px-5 py-4 text-sm">
-                    <p className="text-red-300">{t("errorTitle")}</p>
-                    <p className="mt-1 text-text/70">
-                      {t("errorBodyBefore")}{" "}
-                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-accent-2 underline underline-offset-2">
-                        {t("errorBodyLinkLabel")}
-                      </a>
-                      .
-                    </p>
-                  </div>
-                )}
+                <div>
+                  <label htmlFor={fieldId("empresa")} className={labelClasses}>
+                    {t("fields.empresa.label")}
+                    <Optional label={t("optional")} />
+                  </label>
+                  <input
+                    id={fieldId("empresa")}
+                    name="empresa"
+                    type="text"
+                    autoComplete="organization"
+                    placeholder={t("fields.empresa.placeholder")}
+                    value={values.empresa}
+                    onChange={(e) => updateField("empresa", e.target.value)}
+                    className={fieldClasses}
+                  />
+                </div>
 
-                <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
-                  <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting} className={ctaClasses}>
-                    {isSubmitting ? t("submitting") : t("submit")}
-                    {!isSubmitting && (
-                      <ArrowRight
-                        className="h-4 w-4 text-accent-2 transition-transform duration-200 group-hover:translate-x-1"
-                        aria-hidden="true"
+                <div>
+                  <label htmlFor={fieldId("email")} className={labelClasses}>
+                    {t("fields.email.label")}
+                  </label>
+                  <input
+                    id={fieldId("email")}
+                    name="email"
+                    type="email"
+                    inputMode="email"
+                    autoComplete="email"
+                    placeholder={t("fields.email.placeholder")}
+                    value={values.email}
+                    onChange={(e) => updateField("email", e.target.value)}
+                    aria-required="true"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? `${fieldId("email")}-error` : undefined}
+                    className={fieldClasses}
+                  />
+                  <FieldError id={`${fieldId("email")}-error`} message={errors.email} />
+                </div>
+
+                <div>
+                  <label htmlFor={fieldId("whatsapp")} className={labelClasses}>
+                    {t("fields.whatsapp.label")}
+                    <Optional label={t("optional")} />
+                  </label>
+                  <input
+                    id={fieldId("whatsapp")}
+                    name="whatsapp"
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    placeholder={t("fields.whatsapp.placeholder")}
+                    value={values.whatsapp}
+                    onChange={(e) => updateField("whatsapp", e.target.value)}
+                    className={fieldClasses}
+                  />
+                </div>
+              </div>
+
+              <fieldset className="mt-8">
+                <legend className={labelClasses}>
+                  {t("necessidadeLegend")}
+                  <span className="ml-1.5 normal-case tracking-normal text-text/45">{t("necessidadeHint")}</span>
+                </legend>
+                <div
+                  role="radiogroup"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.necessidade)}
+                  aria-describedby={errors.necessidade ? `${idPrefix}-necessidade-error` : undefined}
+                  className="mt-3 flex flex-wrap gap-2.5"
+                >
+                  {necessidadeOptions.map((option, index) => (
+                    <label key={option} className="cursor-pointer">
+                      <input
+                        id={index === 0 ? `${idPrefix}-necessidade-0` : undefined}
+                        type="radio"
+                        name="necessidade"
+                        value={option}
+                        checked={values.necessidade === option}
+                        onChange={(e) => updateField("necessidade", e.target.value)}
+                        className="peer sr-only"
                       />
-                    )}
-                  </button>
+                      {/* Caixa normal + estado selecionado visível (tinta
+                          verde, borda e ✓) — antes, em caixa alta, os chips
+                          se confundiam com os rótulos dos campos. */}
+                      <span className="inline-flex items-center gap-2 border border-divider px-4 py-2.5 text-sm font-medium text-text/80 transition-colors duration-200 hover:border-text/30 hover:text-text peer-checked:border-accent-2 peer-checked:bg-accent-2/[0.1] peer-checked:text-text peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent-2 [&>svg]:hidden peer-checked:[&>svg]:block">
+                        <Check className="h-3.5 w-3.5 text-accent-2" aria-hidden="true" />
+                        {t(`options.${option}`)}
+                      </span>
+                    </label>
+                  ))}
                 </div>
+                <FieldError id={`${idPrefix}-necessidade-error`} message={errors.necessidade} />
+              </fieldset>
 
-                <p className="mt-6 max-w-sm text-sm text-text/55">
-                  {t("consentBefore")}{" "}
-                  <Link href="/privacidade" className="text-text/75 underline underline-offset-2 hover:text-accent-2">
-                    {t("consentLinkLabel")}
-                  </Link>
-                  .
-                </p>
-              </form>
-            )}
+              <div className="mt-8">
+                <label htmlFor={fieldId("mensagem")} className={labelClasses}>
+                  {t("fields.mensagem.label")}
+                </label>
+                <textarea
+                  id={fieldId("mensagem")}
+                  name="mensagem"
+                  rows={4}
+                  placeholder={t("fields.mensagem.placeholder")}
+                  value={values.mensagem}
+                  onChange={(e) => updateField("mensagem", e.target.value)}
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.mensagem)}
+                  aria-describedby={errors.mensagem ? `${fieldId("mensagem")}-error` : undefined}
+                  className={`${fieldClasses} resize-y min-h-28`}
+                />
+                <FieldError id={`${fieldId("mensagem")}-error`} message={errors.mensagem} />
+              </div>
+
+              {blockedError && (
+                <div role="alert" className="mt-8 border border-red-400/40 bg-red-400/[0.06] px-5 py-4 text-sm">
+                  <p className="text-red-300">{t("errorTitle")}</p>
+                  <p className="mt-1 text-text/70">
+                    {t("errorBodyBefore")}{" "}
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-accent-2 underline underline-offset-2">
+                      {t("errorBodyLinkLabel")}
+                    </a>
+                    .
+                  </p>
+                </div>
+              )}
+
+              <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
+                <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting} className={ctaClasses}>
+                  {isSubmitting ? t("submitting") : t("submit")}
+                  {!isSubmitting && (
+                    <ArrowRight
+                      className="h-4 w-4 text-accent-2 transition-transform duration-200 group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
+                  )}
+                </button>
+              </div>
+
+              <p className="mt-6 max-w-sm text-sm text-text/55">
+                {t("consentBefore")}{" "}
+                <Link href="/privacidade" className="text-text/75 underline underline-offset-2 hover:text-accent-2">
+                  {t("consentLinkLabel")}
+                </Link>
+                .
+              </p>
+            </form>
           </div>
         </div>
       </Container>
