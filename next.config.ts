@@ -20,7 +20,7 @@ const createNextIntlPlugin = require("next-intl/plugin") as typeof import("next-
 // de propósito: se o deploy mudar de plataforma, ou alguém rodar `next
 // start` em outro ambiente, isso garante que continuam valendo sem depender
 // de onde o site está hospedado. A Content-Security-Policy NÃO está aqui:
-// ela precisa de um nonce diferente a cada requisição (ver src/proxy.ts) por
+// ela precisa de um nonce diferente a cada requisição (ver src/middleware.ts) por
 // causa dos <script> inline que o próprio App Router injeta para hidratar a
 // página — um valor estático não pode acompanhar isso, por isso vive só no
 // middleware (que roda em qualquer plataforma, não só na Vercel).

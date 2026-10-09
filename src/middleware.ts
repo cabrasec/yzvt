@@ -42,11 +42,19 @@ function buildCsp(nonce: string): string {
   ].join("; ");
 }
 
-export default function proxy(request: NextRequest) {
-  // btoa (Web padrão), não Buffer: o middleware roda no Edge Runtime na
-  // Vercel por padrão, que não tem as APIs nativas do Node — Buffer
-  // funcionava em `next dev`/`next start` (Node.js local) mas quebraria no
-  // deploy de verdade.
+// Fica em middleware.ts, não proxy.ts: o Next 16 renomeou o arquivo pra
+// "proxy", mas proxy.ts roda obrigatoriamente em runtime Node.js — a própria
+// documentação do Next diz "se quiser continuar usando o Edge runtime,
+// continue usando middleware". A Vercel ainda espera Edge aqui pra reescrever
+// a rota de locale (next-intl) antes da requisição chegar nas funções da
+// aplicação; com proxy.ts (Node.js) o rewrite de "/" -> "/pt" não acontecia
+// e todas as rotas voltavam 404 em produção, mesmo com o build passando
+// local. Reverter para middleware.ts resolve — o aviso de depreciação no
+// terminal é só cosmético por enquanto (o próprio Next diz que vai dar
+// instruções de Edge pra "proxy" numa versão futura).
+export default function middleware(request: NextRequest) {
+  // btoa (Web padrão), não Buffer: mais portável entre Edge e Node — não
+  // custa nada manter, mesmo o Edge sendo o runtime real aqui.
   const nonce = btoa(crypto.randomUUID());
   const csp = buildCsp(nonce);
 
