@@ -5,15 +5,26 @@ type Signal = {
   text: string;
 };
 
+export type DiagnosticVisualLabels = {
+  file: string;
+  person: string;
+  chainSteps: string[];
+  loopTasks: string[];
+  loopCaption: string;
+  dataExists: string;
+  decisionHappens: string;
+};
+
 type DiagnosticSignalsProps = {
   items: Signal[];
+  labels: DiagnosticVisualLabels;
 };
 
 // Sinal 01 — mesmo arquivo, números diferentes por pessoa.
-function VisualMismatch() {
+function VisualMismatch({ labels }: { labels: DiagnosticVisualLabels }) {
   return (
     <div aria-hidden="true" className="flex w-full max-w-64 flex-col items-center">
-      <p className="text-[11.5px] text-text/60">Arquivo</p>
+      <p className="text-[11.5px] text-text/60">{labels.file}</p>
       <div className="h-[18px] w-px bg-divider" />
       <div className="relative h-px w-full">
         <div className="absolute left-[16.667%] right-[16.667%] top-0 h-px bg-divider" />
@@ -25,15 +36,15 @@ function VisualMismatch() {
       </div>
       <div className="grid w-full grid-cols-3 justify-items-center">
         <div className="flex flex-col items-center gap-2">
-          <p className="text-[11.5px] text-text/60">Pessoa</p>
+          <p className="text-[11.5px] text-text/60">{labels.person}</p>
           <p className="text-sm font-semibold">42</p>
         </div>
         <div className="flex flex-col items-center gap-2">
-          <p className="text-[11.5px] text-text/60">Pessoa</p>
+          <p className="text-[11.5px] text-text/60">{labels.person}</p>
           <p className="text-sm font-semibold text-accent">38</p>
         </div>
         <div className="flex flex-col items-center gap-2">
-          <p className="text-[11.5px] text-text/60">Pessoa</p>
+          <p className="text-[11.5px] text-text/60">{labels.person}</p>
           <p className="text-sm font-semibold">42</p>
         </div>
       </div>
@@ -42,19 +53,14 @@ function VisualMismatch() {
 }
 
 // Sinal 02 — a mesma informação passa por ferramentas cada vez mais distantes.
-function VisualChain() {
-  const steps = [
-    { label: "WhatsApp", width: "w-3.5" },
-    { label: "Planilha", width: "w-6" },
-    { label: "E-mail", width: "w-9" },
-    { label: "Responsável", width: "w-12" },
-  ];
+const chainWidths = ["w-3.5", "w-6", "w-9", "w-12"];
+function VisualChain({ labels }: { labels: DiagnosticVisualLabels }) {
   return (
     <div aria-hidden="true" className="flex w-full max-w-60 flex-col gap-2.5">
-      {steps.map((step) => (
-        <div key={step.label} className="flex items-center gap-2.5">
-          <div className={`h-px border-t border-dashed border-text/25 ${step.width}`} />
-          <p className="text-[11.5px] text-text/60">{step.label}</p>
+      {labels.chainSteps.map((label, index) => (
+        <div key={label} className="flex items-center gap-2.5">
+          <div className={`h-px border-t border-dashed border-text/25 ${chainWidths[index]}`} />
+          <p className="text-[11.5px] text-text/60">{label}</p>
         </div>
       ))}
     </div>
@@ -62,12 +68,11 @@ function VisualChain() {
 }
 
 // Sinal 03 — as mesmas quatro tarefas, fechadas em loop, todos os dias.
-function VisualLoop() {
-  const tasks = ["Copiar", "Conferir", "Atualizar", "Enviar"];
+function VisualLoop({ labels }: { labels: DiagnosticVisualLabels }) {
   return (
     <div aria-hidden="true" className="inline-block max-w-60">
       <div className="flex flex-wrap gap-x-3.5 gap-y-2">
-        {tasks.map((task) => (
+        {labels.loopTasks.map((task) => (
           <p key={task} className="text-[11.5px] text-text/60">
             {task}
           </p>
@@ -78,13 +83,13 @@ function VisualLoop() {
         <div className="absolute inset-y-0 right-0 w-px bg-accent/50" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-accent/50" />
       </div>
-      <p className="mt-2.5 text-[11.5px] text-text/60">Todos os dias, de novo</p>
+      <p className="mt-2.5 text-[11.5px] text-text/60">{labels.loopCaption}</p>
     </div>
   );
 }
 
 // Sinal 04 — o dado já existe bem antes de a decisão finalmente acontecer.
-function VisualDelay() {
+function VisualDelay({ labels }: { labels: DiagnosticVisualLabels }) {
   return (
     <div aria-hidden="true" className="w-full max-w-60">
       <div className="relative my-3.5 h-px bg-divider">
@@ -93,8 +98,8 @@ function VisualDelay() {
         <div className="absolute -top-[7px] right-0 h-[15px] w-px bg-accent" />
       </div>
       <div className="flex items-start justify-between gap-3">
-        <p className="text-[11.5px] text-text/60">O dado existe</p>
-        <p className="text-right text-[11.5px] font-semibold text-text">A decisão acontece</p>
+        <p className="text-[11.5px] text-text/60">{labels.dataExists}</p>
+        <p className="text-right text-[11.5px] font-semibold text-text">{labels.decisionHappens}</p>
       </div>
     </div>
   );
@@ -107,7 +112,7 @@ const visuals = [VisualMismatch, VisualChain, VisualLoop, VisualDelay];
 // escolher um sinal, é reconhecer que os quatro já aconteceram. Um pequeno
 // diagrama ilustra cada cena, alternando de lado para criar um zigue-zague
 // de leitura em vez de uma coluna repetitiva de quatro blocos iguais.
-export function DiagnosticSignals({ items }: DiagnosticSignalsProps) {
+export function DiagnosticSignals({ items, labels }: DiagnosticSignalsProps) {
   return (
     <div className="mt-10 flex flex-col">
       {items.map((item, index) => {
@@ -130,7 +135,7 @@ export function DiagnosticSignals({ items }: DiagnosticSignalsProps) {
               <p className="mt-3 max-w-xl text-text/75">{item.text}</p>
             </div>
             <div className="flex flex-none justify-center pt-2 sm:w-60">
-              <Visual />
+              <Visual labels={labels} />
             </div>
           </div>
         );

@@ -1,0 +1,29 @@
+{
+  "ServiceInfraestrutura": {
+    "metaTitle": "Infrastructure | Yzev",
+    "metaDescription": "A stable technical foundation for the business to grow without relying on patchwork fixes.",
+    "eyebrow": "What we do",
+    "title": "Infrastructure",
+    "lead": "A stable technical foundation for the business to grow without relying on patchwork fixes.",
+    "sections": [
+      {
+        "title": "What's included",
+        "body": "We organize servers, networks, backups and the technical environment that keeps day-to-day operations running — in the simplest way that solves the problem, without unnecessary complexity."
+      },
+      {
+        "title": "When it makes sense",
+        "body": "When the company's growth starts running into unstable systems, manual maintenance work, or dependence on a single person to keep everything running."
+      }
+    ],
+    "examplesLabel": "Where it applies",
+    "examples": [
+      "Organized, documented servers and networks",
+      "Backup and recovery routines",
+      "Monitoring to catch problems before customers do",
+      "Migrating legacy systems without stopping operations"
+    ],
+    "ctaTitle": "Want a technical foundation that can handle growth?",
+    "ctaBody": "Tell us what's holding things back today — we'll tell you plainly if infrastructure is the issue.",
+    "ctaButtonLabel": "Let's talk"
+  }
+}

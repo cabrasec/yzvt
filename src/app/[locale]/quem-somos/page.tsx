@@ -6,6 +6,7 @@ import { Container } from "@/components/Container";
 import { buttonClasses } from "@/components/Button";
 import { FlowChain } from "@/components/insights/FlowChain";
 import { Link } from "@/i18n/navigation";
+import { buildAlternates } from "@/lib/site";
 
 // Nenhum número, cliente, equipe ou case é citado nesta página — apenas o
 // posicionamento que já existe no site (Home, Insights). FlowChain é
@@ -24,6 +25,7 @@ export async function generateMetadata({
   return {
     title: t("metaTitle"),
     description: t("metaDescription"),
+    alternates: buildAlternates(locale, "/quem-somos"),
   };
 }
 

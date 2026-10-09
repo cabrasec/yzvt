@@ -11,6 +11,7 @@ import { ArticleIndex } from "@/components/insights/ArticleIndex";
 import { HeroFlow } from "@/components/insights/HeroFlow";
 import { DiagnosticSignals } from "@/components/insights/DiagnosticSignals";
 import { PossibilityMap } from "@/components/insights/PossibilityMap";
+import { buildAlternates } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -24,6 +25,7 @@ export async function generateMetadata({
   return {
     title: `${metaT("quandoPlanilha.title")} | YZEV Tech`,
     description: t("metaDescription"),
+    alternates: buildAlternates(locale, "/insights/quando-uma-planilha-deixa-de-ser-suficiente"),
   };
 }
 
@@ -103,14 +105,14 @@ export default function Page() {
             <p className="mt-6 max-w-md text-lg text-text/75">{t("heroIntro")}</p>
           </div>
 
-          <HeroFlow />
+          <HeroFlow labels={t.raw("heroFlow")} />
         </Container>
       </section>
 
       <article>
         {/* CORPO EDITORIAL — bloco 1: índice lateral + problema + sinais */}
         <Container className={`py-20 sm:py-24 ${readingGrid} lg:py-28`}>
-          <ArticleIndex items={indexItems} className="mb-14 lg:mb-0" />
+          <ArticleIndex items={indexItems} navLabel={metaT("articleIndexLabel")} className="mb-14 lg:mb-0" />
 
           <div className="max-w-3xl space-y-20 sm:space-y-24 lg:space-y-28">
             {/* 02 — O problema */}
@@ -162,7 +164,7 @@ export default function Page() {
                 {t("signals.titleLine2")}
               </h2>
               <p className="mt-5 text-lg text-text/75">{t("signals.intro")}</p>
-              <DiagnosticSignals items={signals} />
+              <DiagnosticSignals items={signals} labels={t.raw("signals.visuals")} />
             </section>
           </div>
         </Container>
@@ -227,7 +229,7 @@ export default function Page() {
                 {t("possibility.title")}
               </h2>
               <p className="mt-5 max-w-xl text-lg text-text/75">{t("possibility.intro")}</p>
-              <PossibilityMap />
+              <PossibilityMap items={t.raw("possibility.items")} />
             </section>
           </div>
         </Container>

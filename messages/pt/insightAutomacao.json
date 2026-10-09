@@ -52,7 +52,7 @@
       },
       "closing": "Nada disso depende de um chatbot respondendo mensagens. Depende do processo estar descrito de um jeito que o sistema consiga seguir sozinho, do início ao fim, exceto quando algo foge da regra. Nesse ponto, a pessoa assume de novo."
     },
-    "darkQuestion": "A pergunta não é: o que podemos automatizar?<br/>É: onde a presença de uma <accent>pessoa</accent> realmente faz diferença?",
+    "darkQuestion": "A pergunta não é: o que podemos automatizar?<br></br>É: onde a presença de uma <accent>pessoa</accent> realmente faz diferença?",
     "canHappenAlone": {
       "automaticLabel": "Pode acontecer automaticamente",
       "automaticItems": [

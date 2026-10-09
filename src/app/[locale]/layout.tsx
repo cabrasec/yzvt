@@ -7,6 +7,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { SITE_URL } from "@/lib/site";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -32,8 +33,18 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Layout" });
   return {
+    metadataBase: new URL(SITE_URL),
     title: t("title"),
     description: t("description"),
+    openGraph: {
+      siteName: "Yzev Tech",
+      type: "website",
+      images: [{ url: "/img/og-image.png", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: ["/img/og-image.png"],
+    },
   };
 }
 

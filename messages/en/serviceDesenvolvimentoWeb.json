@@ -1,0 +1,29 @@
+{
+  "ServiceDesenvolvimentoWeb": {
+    "metaTitle": "Web Development | Yzev",
+    "metaDescription": "Websites and pages that sell — not just exist.",
+    "eyebrow": "What we do",
+    "title": "Web Development",
+    "lead": "Websites and pages that sell — not just exist.",
+    "sections": [
+      {
+        "title": "What's included",
+        "body": "Institutional websites, landing pages and product pages built to turn a visit into a contact, not just to be online."
+      },
+      {
+        "title": "When it makes sense",
+        "body": "When the current site doesn't communicate what the company actually does, has no clear path to contact, or simply doesn't exist yet."
+      }
+    ],
+    "examplesLabel": "Where it applies",
+    "examples": [
+      "Landing pages for campaigns and launches",
+      "Institutional websites",
+      "Product pages built for conversion",
+      "Optimizing existing sites that aren't selling"
+    ],
+    "ctaTitle": "Does your site communicate what your company actually does?",
+    "ctaBody": "Send us the link to what you have today — we'll give you an honest read before proposing anything.",
+    "ctaButtonLabel": "Let's talk"
+  }
+}

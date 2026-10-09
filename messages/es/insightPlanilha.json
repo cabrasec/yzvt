@@ -2,6 +2,16 @@
   "InsightPlanilha": {
     "metaDescription": "Las hojas de cálculo funcionan muy bien hasta el momento en que el proceso empieza a depender más del equipo que de la propia herramienta. Una lectura para quienes administran una empresa pequeña o mediana.",
     "heroIntro": "Las hojas de cálculo funcionan muy bien hasta el momento en que el proceso empieza a depender más del equipo que de la propia herramienta. Una lectura para quienes administran una empresa pequeña o mediana y ya empiezan a notarlo.",
+    "heroFlow": {
+      "clientOrder": "Pedido del cliente",
+      "spreadsheet": "Hoja de cálculo",
+      "whatsapp": "WhatsApp",
+      "email": "Correo",
+      "responsible": "Responsable",
+      "otherSpreadsheet": "Otra hoja de cálculo",
+      "mondayReport": "Informe del lunes",
+      "caption": "Un pedido, seis lugares. Cada línea es un traspaso de información que hoy depende de que alguien se acuerde de hacerlo."
+    },
     "index": {
       "problema": "El problema",
       "sinais": "Las cuatro señales",
@@ -50,7 +60,16 @@
           "heading": "La reunión del lunes empieza con alguien consolidando la hoja de cálculo.",
           "text": "Cuando los datos deben reunirse a mano antes de una decisión, la decisión siempre llega después del momento en que más valía."
         }
-      ]
+      ],
+      "visuals": {
+        "file": "Archivo",
+        "person": "Persona",
+        "chainSteps": ["WhatsApp", "Hoja de cálculo", "Correo", "Responsable"],
+        "loopTasks": ["Copiar", "Verificar", "Actualizar", "Enviar"],
+        "loopCaption": "Todos los días, otra vez",
+        "dataExists": "El dato existe",
+        "decisionHappens": "La decisión ocurre"
+      }
     },
     "manifesto": {
       "part1": "Cuando una operación necesita ser organizada constantemente por alguien, quizás necesite ser organizada por",
@@ -80,7 +99,15 @@
     },
     "possibility": {
       "title": "Quizás el problema que estás intentando organizar ya sea un producto.",
-      "intro": "No todo problema necesita un sistema. Pero algunos procesos dejan de funcionar bien cuando dependen de demasiados controles manuales."
+      "intro": "No todo problema necesita un sistema. Pero algunos procesos dejan de funcionar bien cuando dependen de demasiados controles manuales.",
+      "items": [
+        { "label": "Pedidos", "text": "Recibir, validar, distribuir, dar seguimiento y actualizar automáticamente." },
+        { "label": "Atención", "text": "Centralizar solicitudes y mantener cada atención como un paso rastreable." },
+        { "label": "Operaciones", "text": "Organizar rutinas repetitivas en procesos ejecutables." },
+        { "label": "Gestión", "text": "Consolidar información de diferentes áreas." },
+        { "label": "Seguimiento", "text": "Saber qué pasó, quién lo hizo, cuándo y cuál es el siguiente paso." },
+        { "label": "Sistemas propios", "text": "Construir una herramienta cuando las soluciones listas no reflejan la realidad de la empresa." }
+      ]
     },
     "operationPanel": {
       "ariaLabel": "Panel de operación organizado por software",

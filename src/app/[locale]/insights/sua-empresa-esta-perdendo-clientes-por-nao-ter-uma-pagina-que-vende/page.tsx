@@ -9,6 +9,7 @@ import { ArticleIndex } from "@/components/insights/ArticleIndex";
 import { FlowChain } from "@/components/insights/FlowChain";
 import { Link } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { buildAlternates } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -24,6 +25,10 @@ export async function generateMetadata({
   return {
     title: `${tMeta("perdendoClientes.title")} | Yzev`,
     description: t("metaDescription"),
+    alternates: buildAlternates(
+      locale,
+      "/insights/sua-empresa-esta-perdendo-clientes-por-nao-ter-uma-pagina-que-vende",
+    ),
   };
 }
 
@@ -98,7 +103,7 @@ export default function Page() {
       <article>
         {/* CORPO EDITORIAL — bloco 1: índice lateral + problema */}
         <Container className={`py-20 sm:py-24 ${readingGrid} lg:py-28`}>
-          <ArticleIndex items={indexItems} className="mb-14 lg:mb-0" />
+          <ArticleIndex items={indexItems} navLabel={tMeta("articleIndexLabel")} className="mb-14 lg:mb-0" />
 
           <div className="max-w-3xl space-y-20 sm:space-y-24 lg:space-y-28">
             <section id="problema" className="scroll-mt-28">
@@ -266,7 +271,7 @@ export default function Page() {
               </a>
             </section>
 
-            <section aria-label="Continue lendo" className="border-t border-divider pt-10 sm:pt-12">
+            <section aria-label={t("continueReading.label")} className="border-t border-divider pt-10 sm:pt-12">
               <p className="text-xs uppercase tracking-[0.2em] text-text/60">{t("continueReading.label")}</p>
               <div className="mt-7 grid gap-8 sm:grid-cols-3 sm:gap-10">
                 {relatedArticles.map((article, index) => (

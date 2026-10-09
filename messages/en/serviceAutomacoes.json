@@ -1,0 +1,29 @@
+{
+  "ServiceAutomacoes": {
+    "metaTitle": "Automation | Yzev",
+    "metaDescription": "Repetitive tasks happening on their own, so the team can spend time on what actually needs attention.",
+    "eyebrow": "What we do",
+    "title": "Automation",
+    "lead": "Repetitive tasks happening on their own, so the team can spend time on what actually needs attention.",
+    "sections": [
+      {
+        "title": "What's included",
+        "body": "We automate contact with customers and partners across channels like WhatsApp, Instagram and email, plus internal routines that today depend on someone copying information from one system to another."
+      },
+      {
+        "title": "When it makes sense",
+        "body": "When a process always follows the same pattern, but still depends on someone remembering to do it — confirm an order, update a spreadsheet, send a message."
+      }
+    ],
+    "examplesLabel": "Where it applies",
+    "examples": [
+      "WhatsApp support and Instagram orders",
+      "Automatic confirmations and customer follow-up",
+      "Syncing data between systems",
+      "Administrative routines and messaging"
+    ],
+    "ctaTitle": "Is there a task that repeats every single day?",
+    "ctaBody": "Tell us how it works today — we'll assess whether it can be automated and how.",
+    "ctaButtonLabel": "Let's talk"
+  }
+}

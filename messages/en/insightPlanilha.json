@@ -2,6 +2,16 @@
   "InsightPlanilha": {
     "metaDescription": "Spreadsheets work well right up until the process starts depending more on the team than on the tool itself. A read for anyone running a small or midsize business.",
     "heroIntro": "Spreadsheets work well right up until the process starts depending more on the team than on the tool itself. A read for anyone running a small or midsize business who's starting to feel it happen.",
+    "heroFlow": {
+      "clientOrder": "Customer order",
+      "spreadsheet": "Spreadsheet",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "responsible": "Point person",
+      "otherSpreadsheet": "Another spreadsheet",
+      "mondayReport": "Monday report",
+      "caption": "One order, six stops. Each line is a handoff of information that today depends on someone remembering to do it."
+    },
     "index": {
       "problema": "The problem",
       "sinais": "The four signs",
@@ -36,7 +46,7 @@
           "number": "02",
           "kicker": "Fragmented process",
           "heading": "The order comes in on WhatsApp, gets jotted down in the spreadsheet, and confirmed by email.",
-          "text": "The process runs through four or five tools that don't talk to each other. No one holds the whole operation in one place — just pieces of it."
+          "text": "The process runs through four or five tools that don't talk to each other. No one holds the whole operation in one place, just pieces of it."
         },
         {
           "number": "03",
@@ -50,7 +60,16 @@
           "heading": "Monday's meeting starts with someone consolidating the spreadsheet.",
           "text": "When data has to be pulled together by hand before a decision can be made, the decision always arrives after the moment it mattered most."
         }
-      ]
+      ],
+      "visuals": {
+        "file": "File",
+        "person": "Person",
+        "chainSteps": ["WhatsApp", "Spreadsheet", "Email", "Point person"],
+        "loopTasks": ["Copy", "Check", "Update", "Send"],
+        "loopCaption": "Every day, all over again",
+        "dataExists": "The data exists",
+        "decisionHappens": "The decision happens"
+      }
     },
     "manifesto": {
       "part1": "When an operation needs to be constantly organized by someone, maybe it needs to be organized by",
@@ -75,12 +94,20 @@
         "Reproducible processes",
         "Information available the moment it's needed"
       ],
-      "paragraph1": "This doesn't mean abandoning the spreadsheet. Some processes are still better solved with one — it's the simplest, most appropriate tool for the job. Forcing a system where a spreadsheet already works just trades one problem for another.",
+      "paragraph1": "This doesn't mean abandoning the spreadsheet. There are processes where it's still the simplest, most appropriate solution. Forcing a system where a spreadsheet already works just trades one problem for another.",
       "paragraph2": "The decision point comes when the cost of keeping a manual process running starts to outweigh the benefit of sticking with a tool built to organize data, not to run an entire operation."
     },
     "possibility": {
       "title": "The problem you're trying to organize might already be a product.",
-      "intro": "Not every problem needs a system. But some processes stop working well once they depend on too many manual controls."
+      "intro": "Not every problem needs a system. But some processes stop working well once they depend on too many manual controls.",
+      "items": [
+        { "label": "Orders", "text": "Receive, validate, distribute, track and update automatically." },
+        { "label": "Support", "text": "Centralize requests and keep every interaction as a trackable step." },
+        { "label": "Operations", "text": "Turn repetitive routines into executable processes." },
+        { "label": "Management", "text": "Consolidate information from different areas." },
+        { "label": "Tracking", "text": "Know what happened, who did it, when, and what comes next." },
+        { "label": "Custom systems", "text": "Build a tool when off-the-shelf solutions don't reflect how the business actually works." }
+      ]
     },
     "operationPanel": {
       "ariaLabel": "Operations panel organized by software",

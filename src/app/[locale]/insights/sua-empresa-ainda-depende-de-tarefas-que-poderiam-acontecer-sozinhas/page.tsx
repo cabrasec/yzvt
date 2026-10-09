@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { Link } from "@/i18n/navigation";
 import { ArticleIndex } from "@/components/insights/ArticleIndex";
 import { FlowChain } from "@/components/insights/FlowChain";
+import { buildAlternates } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -21,6 +22,10 @@ export async function generateMetadata({
   return {
     title: `${metaT("tarefasSozinhas.title")} | Yzev`,
     description: t("meta.description"),
+    alternates: buildAlternates(
+      locale,
+      "/insights/sua-empresa-ainda-depende-de-tarefas-que-poderiam-acontecer-sozinhas",
+    ),
   };
 }
 
@@ -129,7 +134,7 @@ export default function Page() {
       <article>
         {/* CORPO EDITORIAL — bloco 1: índice lateral + os dois processos */}
         <Container className={`py-20 sm:py-24 ${readingGrid} lg:py-28`}>
-          <ArticleIndex items={indexItems} className="mb-14 lg:mb-0" />
+          <ArticleIndex items={indexItems} navLabel={tMeta("articleIndexLabel")} className="mb-14 lg:mb-0" />
 
           <div className="max-w-3xl space-y-20 sm:space-y-24 lg:space-y-28">
             {/* O processo manual */}

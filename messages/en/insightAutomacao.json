@@ -50,9 +50,9 @@
         "condition": "Cases outside the rules",
         "result": "A person takes over"
       },
-      "closing": "None of this depends on a chatbot answering messages. It depends on the process being described in a way the system can follow on its own, start to finish — except when something falls outside the rules. That's where a person steps back in."
+      "closing": "None of this depends on a chatbot answering messages. It depends on the process being described in a way the system can follow on its own, start to finish, except when something falls outside the rules. That's where a person steps back in."
     },
-    "darkQuestion": "The question isn't: what can we automate?<br/>It's: where does having a <accent>person</accent> there actually make a difference?",
+    "darkQuestion": "The question isn't: what can we automate?<br></br>It's: where does having a <accent>person</accent> there actually make a difference?",
     "canHappenAlone": {
       "automaticLabel": "Can happen automatically",
       "automaticItems": [

@@ -1,0 +1,29 @@
+{
+  "ServiceSoftwaresPlataformas": {
+    "metaTitle": "Softwares & Plataformas | Yzev",
+    "metaDescription": "Quando não existe solução pronta para o que a empresa precisa, construímos uma sob medida.",
+    "eyebrow": "O que fazemos",
+    "title": "Softwares & Plataformas",
+    "lead": "Quando não existe solução pronta para o que a empresa precisa, construímos uma sob medida.",
+    "sections": [
+      {
+        "title": "O que inclui",
+        "body": "Sistemas próprios, plataformas web e ferramentas internas desenhadas para a realidade específica do negócio — não um software genérico adaptado à força."
+      },
+      {
+        "title": "Quando faz sentido",
+        "body": "Quando as planilhas e ferramentas genéricas já não dão conta da operação, ou quando um processo interno é específico demais para uma solução pronta do mercado."
+      }
+    ],
+    "examplesLabel": "Exemplos de aplicação",
+    "examples": [
+      "Sistemas de gestão sob medida",
+      "Ferramentas internas para equipes",
+      "Plataformas web completas",
+      "Evolução de um MVP para um produto maduro"
+    ],
+    "ctaTitle": "Sua operação já passou do limite da planilha?",
+    "ctaBody": "Conte como o processo funciona hoje — a gente pensa junto se faz sentido virar sistema.",
+    "ctaButtonLabel": "Vamos conversar"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "ServiceCloud": {
+    "metaTitle": "Cloud | Yzev",
+    "metaDescription": "Systems running on the right amount of cloud for your business — without paying for capacity you don't use.",
+    "eyebrow": "What we do",
+    "title": "Cloud",
+    "lead": "Systems running on the right amount of cloud for your business — without paying for capacity you don't use.",
+    "sections": [
+      {
+        "title": "What's included",
+        "body": "Choosing and configuring cloud providers, migrating on-premise systems, and tuning costs so the monthly bill actually matches real usage."
+      },
+      {
+        "title": "When it makes sense",
+        "body": "When the company wants to scale without investing in its own servers, or when it's already on the cloud but paying more than it should due to poor configuration."
+      }
+    ],
+    "examplesLabel": "Where it applies",
+    "examples": [
+      "Migrating systems to the cloud",
+      "Architecture sized for real traffic",
+      "Cutting costs on providers you already use",
+      "Separate test and production environments"
+    ],
+    "ctaTitle": "Is your operation ready for the cloud?",
+    "ctaBody": "We assess the current setup and show the simplest path forward — even if that means staying as you are.",
+    "ctaButtonLabel": "Let's talk"
+  }
+}

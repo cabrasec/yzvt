@@ -2,6 +2,16 @@
   "InsightPlanilha": {
     "metaDescription": "Planilhas funcionam muito bem até o momento em que o processo começa a depender mais da operação do que da própria ferramenta. Uma leitura para quem administra uma empresa pequena ou média.",
     "heroIntro": "Planilhas funcionam muito bem até o momento em que o processo começa a depender mais da operação do que da própria ferramenta. Uma leitura para quem administra uma empresa pequena ou média e sente isso acontecendo.",
+    "heroFlow": {
+      "clientOrder": "Pedido do cliente",
+      "spreadsheet": "Planilha",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail",
+      "responsible": "Responsável",
+      "otherSpreadsheet": "Outra planilha",
+      "mondayReport": "Relatório de segunda",
+      "caption": "Um pedido, seis lugares. Cada linha é uma passagem de informação que hoje depende de alguém lembrar de fazer."
+    },
     "index": {
       "problema": "O problema",
       "sinais": "Os quatro sinais",
@@ -50,7 +60,16 @@
           "heading": "A reunião de segunda começa com alguém consolidando a planilha.",
           "text": "Quando os dados precisam ser reunidos à mão antes de uma decisão, a decisão sempre chega depois do momento em que ela valia mais."
         }
-      ]
+      ],
+      "visuals": {
+        "file": "Arquivo",
+        "person": "Pessoa",
+        "chainSteps": ["WhatsApp", "Planilha", "E-mail", "Responsável"],
+        "loopTasks": ["Copiar", "Conferir", "Atualizar", "Enviar"],
+        "loopCaption": "Todos os dias, de novo",
+        "dataExists": "O dado existe",
+        "decisionHappens": "A decisão acontece"
+      }
     },
     "manifesto": {
       "part1": "Quando uma operação precisa ser constantemente organizada por alguém, talvez ela precise ser organizada por",
@@ -80,7 +99,15 @@
     },
     "possibility": {
       "title": "Talvez o problema que você está tentando organizar já seja um produto.",
-      "intro": "Nem todo problema precisa de um sistema. Mas alguns processos deixam de funcionar bem quando dependem de controles manuais demais."
+      "intro": "Nem todo problema precisa de um sistema. Mas alguns processos deixam de funcionar bem quando dependem de controles manuais demais.",
+      "items": [
+        { "label": "Pedidos", "text": "Receber, validar, distribuir, acompanhar e atualizar automaticamente." },
+        { "label": "Atendimento", "text": "Centralizar solicitações e manter cada atendimento como uma etapa rastreável." },
+        { "label": "Operações", "text": "Organizar rotinas repetitivas em processos executáveis." },
+        { "label": "Gestão", "text": "Consolidar informações de diferentes áreas." },
+        { "label": "Acompanhamento", "text": "Saber o que aconteceu, quem fez, quando e qual é o próximo passo." },
+        { "label": "Sistemas próprios", "text": "Construir uma ferramenta quando as soluções prontas não refletem a realidade da empresa." }
+      ]
     },
     "operationPanel": {
       "ariaLabel": "Painel de operação organizado por software",

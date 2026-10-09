@@ -9,10 +9,11 @@ type IndexItem = {
 
 type ArticleIndexProps = {
   items: IndexItem[];
+  navLabel: string;
   className?: string;
 };
 
-export function ArticleIndex({ items, className = "" }: ArticleIndexProps) {
+export function ArticleIndex({ items, navLabel, className = "" }: ArticleIndexProps) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
 
   useEffect(() => {
@@ -43,7 +44,7 @@ export function ArticleIndex({ items, className = "" }: ArticleIndexProps) {
 
   return (
     <nav
-      aria-label="Índice do artigo"
+      aria-label={navLabel}
       className={`lg:sticky lg:top-28 lg:self-start ${className}`}
     >
       <ol className="flex gap-5 overflow-x-auto border-b border-divider pb-4 text-xs uppercase tracking-[0.12em] text-text/50 lg:flex-col lg:gap-3 lg:border-b-0 lg:border-l lg:border-divider lg:pb-0 lg:pl-5">

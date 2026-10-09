@@ -1,0 +1,29 @@
+{
+  "ServiceAutomacoes": {
+    "metaTitle": "Automatización | Yzev",
+    "metaDescription": "Tareas repetitivas que suceden solas, para que el equipo use su tiempo en lo que de verdad exige atención.",
+    "eyebrow": "Qué hacemos",
+    "title": "Automatización",
+    "lead": "Tareas repetitivas que suceden solas, para que el equipo use su tiempo en lo que de verdad exige atención.",
+    "sections": [
+      {
+        "title": "Qué incluye",
+        "body": "Automatizamos el contacto con clientes y socios en canales como WhatsApp, Instagram y correo electrónico, además de rutinas internas que hoy dependen de que alguien copie información de un sistema a otro."
+      },
+      {
+        "title": "Cuándo tiene sentido",
+        "body": "Cuando un proceso sigue siempre el mismo patrón, pero todavía depende de que alguien se acuerde de hacerlo — confirmar un pedido, actualizar una planilla, enviar un mensaje."
+      }
+    ],
+    "examplesLabel": "Dónde se aplica",
+    "examples": [
+      "Atención por WhatsApp y pedidos por Instagram",
+      "Confirmaciones automáticas y seguimiento de clientes",
+      "Actualización de datos entre sistemas",
+      "Rutinas administrativas y envío de mensajes"
+    ],
+    "ctaTitle": "¿Hay una tarea que se repite todos los días?",
+    "ctaBody": "Cuéntanos cómo funciona hoy — evaluamos si se puede automatizar y cómo.",
+    "ctaButtonLabel": "Hablemos"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "ServiceAutomacoes": {
+    "metaTitle": "Automações | Yzev",
+    "metaDescription": "Tarefas repetitivas acontecendo sozinhas, para a equipe gastar tempo com o que exige atenção de verdade.",
+    "eyebrow": "O que fazemos",
+    "title": "Automações",
+    "lead": "Tarefas repetitivas acontecendo sozinhas, para a equipe gastar tempo com o que exige atenção de verdade.",
+    "sections": [
+      {
+        "title": "O que inclui",
+        "body": "Automatizamos o contato com clientes e parceiros em canais como WhatsApp, Instagram e e-mail, além de rotinas internas que hoje dependem de alguém copiar informação de um sistema para outro."
+      },
+      {
+        "title": "Quando faz sentido",
+        "body": "Quando um processo segue sempre o mesmo padrão, mas ainda depende de alguém lembrar de fazer — confirmar pedido, atualizar planilha, enviar mensagem."
+      }
+    ],
+    "examplesLabel": "Exemplos de aplicação",
+    "examples": [
+      "Atendimento pelo WhatsApp e pedidos pelo Instagram",
+      "Confirmações automáticas e acompanhamento de clientes",
+      "Atualização de dados entre sistemas",
+      "Rotinas administrativas e envio de mensagens"
+    ],
+    "ctaTitle": "Tem uma tarefa que se repete todo dia?",
+    "ctaBody": "Conte como ela funciona hoje — a gente avalia se dá para automatizar e como.",
+    "ctaButtonLabel": "Vamos conversar"
+  }
+}

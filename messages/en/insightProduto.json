@@ -16,7 +16,7 @@
       "intro": "First comes the problem. Then comes the attempt to solve it.",
       "lead": "A product doesn't start with a technology. It starts with a problem worth solving.",
       "subheading": "First, solve it for yourself",
-      "body": "A company can build its own tool to meet an internal need. At this stage, the goal isn't to sell software — it's to make its own process work better.",
+      "body": "A company can build its own tool to meet an internal need. At this stage, the goal isn't to sell software. It's to make its own process work better.",
       "revealedIntro": "That process also reveals things you couldn't see from the outside:",
       "revealedItems": [
         "Who actually uses the solution",
@@ -31,7 +31,7 @@
       "headingPrefix": "What if",
       "headingAccent": "other companies",
       "headingSuffix": "had the same problem?",
-      "body": "If other companies face a similar pain point, a solution built internally may have the potential to become a product. That doesn't mean every internal problem will turn into a product — it's a possibility, and every possibility like this needs to be validated."
+      "body": "If other companies face a similar pain point, a solution built internally may have the potential to become a product. That doesn't mean every internal problem will turn into a product. It's a possibility, and every possibility like this needs to be validated."
     },
     "solucaoProduto": {
       "heading": "From internal solution to product",
@@ -62,8 +62,8 @@
       "headingPrefix": "Before it can be sold, a product needs to",
       "headingAccent": "make sense",
       "headingSuffix": "to someone.",
-      "body": "Validating the problem and the need comes before investing in a complex platform. The question shouldn't be “what can we build?”.",
-      "closing": "It should be: which problem is worth solving?"
+      "body": "Validating the problem and the need comes before investing in a complex platform. The question shouldn't be “what can we build?”",
+      "closing": "It's: which problem is worth solving?"
     },
     "comecarPequeno": {
       "heading": "Start small",
@@ -71,7 +71,7 @@
     },
     "closing": {
       "paragraph2": "A tool built to organize your own operation can reveal a process other companies need to solve too.",
-      "paragraph3": "The first step isn't building a huge platform. It's understanding whether there's a real, recurring problem — relevant enough to become a solution.",
+      "paragraph3": "The first step isn't building a huge platform. It's understanding whether there's a real, recurring problem, relevant enough to become a solution.",
       "heading": "Is there a problem your company has already solved internally?",
       "body": "The first step can be simple: understanding whether other companies share that same problem.",
       "cta": "Let's talk about my product"

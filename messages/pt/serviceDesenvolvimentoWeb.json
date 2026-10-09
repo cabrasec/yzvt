@@ -1,0 +1,29 @@
+{
+  "ServiceDesenvolvimentoWeb": {
+    "metaTitle": "Desenvolvimento Web | Yzev",
+    "metaDescription": "Sites e páginas que vendem — não só existem.",
+    "eyebrow": "O que fazemos",
+    "title": "Desenvolvimento Web",
+    "lead": "Sites e páginas que vendem — não só existem.",
+    "sections": [
+      {
+        "title": "O que inclui",
+        "body": "Sites institucionais, landing pages e páginas de produto pensadas para converter visita em contato, não só para existir no ar."
+      },
+      {
+        "title": "Quando faz sentido",
+        "body": "Quando o site atual não comunica o que a empresa faz, não tem um caminho claro até o contato, ou simplesmente não existe ainda."
+      }
+    ],
+    "examplesLabel": "Exemplos de aplicação",
+    "examples": [
+      "Landing pages para campanhas e lançamentos",
+      "Sites institucionais",
+      "Páginas de produto com foco em conversão",
+      "Otimização de sites existentes que não vendem"
+    ],
+    "ctaTitle": "Seu site comunica o que sua empresa faz de verdade?",
+    "ctaBody": "Manda o link do que você tem hoje — a gente dá uma opinião honesta antes de propor qualquer coisa.",
+    "ctaButtonLabel": "Vamos conversar"
+  }
+}

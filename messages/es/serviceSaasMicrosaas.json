@@ -1,0 +1,29 @@
+{
+  "ServiceSaasMicrosaas": {
+    "metaTitle": "SaaS & MicroSaaS | Yzev",
+    "metaDescription": "Una solución interna validada puede convertirse en un producto que otras empresas paguen por usar.",
+    "eyebrow": "Qué hacemos",
+    "title": "SaaS & MicroSaaS",
+    "lead": "Una solución interna validada puede convertirse en un producto que otras empresas paguen por usar.",
+    "sections": [
+      {
+        "title": "Qué incluye",
+        "body": "Convertimos herramientas internas e ideas validadas en productos SaaS o MicroSaaS — desde el primer MVP hasta una plataforma lista para otros clientes."
+      },
+      {
+        "title": "Cuándo tiene sentido",
+        "body": "Cuando una solución creada para resolver un problema interno resulta lo bastante útil como para convertirse en producto, o cuando la idea ya existe y falta construir la primera versión."
+      }
+    ],
+    "examplesLabel": "Dónde se aplica",
+    "examples": [
+      "MVPs validados con usuarios reales",
+      "Transformar una herramienta interna en producto",
+      "Plataformas SaaS multi-cliente",
+      "MicroSaaS enfocados en un problema específico"
+    ],
+    "ctaTitle": "¿Tienes una idea de producto que todavía no salió del papel?",
+    "ctaBody": "Cuéntanos la idea — te ayudamos a pensar el primer paso para validarla antes de construir todo.",
+    "ctaButtonLabel": "Hablemos"
+  }
+}

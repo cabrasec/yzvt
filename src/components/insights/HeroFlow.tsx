@@ -29,16 +29,27 @@ function VLine({ delayMs, className = "" }: { delayMs: number; className?: strin
   );
 }
 
-export function HeroFlow() {
+export type HeroFlowLabels = {
+  clientOrder: string;
+  spreadsheet: string;
+  whatsapp: string;
+  email: string;
+  responsible: string;
+  otherSpreadsheet: string;
+  mondayReport: string;
+  caption: string;
+};
+
+export function HeroFlow({ labels }: { labels: HeroFlowLabels }) {
   return (
     <figure className="m-0">
       <div className="grid grid-cols-3 items-center justify-items-center gap-y-0 py-2">
         <Node delayMs={0} className="text-sm text-text/60">
-          Pedido do cliente
+          {labels.clientOrder}
         </Node>
         <VLine delayMs={120} className="h-8" />
         <Node delayMs={300} className="text-2xl font-semibold tracking-[-0.01em] sm:text-3xl">
-          Planilha
+          {labels.spreadsheet}
         </Node>
 
         {/* split: Planilha -> WhatsApp / E-mail */}
@@ -51,13 +62,13 @@ export function HeroFlow() {
 
         <div className="py-1 text-center">
           <span className="dg inline-block text-base font-medium opacity-0 sm:text-lg" style={dg("dg-in", 380, 820)}>
-            WhatsApp
+            {labels.whatsapp}
           </span>
         </div>
         <div />
         <div className="py-1 text-center">
           <span className="dg inline-block text-base font-medium opacity-0 sm:text-lg" style={dg("dg-in", 380, 820)}>
-            E-mail
+            {labels.email}
           </span>
         </div>
 
@@ -67,13 +78,13 @@ export function HeroFlow() {
 
         <div className="py-1 text-center">
           <span className="dg inline-block text-sm text-text/60 opacity-0" style={dg("dg-in", 380, 1080)}>
-            Responsável
+            {labels.responsible}
           </span>
         </div>
         <div />
         <div className="py-1 text-center">
           <span className="dg inline-block text-sm text-text/60 opacity-0" style={dg("dg-in", 380, 1080)}>
-            Outra planilha
+            {labels.otherSpreadsheet}
           </span>
         </div>
 
@@ -87,15 +98,13 @@ export function HeroFlow() {
 
         <div className="col-span-3 py-1 text-center">
           <span className="dg relative inline-block pb-1 text-xl font-semibold tracking-[-0.01em] opacity-0 sm:text-2xl" style={dg("dg-in", 380, 1640)}>
-            Relatório de segunda
+            {labels.mondayReport}
             <span aria-hidden="true" className="dg absolute inset-x-0 bottom-0 h-0.5 origin-left bg-accent/40" style={dg("dg-scale-x", 300, 1900)} />
           </span>
         </div>
       </div>
 
-      <figcaption className="mt-8 max-w-sm text-sm text-text/60">
-        Um pedido, seis lugares. Cada linha é uma passagem de informação que hoje depende de alguém lembrar de fazer.
-      </figcaption>
+      <figcaption className="mt-8 max-w-sm text-sm text-text/60">{labels.caption}</figcaption>
     </figure>
   );
 }

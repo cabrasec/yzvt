@@ -1,0 +1,29 @@
+{
+  "ServiceCloud": {
+    "metaTitle": "Cloud | Yzev",
+    "metaDescription": "Sistemas funcionando en la nube justa para el tamaño del negocio — sin pagar por capacidad que no usas.",
+    "eyebrow": "Qué hacemos",
+    "title": "Cloud",
+    "lead": "Sistemas funcionando en la nube justa para el tamaño del negocio — sin pagar por capacidad que no usas.",
+    "sections": [
+      {
+        "title": "Qué incluye",
+        "body": "Elección y configuración de proveedores de nube, migración de sistemas locales, y ajuste de costos para que la factura a fin de mes tenga sentido con el uso real."
+      },
+      {
+        "title": "Cuándo tiene sentido",
+        "body": "Cuando la empresa quiere escalar sin invertir en servidor propio, o cuando ya está en la nube pero pagando más de lo debido por falta de configuración."
+      }
+    ],
+    "examplesLabel": "Dónde se aplica",
+    "examples": [
+      "Migración de sistemas a la nube",
+      "Arquitectura dimensionada para el tráfico real",
+      "Reducción de costos en proveedores ya contratados",
+      "Entornos de prueba y producción separados"
+    ],
+    "ctaTitle": "¿Tu operación ya está lista para la nube?",
+    "ctaBody": "Evaluamos el escenario actual y mostramos el camino más simple — incluso si es seguir como estás.",
+    "ctaButtonLabel": "Hablemos"
+  }
+}

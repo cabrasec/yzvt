@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowRight, ChevronDown, Globe, Menu, Search, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Globe, Menu, X } from "lucide-react";
 import { Container } from "@/components/Container";
 import { buttonClasses } from "@/components/Button";
 import { Logo } from "@/components/brand/Logo";
@@ -37,9 +37,6 @@ export function Header() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
-
-  const [searchOpen, setSearchOpen] = useState(false);
-  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
@@ -87,10 +84,6 @@ export function Header() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [langOpen]);
-
-  useEffect(() => {
-    if (searchOpen) searchInputRef.current?.focus();
-  }, [searchOpen]);
 
   function switchLocale(nextLocale: AppLocale) {
     setLangOpen(false);
@@ -180,32 +173,6 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-5 md:flex">
-          {searchOpen ? (
-            <div className="flex items-center gap-2 border-b border-divider pb-0.5">
-              <Search className="h-5 w-5 text-text/60 lg:h-[22px] lg:w-[22px]" aria-hidden="true" />
-              <input
-                ref={searchInputRef}
-                type="text"
-                placeholder={t("searchPlaceholder")}
-                aria-label={t("searchAriaLabel")}
-                onBlur={() => setSearchOpen(false)}
-                onKeyDown={(event) => {
-                  if (event.key === "Escape") setSearchOpen(false);
-                }}
-                className="w-28 bg-transparent text-sm text-text placeholder:text-text/40 outline-none transition-[width] duration-200 focus:w-40"
-              />
-            </div>
-          ) : (
-            <button
-              type="button"
-              aria-label={t("searchButtonAriaLabel")}
-              onClick={() => setSearchOpen(true)}
-              className="text-text/60 hover:text-text"
-            >
-              <Search className="h-5 w-5 lg:h-[22px] lg:w-[22px]" aria-hidden="true" />
-            </button>
-          )}
-
           <div ref={langRef} className="relative">
             <button
               type="button"

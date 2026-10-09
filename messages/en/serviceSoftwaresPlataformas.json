@@ -1,0 +1,29 @@
+{
+  "ServiceSoftwaresPlataformas": {
+    "metaTitle": "Software & Platforms | Yzev",
+    "metaDescription": "When there's no ready-made solution for what the business needs, we build one from scratch.",
+    "eyebrow": "What we do",
+    "title": "Software & Platforms",
+    "lead": "When there's no ready-made solution for what the business needs, we build one from scratch.",
+    "sections": [
+      {
+        "title": "What's included",
+        "body": "Custom systems, web platforms and internal tools designed for the business's specific reality — not off-the-shelf software forced to fit."
+      },
+      {
+        "title": "When it makes sense",
+        "body": "When spreadsheets and generic tools can no longer handle the operation, or when an internal process is too specific for any ready-made solution on the market."
+      }
+    ],
+    "examplesLabel": "Where it applies",
+    "examples": [
+      "Custom management systems",
+      "Internal tools for teams",
+      "Complete web platforms",
+      "Growing an MVP into a mature product"
+    ],
+    "ctaTitle": "Has your operation already outgrown the spreadsheet?",
+    "ctaBody": "Tell us how the process works today — we'll think through whether it's worth becoming a system together.",
+    "ctaButtonLabel": "Let's talk"
+  }
+}

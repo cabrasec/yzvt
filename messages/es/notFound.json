@@ -1,0 +1,9 @@
+{
+  "NotFound": {
+    "eyebrow": "Error 404",
+    "title": "Esta página no existe.",
+    "body": "La dirección puede haber cambiado, o nunca existió. Revisa los enlaces de abajo.",
+    "homeLabel": "Volver al inicio",
+    "servicesLabel": "Ver qué hacemos"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "ServiceInfraestrutura": {
+    "metaTitle": "Infraestructura | Yzev",
+    "metaDescription": "Una base técnica estable para que el negocio crezca sin depender de parches.",
+    "eyebrow": "Qué hacemos",
+    "title": "Infraestructura",
+    "lead": "Una base técnica estable para que el negocio crezca sin depender de parches.",
+    "sections": [
+      {
+        "title": "Qué incluye",
+        "body": "Organizamos servidores, redes, copias de seguridad y el entorno técnico que sostiene el día a día — de la forma más simple que resuelve el problema, sin complejidad innecesaria."
+      },
+      {
+        "title": "Cuándo tiene sentido",
+        "body": "Cuando el crecimiento de la empresa empieza a chocar con sistemas inestables, mantenimiento manual o dependencia de una sola persona para mantener todo funcionando."
+      }
+    ],
+    "examplesLabel": "Dónde se aplica",
+    "examples": [
+      "Servidores y redes organizados y documentados",
+      "Rutinas de respaldo y recuperación",
+      "Monitoreo para detectar problemas antes que el cliente",
+      "Migración de sistemas antiguos sin detener la operación"
+    ],
+    "ctaTitle": "¿Quieres una base técnica que aguante el crecimiento?",
+    "ctaBody": "Cuéntanos qué está frenando las cosas hoy — te decimos con franqueza si el problema es de infraestructura.",
+    "ctaButtonLabel": "Hablemos"
+  }
+}

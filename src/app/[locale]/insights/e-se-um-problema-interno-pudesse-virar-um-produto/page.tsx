@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import { ArticleIndex } from "@/components/insights/ArticleIndex";
 import { FlowChain } from "@/components/insights/FlowChain";
 import { Link } from "@/i18n/navigation";
+import { buildAlternates } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -21,6 +22,7 @@ export async function generateMetadata({
   return {
     title: `${tMeta("problemaInterno.title")} | Yzev`,
     description: t("hero.pullQuote"),
+    alternates: buildAlternates(locale, "/insights/e-se-um-problema-interno-pudesse-virar-um-produto"),
   };
 }
 
@@ -136,7 +138,7 @@ export default function Page() {
       <article>
         {/* CORPO EDITORIAL — bloco 1: índice lateral + o problema vem primeiro */}
         <Container className={`py-20 sm:py-24 ${readingGrid} lg:py-28`}>
-          <ArticleIndex items={indexItems} className="mb-14 lg:mb-0" />
+          <ArticleIndex items={indexItems} navLabel={tMeta("articleIndexLabel")} className="mb-14 lg:mb-0" />
 
           <div className="max-w-3xl space-y-20 sm:space-y-24 lg:space-y-28">
             <section id="problema" className="scroll-mt-28">
@@ -322,7 +324,7 @@ export default function Page() {
               </Link>
             </section>
 
-            <section aria-label="Continue lendo" className="border-t border-divider pt-10 sm:pt-12">
+            <section aria-label={t("continueReading")} className="border-t border-divider pt-10 sm:pt-12">
               <p className="text-xs uppercase tracking-[0.2em] text-text/60">{t("continueReading")}</p>
               <div className="mt-7 grid gap-8 sm:grid-cols-3 sm:gap-10">
                 {relatedArticlesConfig.map((article) => (
