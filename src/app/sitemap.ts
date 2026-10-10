@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
-import { localizedUrl } from "@/lib/site";
+import { buildAlternates, localizedUrl } from "@/lib/site";
 
 // Um path por rota real do site (sem prefixo de locale) — o sitemap gera as
 // 3 versões de cada um automaticamente via localizedUrl/buildAlternates.
@@ -26,9 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return paths.flatMap((path) =>
     routing.locales.map((locale) => ({
       url: localizedUrl(locale, path),
-      alternates: {
-        languages: Object.fromEntries(routing.locales.map((loc) => [loc, localizedUrl(loc, path)])),
-      },
+      // Mesmo hreflang (incluindo x-default) que cada página declara no HTML.
+      alternates: { languages: buildAlternates(locale, path).languages },
     })),
   );
 }
