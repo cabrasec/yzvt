@@ -9,7 +9,7 @@ import { Footer } from "@/components/Footer";
 import { ArticleIndex } from "@/components/insights/ArticleIndex";
 import { FlowChain } from "@/components/insights/FlowChain";
 import { Link } from "@/i18n/navigation";
-import { buildAlternates } from "@/lib/site";
+import { buildAlternates, buildOpenGraph } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -20,9 +20,10 @@ export async function generateMetadata({
   const tMeta = await getTranslations({ locale, namespace: "InsightsMeta" });
   const t = await getTranslations({ locale, namespace: "InsightProduto" });
   return {
-    title: `${tMeta("problemaInterno.title")} | Yzev`,
-    description: t("hero.pullQuote"),
+    title: tMeta("problemaInterno.title"),
+    description: t("metaDescription"),
     alternates: buildAlternates(locale, "/insights/e-se-um-problema-interno-pudesse-virar-um-produto"),
+    openGraph: buildOpenGraph(locale, "/insights/e-se-um-problema-interno-pudesse-virar-um-produto", "article"),
   };
 }
 

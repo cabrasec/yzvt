@@ -9,7 +9,7 @@ import { ArticleIndex } from "@/components/insights/ArticleIndex";
 import { FlowChain } from "@/components/insights/FlowChain";
 import { Link } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
-import { buildAlternates } from "@/lib/site";
+import { buildAlternates, buildOpenGraph } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -23,11 +23,16 @@ export async function generateMetadata({
   ]);
 
   return {
-    title: `${tMeta("perdendoClientes.title")} | Yzev`,
+    title: tMeta("perdendoClientes.title"),
     description: t("metaDescription"),
     alternates: buildAlternates(
       locale,
       "/insights/sua-empresa-esta-perdendo-clientes-por-nao-ter-uma-pagina-que-vende",
+    ),
+    openGraph: buildOpenGraph(
+      locale,
+      "/insights/sua-empresa-esta-perdendo-clientes-por-nao-ter-uma-pagina-que-vende",
+      "article",
     ),
   };
 }

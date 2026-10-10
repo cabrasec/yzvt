@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 import { Link } from "@/i18n/navigation";
 import { ArticleIndex } from "@/components/insights/ArticleIndex";
 import { FlowChain } from "@/components/insights/FlowChain";
-import { buildAlternates } from "@/lib/site";
+import { buildAlternates, buildOpenGraph } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -20,11 +20,16 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "InsightAutomacao" });
 
   return {
-    title: `${metaT("tarefasSozinhas.title")} | Yzev`,
+    title: metaT("tarefasSozinhas.title"),
     description: t("meta.description"),
     alternates: buildAlternates(
       locale,
       "/insights/sua-empresa-ainda-depende-de-tarefas-que-poderiam-acontecer-sozinhas",
+    ),
+    openGraph: buildOpenGraph(
+      locale,
+      "/insights/sua-empresa-ainda-depende-de-tarefas-que-poderiam-acontecer-sozinhas",
+      "article",
     ),
   };
 }

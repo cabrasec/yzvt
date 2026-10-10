@@ -1,5 +1,6 @@
 {
   "InsightProduto": {
+    "metaDescription": "Cómo una herramienta creada para resolver un problema interno puede convertirse en un producto SaaS: cuándo tiene sentido y cómo empezar en pequeño.",
     "hero": {
       "intro": "Los productos relevantes suelen empezar de la misma manera: una empresa se da cuenta de que pierde tiempo controlando pedidos, clientes, documentos, agenda, inventario, aprobaciones o seguimiento de tareas.",
       "pullQuote": "A veces, el próximo producto de tu empresa está escondido dentro de un problema que ya resolvió."

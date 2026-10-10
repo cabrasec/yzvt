@@ -4,7 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/Container";
 import { Link } from "@/i18n/navigation";
-import { buildAlternates } from "@/lib/site";
+import { buildAlternates, buildOpenGraph } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -17,6 +17,7 @@ export async function generateMetadata({
     title: t("metaTitle"),
     description: t("metaDescription"),
     alternates: buildAlternates(locale, "/o-que-fazemos"),
+    openGraph: buildOpenGraph(locale, "/o-que-fazemos"),
   };
 }
 

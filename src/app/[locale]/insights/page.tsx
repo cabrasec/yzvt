@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
-import { buildAlternates } from "@/lib/site";
+import { buildAlternates, buildOpenGraph } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -18,6 +18,7 @@ export async function generateMetadata({
     title: t("metaTitle"),
     description: t("metaDescription"),
     alternates: buildAlternates(locale, "/insights"),
+    openGraph: buildOpenGraph(locale, "/insights"),
   };
 }
 

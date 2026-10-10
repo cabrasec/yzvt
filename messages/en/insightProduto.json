@@ -1,5 +1,6 @@
 {
   "InsightProduto": {
+    "metaDescription": "How a tool built to solve an internal problem can become a SaaS product: when it makes sense and how to start small.",
     "hero": {
       "intro": "Meaningful products usually start the same way: a company realizes it is wasting time managing orders, customers, documents, scheduling, inventory, approvals, or task tracking.",
       "pullQuote": "Sometimes, your company's next product is hiding inside a problem it already solved."

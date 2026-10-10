@@ -27,3 +27,25 @@ export function buildAlternates(locale: string, path: string) {
     languages,
   };
 }
+
+// Marca usada nos metadados (sufixo do <title>, og:site_name) — grafia do logo.
+export const SITE_NAME = "yzevtech";
+
+const ogLocales: Record<string, string> = { pt: "pt_BR", en: "en_US", es: "es_ES" };
+
+export const OG_IMAGE = { url: "/img/og-image.png", width: 1200, height: 630, alt: SITE_NAME };
+
+// Open Graph completo de uma página. Precisa ser o objeto inteiro: o Next faz
+// merge raso dos metadados, então um `openGraph` na página substitui o do
+// layout por completo (siteName e imagem incluídos). og:title/og:description
+// não vão aqui — o Next os herda do title/description resolvidos da página.
+export function buildOpenGraph(locale: string, path: string, type: "website" | "article" = "website") {
+  return {
+    type,
+    siteName: SITE_NAME,
+    url: localizedUrl(locale, path),
+    locale: ogLocales[locale],
+    alternateLocale: routing.locales.filter((loc) => loc !== locale).map((loc) => ogLocales[loc]),
+    images: [OG_IMAGE],
+  };
+}

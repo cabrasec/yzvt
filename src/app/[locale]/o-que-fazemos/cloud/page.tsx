@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { ServicePage, type ServiceContent } from "@/components/services/ServicePage";
-import { buildAlternates } from "@/lib/site";
+import { buildAlternates, buildOpenGraph } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -15,6 +15,7 @@ export async function generateMetadata({
     title: t("metaTitle"),
     description: t("metaDescription"),
     alternates: buildAlternates(locale, "/o-que-fazemos/cloud"),
+    openGraph: buildOpenGraph(locale, "/o-que-fazemos/cloud"),
   };
 }
 

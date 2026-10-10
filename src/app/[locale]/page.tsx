@@ -6,7 +6,7 @@ import { Thoughts } from "@/components/Thoughts";
 import { Contact } from "@/components/Contact";
 import { Closing } from "@/components/Closing";
 import { Footer } from "@/components/Footer";
-import { buildAlternates } from "@/lib/site";
+import { buildAlternates, buildOpenGraph } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -14,7 +14,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return { alternates: buildAlternates(locale, "") };
+  return {
+    alternates: buildAlternates(locale, ""),
+    openGraph: buildOpenGraph(locale, ""),
+  };
 }
 
 export default function Home() {

@@ -11,7 +11,7 @@ import { ArticleIndex } from "@/components/insights/ArticleIndex";
 import { HeroFlow } from "@/components/insights/HeroFlow";
 import { DiagnosticSignals } from "@/components/insights/DiagnosticSignals";
 import { PossibilityMap } from "@/components/insights/PossibilityMap";
-import { buildAlternates } from "@/lib/site";
+import { buildAlternates, buildOpenGraph } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -23,9 +23,10 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "InsightPlanilha" });
 
   return {
-    title: `${metaT("quandoPlanilha.title")} | YZEV Tech`,
+    title: metaT("quandoPlanilha.title"),
     description: t("metaDescription"),
     alternates: buildAlternates(locale, "/insights/quando-uma-planilha-deixa-de-ser-suficiente"),
+    openGraph: buildOpenGraph(locale, "/insights/quando-uma-planilha-deixa-de-ser-suficiente", "article"),
   };
 }
 

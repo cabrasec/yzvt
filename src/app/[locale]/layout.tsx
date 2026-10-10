@@ -7,7 +7,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { routing, type AppLocale } from "@/i18n/routing";
-import { SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -34,16 +34,18 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Layout" });
   return {
     metadataBase: new URL(SITE_URL),
-    title: t("title"),
+    // default: título completo da home (o template não se aplica a ele);
+    // template: sufixo da marca para os títulos das páginas filhas.
+    title: { default: t("title"), template: `%s | ${SITE_NAME}` },
     description: t("description"),
     openGraph: {
-      siteName: "Yzev Tech",
+      siteName: SITE_NAME,
       type: "website",
-      images: [{ url: "/img/og-image.png", width: 1200, height: 630 }],
+      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
-      images: ["/img/og-image.png"],
+      images: [OG_IMAGE.url],
     },
   };
 }
