@@ -1,38 +1,38 @@
 {
   "Privacidade": {
-    "metaTitle": "Privacy Notice | Yzev",
-    "metaDescription": "How Yzev handles the personal data submitted through the site's contact form.",
+    "metaTitle": "Privacy Notice | Yzev Tech",
+    "metaDescription": "Learn how Yzev Tech handles the personal data submitted through the site's contact form.",
     "eyebrow": "Legal",
     "title": "Privacy Notice",
     "lastUpdated": "Last updated: October 2026.",
     "sections": [
       {
         "title": "1. Who is responsible for this data",
-        "body": "This notice explains how Yzev Tech (\"Yzev\", \"we\") handles the personal data collected on this site, in accordance with Brazil's General Data Protection Law (Lei Geral de Proteção de Dados, Law No. 13,709/2018 — LGPD)."
+        "body": "This notice explains how Yzev Tech (\"Yzev\", \"we\") handles the personal data collected through this site, in accordance with Brazil's General Data Protection Law (Lei Geral de Proteção de Dados Pessoais, Law No. 13,709/2018 — LGPD). For questions or requests related to privacy, contact us at contato@yzev.tech"
       },
       {
-        "title": "2. Cookies",
-        "body": "We use a single cookie, strictly necessary for the site to work: NEXT_LOCALE, which remembers which language (Portuguese, English or Spanish) you're browsing in as you move between pages. It doesn't identify you and isn't used for tracking, so it doesn't require a consent banner. We don't use tracking cookies or analytics tools on this site."
+        "title": "2. Cookies and similar technologies",
+        "body": "The site uses the NEXT_LOCALE cookie, tied to navigation between the available languages (Portuguese, English and Spanish). In the configuration we observed, it's a session cookie and holds the selected language code. As of this review, we haven't identified any advertising cookies or analytics tools in use. This may be revisited if new services or technologies are added to the site."
       },
       {
         "title": "3. What data we collect",
-        "body": "The only personal data we collect is what you voluntarily provide when filling out the contact form: name, company, email, WhatsApp number, the selected need, and the message you send."
+        "body": "We collect the personal data you voluntarily provide when filling out the contact form, such as name, company, email address, WhatsApp number, selected need, and message content. Please share only the information necessary for us to understand and respond to your request."
       },
       {
-        "title": "4. What we use this data for",
-        "body": "We use this information exclusively to understand your request and respond to your contact. To deliver your message to our email, the form is processed by Web3Forms (web3forms.com) — it only relays the message and doesn't use your data for any other purpose. We don't use this data to send marketing, we don't sell it, and we don't share it with anyone beyond that technical processor."
+        "title": "4. What we use this data for and who we share it with",
+        "body": "We use the data to understand your request, respond to your contact, and follow up on it. The form uses Web3Forms (web3forms.com) to forward messages to our corporate email address. Processing follows that service's applicable terms and privacy practices. We don't sell the personal data submitted through the form or use it for marketing campaigns without a proper legal basis. Sharing may occur when necessary to carry out the request, comply with legal obligations, or in other cases permitted by law."
       },
       {
-        "title": "5. How long we keep it",
-        "body": "We keep the contact form data only for as long as needed to handle your request and maintain a record of our conversation with you. You can request deletion of this data at any time through the channels listed below."
+        "title": "5. How long we keep the data",
+        "body": "We keep the data for as long as necessary to respond to the request, follow up on it, and meet any legal obligations. After that period, the data is deleted or anonymized where applicable, except where retention is required or permitted by law. Since the form is processed by Web3Forms (web3forms.com), the submitted message may also remain stored in that provider's systems for its own retention period, as described in its privacy policy — we don't have direct control over that timeframe. You can request information about data retention or deletion through the contact channel listed in this notice."
       },
       {
         "title": "6. Your rights",
-        "body": "Under the LGPD, you can request confirmation of processing, access, correction, anonymization, portability, or deletion of your data, as well as withdraw your consent. To exercise any of these rights, contact us at the email below."
+        "body": "Under the LGPD, you may request, as applicable, confirmation that processing is taking place, access to your data, correction of incomplete, inaccurate or outdated data, anonymization, blocking or deletion of unnecessary, excessive, or non-compliant data, as well as other rights provided by law. Where processing is based on consent, you may withdraw it. To exercise your rights, contact us at the address below."
       },
       {
         "title": "7. Contact",
-        "body": "Questions about this notice or how your data is handled can be sent to contato@yzev.tech."
+        "body": "For questions, requests, or any matters related to privacy and the handling of personal data, write to contato@yzev.tech"
       }
     ]
   }

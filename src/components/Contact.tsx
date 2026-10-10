@@ -3,10 +3,10 @@
 import { useEffect, useId, useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, Check, Mail } from "lucide-react";
+import { ArrowRight, Check, Compass, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/Container";
 import { WhatsAppIcon } from "@/components/Closing";
-import { CONTACT_EMAIL, WHATSAPP_DISPLAY, getWhatsAppUrl } from "@/lib/contact";
+import { WHATSAPP_DISPLAY, getWhatsAppUrl } from "@/lib/contact";
 import { localizedUrl } from "@/lib/site";
 
 type FormValues = {
@@ -71,7 +71,7 @@ function Optional({ label }: { label: string }) {
 }
 
 const ctaClasses =
-  "group inline-flex w-full items-center justify-center gap-2.5 border border-accent-2/70 px-6 py-3 text-sm font-semibold text-text transition-colors duration-200 hover:border-accent-2 hover:bg-accent-2/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2 disabled:cursor-not-allowed disabled:opacity-45 sm:w-auto";
+  "group inline-flex w-full items-center justify-center gap-2.5 border border-accent-2 bg-accent-2/[0.1] px-6 py-3 text-sm font-semibold text-text transition-colors duration-200 hover:bg-accent-2/[0.18] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-2 disabled:cursor-not-allowed disabled:opacity-45 sm:w-auto";
 
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
@@ -197,16 +197,25 @@ export function Contact() {
               </a>
               <p className="mt-3 text-sm text-text/60">{WHATSAPP_DISPLAY}</p>
               <p className="mt-1 text-xs text-text/45">{tCommon("serviceHours")}</p>
+            </div>
 
-              <div className="mt-5 border-t border-divider pt-5">
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  className="inline-flex items-center gap-2.5 text-base font-semibold text-text no-underline transition-colors duration-200 hover:text-accent-2"
-                >
-                  <Mail className="h-5 w-5 text-accent-2" aria-hidden="true" />
-                  {t("emailLinkLabel")}
-                </a>
-                <p className="mt-3 text-sm text-text/60">{CONTACT_EMAIL}</p>
+            {/* Informações institucionais, não acionáveis — reforçam
+                confiança sem repetir o canal de contato (WhatsApp acima,
+                e-mail já coberto pelo próprio formulário). */}
+            <div className="mt-8 space-y-5">
+              <div className="flex items-start gap-3">
+                <Compass className="mt-0.5 h-5 w-5 shrink-0 text-accent-2" aria-hidden="true" />
+                <div>
+                  <p className="text-sm font-semibold text-text">{t("trust.consultive.title")}</p>
+                  <p className="mt-1 text-sm text-text/60">{t("trust.consultive.body")}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-accent-2" aria-hidden="true" />
+                <div>
+                  <p className="text-sm font-semibold text-text">{t("trust.noCommitment.title")}</p>
+                  <p className="mt-1 text-sm text-text/60">{t("trust.noCommitment.body")}</p>
+                </div>
               </div>
             </div>
           </div>

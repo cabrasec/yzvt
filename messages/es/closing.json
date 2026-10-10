@@ -1,8 +1,8 @@
 {
   "Closing": {
-    "intro": "Software, automatización y productos digitales para empresas que quieren crecer.",
-    "question": "¿Hablamos sobre lo que tu negocio necesita?",
-    "note": "Una primera conversación ayuda a entender el desafío y encontrar el mejor camino.",
-    "whatsappLabel": "Hablar por WhatsApp"
+    "title": "Tecnología que resuelve problemas reales.",
+    "description": "Software, automatización y productos digitales para empresas que quieren crecer.",
+    "complement": "Entendemos el desafío, evaluamos las posibilidades y construimos el camino más adecuado para tu negocio.",
+    "ctaLabel": "Conoce lo que hacemos"
   }
 }

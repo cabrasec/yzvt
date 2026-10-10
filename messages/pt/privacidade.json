@@ -1,38 +1,38 @@
 {
   "Privacidade": {
-    "metaTitle": "Aviso de Privacidade | Yzev",
-    "metaDescription": "Como a Yzev trata os dados pessoais enviados pelo formulário de contato do site.",
+    "metaTitle": "Aviso de Privacidade | Yzev Tech",
+    "metaDescription": "Saiba como a Yzev Tech trata os dados pessoais enviados pelo formulário de contato do site.",
     "eyebrow": "Legal",
     "title": "Aviso de Privacidade",
     "lastUpdated": "Última atualização: outubro de 2026.",
     "sections": [
       {
         "title": "1. Quem é responsável pelos dados",
-        "body": "Este aviso explica como a Yzev Tech (\"Yzev\", \"nós\") trata os dados pessoais coletados neste site, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD)."
+        "body": "Este aviso explica como a Yzev Tech (\"Yzev\", \"nós\") trata os dados pessoais coletados por meio deste site, em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD). Para dúvidas ou solicitações relacionadas à privacidade, entre em contato pelo endereço contato@yzev.tech"
       },
       {
-        "title": "2. Cookies",
-        "body": "Usamos um único cookie, estritamente necessário para o funcionamento do site: NEXT_LOCALE, que lembra em qual idioma (português, inglês ou espanhol) você está navegando ao trocar de página. Ele não identifica você nem é usado para rastreamento — por isso não exige um banner de consentimento. Não usamos cookies de rastreamento nem ferramentas de analytics neste site."
+        "title": "2. Cookies e tecnologias semelhantes",
+        "body": "O site utiliza o cookie NEXT_LOCALE, associado à navegação entre os idiomas disponíveis (português, inglês e espanhol). Na configuração observada, ele é um cookie de sessão e contém o código do idioma selecionado. Até o momento, não identificamos cookies de publicidade ou ferramentas de analytics nas verificações realizadas. Essa configuração poderá ser revista caso novos serviços ou tecnologias sejam incorporados ao site."
       },
       {
         "title": "3. Quais dados coletamos",
-        "body": "O único dado pessoal coletado é o que você mesmo informa, de forma voluntária, ao preencher o formulário de contato: nome, empresa, e-mail, WhatsApp, a necessidade selecionada e a mensagem enviada."
+        "body": "Coletamos os dados pessoais que você fornece voluntariamente ao preencher o formulário de contato, como nome, empresa, endereço de e-mail, WhatsApp, necessidade selecionada e conteúdo da mensagem. Forneça apenas as informações necessárias para que possamos compreender e responder à sua solicitação."
       },
       {
-        "title": "4. Para que usamos esses dados",
-        "body": "Usamos essas informações exclusivamente para entender sua solicitação e responder ao seu contato. Para entregar sua mensagem até nosso e-mail, o formulário é processado pela Web3Forms (web3forms.com) — ela só repassa a mensagem, não usa seus dados para nenhum outro fim. Não usamos esses dados para enviar marketing, não os vendemos e não os compartilhamos com mais ninguém além desse processador técnico."
+        "title": "4. Para que usamos e com quem compartilhamos esses dados",
+        "body": "Utilizamos os dados para compreender sua solicitação, responder ao contato e dar andamento ao atendimento. O formulário utiliza a Web3Forms (web3forms.com) para encaminhar as mensagens ao nosso endereço de e-mail corporativo. O processamento é realizado conforme as condições e práticas de privacidade aplicáveis ao serviço. Não comercializamos os dados pessoais enviados pelo formulário nem os utilizamos para campanhas de marketing sem a devida base legal. O compartilhamento poderá ocorrer quando necessário para viabilizar o atendimento, cumprir obrigações legais ou nas demais hipóteses permitidas pela legislação."
       },
       {
-        "title": "5. Por quanto tempo guardamos",
-        "body": "Mantemos os dados do formulário apenas pelo tempo necessário para tratar sua solicitação e manter um histórico de conversa com você. Você pode pedir a exclusão desses dados a qualquer momento, pelos canais indicados abaixo."
+        "title": "5. Por quanto tempo mantemos os dados",
+        "body": "Mantemos os dados pelo período necessário para responder à solicitação, acompanhar o atendimento e cumprir eventuais obrigações legais. Após esse período, os dados serão excluídos ou anonimizados, quando cabível, ressalvadas as hipóteses em que sua conservação seja necessária ou permitida pela legislação. Como o formulário é processado pela Web3Forms (web3forms.com), a mensagem enviada também pode permanecer armazenada nos sistemas desse fornecedor pelo prazo de retenção próprio do serviço, descrito na política de privacidade dele — não temos controle direto sobre esse prazo. Você pode solicitar informações sobre a retenção ou a exclusão dos seus dados pelo canal de contato indicado neste aviso."
       },
       {
         "title": "6. Seus direitos",
-        "body": "Nos termos da LGPD, você pode solicitar a confirmação de tratamento, acesso, correção, anonimização, portabilidade ou exclusão dos seus dados, bem como revogar o consentimento dado. Para exercer qualquer um desses direitos, entre em contato pelo e-mail abaixo."
+        "body": "Nos termos da LGPD, você pode solicitar, conforme aplicável, a confirmação da existência de tratamento, o acesso aos dados, a correção de dados incompletos, inexatos ou desatualizados, a anonimização, o bloqueio ou a eliminação de dados desnecessários, excessivos ou tratados em desconformidade com a legislação, além dos demais direitos previstos em lei. Quando o tratamento se basear no consentimento, você poderá solicitar sua revogação. Para exercer seus direitos, entre em contato pelo endereço indicado abaixo."
       },
       {
         "title": "7. Contato",
-        "body": "Dúvidas sobre este aviso ou sobre o tratamento dos seus dados podem ser enviadas para contato@yzev.tech."
+        "body": "Para dúvidas, solicitações ou assuntos relacionados à privacidade e ao tratamento de dados pessoais, escreva para contato@yzev.tech"
       }
     ]
   }

@@ -2,10 +2,19 @@
   "Contact": {
     "eyebrow": "Contact",
     "heading": "Tell us what you need to solve.",
-    "lead": "From there, we think through the best-fit solution — and we'll tell you plainly if we're not the right team for it.",
+    "lead": "From there, we find the solution that fits best — and we're upfront when we're not the right team for it.",
     "whatsappBoxLabel": "Prefer to talk?",
     "whatsappLinkLabel": "Chat on WhatsApp",
-    "emailLinkLabel": "Send an email",
+    "trust": {
+      "consultive": {
+        "title": "Consultative approach",
+        "body": "We understand the challenge before recommending a solution."
+      },
+      "noCommitment": {
+        "title": "No obligation",
+        "body": "We look at what you need to find the right path for your business."
+      }
+    },
     "requiredNote": "All fields are required, except where marked.",
     "optional": "(optional)",
     "fields": {

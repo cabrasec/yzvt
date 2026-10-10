@@ -1,38 +1,38 @@
 {
   "Privacidade": {
-    "metaTitle": "Aviso de Privacidad | Yzev",
-    "metaDescription": "Cómo Yzev trata los datos personales enviados a través del formulario de contacto del sitio.",
+    "metaTitle": "Aviso de Privacidad | Yzev Tech",
+    "metaDescription": "Conoce cómo Yzev Tech trata los datos personales enviados a través del formulario de contacto del sitio.",
     "eyebrow": "Legal",
     "title": "Aviso de Privacidad",
     "lastUpdated": "Última actualización: octubre de 2026.",
     "sections": [
       {
         "title": "1. Quién es responsable de los datos",
-        "body": "Este aviso explica cómo Yzev Tech (\"Yzev\", \"nosotros\") trata los datos personales recolectados en este sitio, de conformidad con la Ley General de Protección de Datos de Brasil (Lei Geral de Proteção de Dados, Ley N.º 13.709/2018 — LGPD)."
+        "body": "Este aviso explica cómo Yzev Tech (\"Yzev\", \"nosotros\") trata los datos personales recopilados a través de este sitio, de conformidad con la Ley General de Protección de Datos de Brasil (Lei Geral de Proteção de Dados Pessoais, Ley n.º 13.709/2018 — LGPD). Para dudas o solicitudes relacionadas con la privacidad, contáctanos en contato@yzev.tech"
       },
       {
-        "title": "2. Cookies",
-        "body": "Usamos una única cookie, estrictamente necesaria para el funcionamiento del sitio: NEXT_LOCALE, que recuerda en qué idioma (portugués, inglés o español) estás navegando al cambiar de página. No te identifica ni se usa para rastreo, por lo que no requiere un banner de consentimiento. No usamos cookies de rastreo ni herramientas de analítica en este sitio."
+        "title": "2. Cookies y tecnologías similares",
+        "body": "El sitio utiliza la cookie NEXT_LOCALE, vinculada a la navegación entre los idiomas disponibles (portugués, inglés y español). En la configuración observada, es una cookie de sesión y contiene el código del idioma seleccionado. Hasta el momento, no identificamos cookies publicitarias ni herramientas de analítica en las verificaciones realizadas. Esta configuración podrá revisarse si se incorporan nuevos servicios o tecnologías al sitio."
       },
       {
-        "title": "3. Qué datos recolectamos",
-        "body": "El único dato personal que recolectamos es el que tú mismo proporcionas voluntariamente al completar el formulario de contacto: nombre, empresa, correo electrónico, WhatsApp, la necesidad seleccionada y el mensaje enviado."
+        "title": "3. Qué datos recopilamos",
+        "body": "Recopilamos los datos personales que proporcionas voluntariamente al completar el formulario de contacto, como nombre, empresa, correo electrónico, WhatsApp, necesidad seleccionada y contenido del mensaje. Proporciona solo la información necesaria para que podamos comprender y responder a tu solicitud."
       },
       {
-        "title": "4. Para qué usamos estos datos",
-        "body": "Usamos esta información exclusivamente para entender tu solicitud y responder a tu contacto. Para entregar tu mensaje a nuestro correo, el formulario es procesado por Web3Forms (web3forms.com) — solo reenvía el mensaje y no usa tus datos para ningún otro fin. No usamos estos datos para enviar marketing, no los vendemos y no los compartimos con nadie más allá de ese procesador técnico."
+        "title": "4. Para qué usamos estos datos y con quién los compartimos",
+        "body": "Utilizamos los datos para comprender tu solicitud, responder al contacto y dar seguimiento a la atención. El formulario utiliza Web3Forms (web3forms.com) para enviar los mensajes a nuestra dirección de correo corporativa. El procesamiento se realiza conforme a las condiciones y prácticas de privacidad aplicables a ese servicio. No comercializamos los datos personales enviados por el formulario ni los usamos para campañas de marketing sin la base legal correspondiente. El intercambio podrá ocurrir cuando sea necesario para dar curso a la atención, cumplir obligaciones legales o en los demás casos permitidos por la legislación."
       },
       {
-        "title": "5. Por cuánto tiempo los conservamos",
-        "body": "Conservamos los datos del formulario solo por el tiempo necesario para atender tu solicitud y mantener un historial de la conversación contigo. Puedes solicitar la eliminación de estos datos en cualquier momento a través de los canales indicados abajo."
+        "title": "5. Por cuánto tiempo conservamos los datos",
+        "body": "Conservamos los datos durante el período necesario para responder a la solicitud, dar seguimiento a la atención y cumplir eventuales obligaciones legales. Transcurrido ese período, los datos serán eliminados o anonimizados, cuando corresponda, salvo en los casos en que su conservación sea necesaria o esté permitida por la ley. Como el formulario es procesado por Web3Forms (web3forms.com), el mensaje enviado también puede permanecer almacenado en los sistemas de ese proveedor durante el plazo de retención propio del servicio, descrito en su política de privacidad — no tenemos control directo sobre ese plazo. Puedes solicitar información sobre la retención o eliminación de tus datos a través del canal de contacto indicado en este aviso."
       },
       {
         "title": "6. Tus derechos",
-        "body": "Conforme a la LGPD, puedes solicitar la confirmación del tratamiento, acceso, corrección, anonimización, portabilidad o eliminación de tus datos, así como revocar el consentimiento otorgado. Para ejercer cualquiera de estos derechos, contáctanos por el correo indicado abajo."
+        "body": "Conforme a la LGPD, puedes solicitar, según corresponda, la confirmación de la existencia de tratamiento, el acceso a los datos, la corrección de datos incompletos, inexactos o desactualizados, la anonimización, el bloqueo o la eliminación de datos innecesarios, excesivos o tratados en incumplimiento de la legislación, además de los demás derechos previstos por la ley. Cuando el tratamiento se base en el consentimiento, podrás solicitar su revocación. Para ejercer tus derechos, contáctanos en la dirección indicada a continuación."
       },
       {
         "title": "7. Contacto",
-        "body": "Dudas sobre este aviso o sobre el tratamiento de tus datos pueden enviarse a contato@yzev.tech."
+        "body": "Para dudas, solicitudes o cualquier asunto relacionado con la privacidad y el tratamiento de datos personales, escribe a contato@yzev.tech"
       }
     ]
   }

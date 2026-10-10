@@ -2,10 +2,19 @@
   "Contact": {
     "eyebrow": "Contacto",
     "heading": "Cuéntanos qué necesitas resolver.",
-    "lead": "A partir de ahí, pensamos en la solución más adecuada — y te diremos con franqueza si no somos la mejor opción.",
+    "lead": "A partir de ahí, encontramos la solución más adecuada — y somos transparentes cuando no somos la mejor opción.",
     "whatsappBoxLabel": "¿Prefieres hablar?",
     "whatsappLinkLabel": "Hablar por WhatsApp",
-    "emailLinkLabel": "Enviar correo",
+    "trust": {
+      "consultive": {
+        "title": "Atención consultiva",
+        "body": "Entendemos el desafío antes de recomendar una solución."
+      },
+      "noCommitment": {
+        "title": "Sin compromiso",
+        "body": "Analizamos tu necesidad para encontrar el camino más adecuado para tu negocio."
+      }
+    },
     "requiredNote": "Todos los campos son obligatorios, excepto los marcados.",
     "optional": "(opcional)",
     "fields": {

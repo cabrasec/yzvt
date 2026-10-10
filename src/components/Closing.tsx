@@ -1,15 +1,13 @@
+import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/Container";
-import { getWhatsAppUrl } from "@/lib/contact";
+import { Link } from "@/i18n/navigation";
 
-// Última assinatura da Home, entre o Contato e o Footer. Agora com uma ação:
-// é o último ponto de decisão da página. Tipografia em peso médio e caixa
-// normal, como o resto do site — a caixa alta em negrito destoava da marca.
-// A tagline "Tecnologia para o próximo passo." fica só no Footer.
+// Última assinatura da Home, entre o Contato e o Footer: não repete o
+// convite pra falar no WhatsApp (já coberto na Seção de Contato, acima) —
+// em vez disso reforça o posicionamento e encaminha pra "O que fazemos".
 export function Closing() {
   const t = useTranslations("Closing");
-  const tCommon = useTranslations("Common");
-  const whatsappUrl = getWhatsAppUrl(tCommon("whatsappGreeting"));
 
   return (
     <section className="border-t border-divider bg-bg py-16 text-text sm:py-20">
@@ -17,22 +15,23 @@ export function Closing() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-xl">
             <div className="h-px w-16 bg-accent-2" aria-hidden="true" />
-            <p className="mt-6 text-text/60">{t("intro")}</p>
-            <p className="mt-3 text-2xl font-medium leading-snug tracking-[-0.015em] sm:text-3xl">
-              {t("question")}
+            <p className="mt-6 text-2xl font-medium leading-snug tracking-[-0.015em] sm:text-3xl">
+              {t("title")}
             </p>
-            <p className="mt-4 text-text/60">{t("note")}</p>
+            <p className="mt-4 text-text/60">{t("description")}</p>
+            <p className="mt-3 text-text/60">{t("complement")}</p>
           </div>
 
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/o-que-fazemos"
             className="group inline-flex items-center gap-2.5 self-start border border-accent-2/70 px-6 py-3 text-sm font-semibold text-text no-underline transition-colors duration-200 hover:border-accent-2 hover:bg-accent-2/[0.06] lg:self-auto"
           >
-            <WhatsAppIcon className="h-4 w-4 text-accent-2" />
-            {t("whatsappLabel")}
-          </a>
+            {t("ctaLabel")}
+            <ArrowRight
+              className="h-4 w-4 text-accent-2 transition-transform duration-200 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </Link>
         </div>
       </Container>
     </section>
