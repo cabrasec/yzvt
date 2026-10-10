@@ -5,6 +5,7 @@
     "lead": "A partir de ahí, pensamos en la solución más adecuada — y te diremos con franqueza si no somos la mejor opción.",
     "whatsappBoxLabel": "¿Prefieres hablar?",
     "whatsappLinkLabel": "Hablar por WhatsApp",
+    "emailLinkLabel": "Enviar correo",
     "requiredNote": "Todos los campos son obligatorios, excepto los marcados.",
     "optional": "(opcional)",
     "fields": {

@@ -3,10 +3,10 @@
 import { useEffect, useId, useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Mail } from "lucide-react";
 import { Container } from "@/components/Container";
 import { WhatsAppIcon } from "@/components/Closing";
-import { WHATSAPP_DISPLAY, getWhatsAppUrl } from "@/lib/contact";
+import { CONTACT_EMAIL, WHATSAPP_DISPLAY, getWhatsAppUrl } from "@/lib/contact";
 import { localizedUrl } from "@/lib/site";
 
 type FormValues = {
@@ -197,6 +197,17 @@ export function Contact() {
               </a>
               <p className="mt-3 text-sm text-text/60">{WHATSAPP_DISPLAY}</p>
               <p className="mt-1 text-xs text-text/45">{tCommon("serviceHours")}</p>
+
+              <div className="mt-5 border-t border-divider pt-5">
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="inline-flex items-center gap-2.5 text-base font-semibold text-text no-underline transition-colors duration-200 hover:text-accent-2"
+                >
+                  <Mail className="h-5 w-5 text-accent-2" aria-hidden="true" />
+                  {t("emailLinkLabel")}
+                </a>
+                <p className="mt-3 text-sm text-text/60">{CONTACT_EMAIL}</p>
+              </div>
             </div>
           </div>
 

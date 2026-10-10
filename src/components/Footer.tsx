@@ -1,3 +1,4 @@
+import { Mail } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/brand/Logo";
@@ -5,6 +6,7 @@ import { WhatsAppIcon } from "@/components/Closing";
 import { Link } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
 import {
+  CONTACT_EMAIL,
   INSTAGRAM_HANDLE,
   INSTAGRAM_URL,
   WHATSAPP_DISPLAY,
@@ -96,6 +98,12 @@ export function Footer() {
                 <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-2.5`}>
                   <InstagramIcon className="h-4 w-4 shrink-0 text-accent-2" />
                   {INSTAGRAM_HANDLE}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${CONTACT_EMAIL}`} className={`${linkClass} inline-flex items-center gap-2.5`}>
+                  <Mail className="h-4 w-4 shrink-0 text-accent-2" aria-hidden="true" />
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li className="text-xs text-text/50">{tCommon("serviceHours")}</li>
