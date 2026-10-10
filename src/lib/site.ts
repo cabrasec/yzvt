@@ -28,7 +28,7 @@ export function buildAlternates(locale: string, path: string) {
   };
 }
 
-// Marca usada nos metadados (sufixo do <title>, og:site_name) — grafia do logo.
+// Marca usada nos metadados (og:site_name) — grafia do logo.
 export const SITE_NAME = "yzevtech";
 
 const ogLocales: Record<string, string> = { pt: "pt_BR", en: "en_US", es: "es_ES" };

@@ -4,8 +4,8 @@
  * A mensagem pré-preenchida do WhatsApp varia por idioma (mensagens/Common),
  * por isso vira função — cada componente passa o texto já traduzido.
  */
-export const WHATSAPP_NUMBER = "5511973737822";
-export const WHATSAPP_DISPLAY = "+55 11 97373-7822";
+export const WHATSAPP_NUMBER = "5561982685581";
+export const WHATSAPP_DISPLAY = "+55 61 98268-5581";
 export const INSTAGRAM_HANDLE = "@yzevtech";
 export const INSTAGRAM_URL = "https://instagram.com/yzevtech";
 export const CONTACT_EMAIL = "contato@yzev.tech";

@@ -34,9 +34,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Layout" });
   return {
     metadataBase: new URL(SITE_URL),
-    // default: título completo da home (o template não se aplica a ele);
-    // template: sufixo da marca para os títulos das páginas filhas.
-    title: { default: t("title"), template: `%s | ${SITE_NAME}` },
+    title: t("title"),
     description: t("description"),
     openGraph: {
       siteName: SITE_NAME,
